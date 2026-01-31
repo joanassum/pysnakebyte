@@ -1,0 +1,9 @@
+{
+  "id": "adv-09",
+  "title": "Dataclasses",
+  "category": "Advanced Topics",
+  "number": 95,
+  "duration": "8 min read",
+  "content": "## Dataclasses\n\nIntroduced in Python 3.7, dataclasses are a decorator and a set of functions that automatically generate special methods such as `__init__()`, `__repr__()`, and `__eq__()` for user-defined classes.\n\n### Basic Usage\n\n```python\nfrom dataclasses import dataclass\n\n@dataclass\nclass InventoryItem:\n    name: str\n    unit_price: float\n    quantity_on_hand: int = 0\n\n    def total_cost(self) -> float:\n        return self.unit_price * self.quantity_on_hand\n```\n\n### Benefits\n\n- Less boilerplate code.\n- Readable string representation by default.\n- Easy comparison between objects.\n\n### Immutable Dataclasses\n\nYou can make a dataclass immutable (read-only) by setting `frozen=True`.\n\n```python\n@dataclass(frozen=True)\nclass Point:\n    x: int\n    y: int\n```\n",
+  "code": "from dataclasses import dataclass\n\n# 1. Create a dataclass `Car` with make, model, year, and a default color 'white'\n\n# @dataclass\n# class Car:\n#     pass\n\n# 2. Create an instance of Car and print it\n\n# 3. Try to modify an attribute. Then make it frozen and try again to see the error.\n"
+}

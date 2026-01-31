@@ -1,0 +1,9 @@
+{
+  "id": "ml-23",
+  "title": "Bar Charts and Histograms",
+  "category": "Python for Data Science",
+  "number": 23,
+  "duration": "12 min read",
+  "content": "# Bar Charts and Histograms\n\nVisualizing distributions and categorical comparisons.\n\n## Bar Charts\n\nCompare categorical data.\n\n```python\ncategories = ['A', 'B', 'C']\nvalues = [10, 20, 15]\n\nplt.bar(categories, values, color='skyblue')\n```\n\nFor horizontal bars, use `plt.barh()`.\n\n## Histograms\n\nVisualize the distribution of a continuous variable.\n\n```python\ndata = np.random.randn(1000)\nplt.hist(data, bins=30, alpha=0.7, color='steelblue', edgecolor='black')\n```\n\n*   `bins`: Number of intervals (or list of bin edges).\n*   `density`: If True, draw and return a probability density (area sums to 1).\n*   `cumulative`: If True, compute a cumulative histogram.\n\n## Pie Charts\n\n(Use sparingly)\n\n```python\nplt.pie(values, labels=categories, autopct='%1.1f%%')\n```",
+  "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\ndata = np.random.normal(0, 1, 1000)\nplt.hist(data, bins=20)\n# plt.show()"
+}

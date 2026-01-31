@@ -1,0 +1,9 @@
+{
+  "id": "challenge-23",
+  "title": "Flatten Nested List",
+  "difficulty": "hard",
+  "description": "# Flatten Nested List\n\nWrite a function that flattens a deeply nested list into a single flat list.\n\n## Example\n\n```python\nresult = solution([1, [2, [3, [4, 5]]]])\nprint(result)  # Output: [1, 2, 3, 4, 5]\n\nresult = solution([[1, 2], [3, [4, 5]], 6])\nprint(result)  # Output: [1, 2, 3, 4, 5, 6]\n```\n\n## Requirements\n\n- Accept a nested list of arbitrary depth\n- Return a flat list with all elements\n- Preserve the order of elements\n- Handle empty lists and already flat lists",
+  "short_description": "Flatten deeply nested list",
+  "starter_code": "def solution(nested):\n    # Flatten a deeply nested list\n    pass\n\n# Test your solution\nprint(solution([1, [2, [3, [4]]]]))  # Should print [1, 2, 3, 4]",
+  "test_code": "assert solution([1, [2, [3, [4, 5]]]]) == [1, 2, 3, 4, 5], 'Test 1 failed'\nassert solution([[1, 2], [3, [4, 5]], 6]) == [1, 2, 3, 4, 5, 6], 'Test 2 failed'\nassert solution([]) == [], 'Test 3 failed: empty list'\nassert solution([1, 2, 3]) == [1, 2, 3], 'Test 4 failed: already flat'\nassert solution([[[[[1]]]]]) == [1], 'Test 5 failed: deeply nested single'\nassert solution([[], [1], [], [2, [3]], []]) == [1, 2, 3], 'Test 6 failed: with empty sublists'\nprint('PASSED')"
+}

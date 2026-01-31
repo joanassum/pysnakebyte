@@ -1,0 +1,9 @@
+{
+  "id": "trade-61",
+  "title": "REST API Basics for Trading",
+  "category": "Connecting to Brokers (APIs)",
+  "number": 61,
+  "duration": "8 min read",
+  "content": "# APIs in Trading\n\nApplication Programming Interfaces (APIs) allow your code to talk to a broker's servers.\n\n## REST (Representational State Transfer)\n- Uses standard HTTP methods: `GET`, `POST`, `DELETE`, `PUT`.\n- **Stateless**: Each request must contain all necessary info.\n\n## Common Endpoints\n- `GET /market/ticker`: Get current price.\n- `GET /account`: Get balance.\n- `POST /order`: Place a trade.",
+  "code": "import requests\n\n# Public API example (CoinGecko - no key needed for basic)\nurl = \"https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd\"\nresponse = requests.get(url)\n\nif response.status_code == 200:\n    data = response.json()\n    price = data['bitcoin']['usd']\n    print(f\"Bitcoin Price: ${price}\")\nelse:\n    print(\"Error fetching data\")\n"
+}

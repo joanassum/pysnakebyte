@@ -1,0 +1,9 @@
+{
+  "id": "ml-84",
+  "title": "DBSCAN",
+  "category": "Unsupervised Learning",
+  "number": 84,
+  "duration": "15 min read",
+  "content": "## DBSCAN\n\n**Density-Based Spatial Clustering of Applications with Noise (DBSCAN)** groups together points that are close to each other based on a distance measurement (usually Euclidean) and a minimum number of points. It also marks as outliers the points that are in low-density regions.\n\n### Key Parameters\n\n*   **eps (epsilon)**: The maximum distance between two samples for one to be considered as in the neighborhood of the other.\n*   **min_samples**: The number of samples (or total weight) in a neighborhood for a point to be considered as a core point.\n\n### Advantages over K-Means\n\n1.  Does not require specifying the number of clusters $K$ beforehand.\n2.  Can find arbitrarily shaped clusters (not just spherical like K-Means).\n3.  Robust to outliers (noise).\n\n### Implementation\n\n```python\nfrom sklearn.cluster import DBSCAN\n\ndbscan = DBSCAN(eps=0.3, min_samples=5)\ny_dbscan = dbscan.fit_predict(X)\n\n# -1 label represents noise/outliers\n```\n",
+  "code": "from sklearn.cluster import DBSCAN\nfrom sklearn.datasets import make_moons\nimport matplotlib.pyplot as plt\n\n# Generate non-spherical data\nX, y = make_moons(n_samples=200, noise=0.05, random_state=0)\n\n# TODO: Initialize DBSCAN with eps=0.3 and min_samples=5\ndbscan = \n\n# TODO: Fit and predict\n# clusters = \n\n# Plot the results\n# plt.scatter(X[:, 0], X[:, 1], c=clusters, cmap='viridis')\n# plt.title(\"DBSCAN Clustering\")\n# plt.show()"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "adv-08",
+  "title": "Type Hints",
+  "category": "Advanced Topics",
+  "number": 94,
+  "duration": "8 min read",
+  "content": "## Type Hints\n\nPython is a dynamically typed language. However, Python 3.5 introduced support for type hints to enable static type checking using tools like `mypy`. This helps in documenting code and catching bugs early.\n\n### Basic Syntax\n\n```python\ndef greeting(name: str) -> str:\n    return 'Hello ' + name\n```\n\n### Variable Annotation\n\n```python\nage: int = 25\n```\n\n### The `typing` Module\n\nFor more complex types, use the `typing` module (or built-in types in Python 3.9+).\n\n```python\nfrom typing import List, Dict, Optional, Union\n\ndef process_items(items: List[str]) -> None:\n    for item in items:\n        print(item)\n\ndef find_item(id: int) -> Optional[str]:\n    # Returns a string or None\n    pass\n```\n",
+  "code": "from typing import List, Dict, Union\n\n# 1. Add type hints to this function\ndef calculate_total(price, quantity, tax_rate):\n    return price * quantity * (1 + tax_rate)\n\n# 2. Define a type hint for a list of integers\n# numbers: ... = [1, 2, 3]\n\n# 3. Define a function that accepts either an int or a float\n# def process_number(num: ...):\n#    pass\n"
+}

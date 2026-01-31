@@ -1,0 +1,9 @@
+{
+  "id": "trade-68",
+  "title": "Error Handling & Rate Limits",
+  "category": "Connecting to Brokers (APIs)",
+  "number": 68,
+  "duration": "10 min read",
+  "content": "# Robustness in Trading Bots\n\nBots run 24/7. They will encounter errors.\n\n## HTTP Errors\n- **429 (Too Many Requests)**: You hit the rate limit. **Back off** immediately.\n- **5xx (Server Errors)**: Exchange is down/overloaded. Retry with exponential backoff.\n\n## Network Errors\n- Connection timeouts. Catch `requests.exceptions.ConnectionError`.\n\n## Logic Errors\n- Insufficient funds. Catch API specific error codes.",
+  "code": "import time\nimport random\n\ndef safe_request():\n    retries = 3\n    for i in range(retries):\n        try:\n            # response = requests.get(...)\n            # if response.status_code == 429:\n            #     wait = int(response.headers.get(\"Retry-After\", 60))\n            #     time.sleep(wait)\n            #     continue\n            print(\"Request Success\")\n            return\n        except Exception as e:\n            wait = 2 ** i # Exponential backoff: 1s, 2s, 4s...\n            print(f\"Error: {e}. Retrying in {wait}s\")\n            time.sleep(wait)\n    print(\"Failed after retries\")\n\nsafe_request()\n"
+}

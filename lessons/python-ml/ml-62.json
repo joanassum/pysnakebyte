@@ -1,0 +1,9 @@
+{
+  "id": "ml-62",
+  "title": "Multiple Linear Regression",
+  "category": "Regression",
+  "number": 62,
+  "duration": "10 min read",
+  "content": "## Beyond One Variable\n\nMultiple Linear Regression models the relationship between two or more features and a single target variable.\n\n$$ y = b_0 + b_1 x_1 + b_2 x_2 + ... + b_n x_n $$\n\n### Key Concepts\n\n- **Coefficients**: Each coefficient $b_i$ represents the change in the target $y$ for a one-unit change in $x_i$, assuming all other variables are held constant.\n- **Multicollinearity**: When features are highly correlated with each other, it becomes difficult to determine the individual effect of each feature. This can lead to unstable coefficient estimates.\n\n### Feature Importance\n\nIn linear regression, the magnitude of the coefficients can indicate feature importance, *provided that features are scaled to the same range*.\n",
+  "code": "import numpy as np\nfrom sklearn.linear_model import LinearRegression\n\n# Sample Data: House Prices\n# Features: [Size (sqft), Bedrooms, Age]\nX = np.array([\n    [1500, 3, 10],\n    [2000, 4, 5],\n    [1200, 2, 20],\n    [2500, 4, 2],\n    [1800, 3, 8]\n])\n# Target: Price\ny = np.array([300000, 450000, 200000, 550000, 380000])\n\n# Train\nmodel = LinearRegression()\nmodel.fit(X, y)\n\nprint(\"Coefficients:\")\nfeatures = ['Size', 'Bedrooms', 'Age']\nfor feature, coef in zip(features, model.coef_):\n    print(f\"{feature}: {coef:.2f}\")\n\nprint(f\"\\nIntercept: {model.intercept_:.2f}\")\n\n# Predict\n# House: 1700 sqft, 3 bed, 15 years old\nnew_house = [[1700, 3, 15]]\npred = model.predict(new_house)\nprint(f\"\\nPredicted Price: ${pred[0]:,.2f}\")"
+}

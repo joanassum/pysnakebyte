@@ -1,0 +1,9 @@
+{
+  "id": "trade-54",
+  "title": "Building a Strategy in Backtrader",
+  "category": "Backtesting Frameworks",
+  "number": 54,
+  "duration": "15 min read",
+  "content": "# Implementing Logic in Backtrader\n\nTo define a strategy, subclass `bt.Strategy` and override:\n1. `__init__`: Define indicators (e.g., SMA).\n2. `next`: Called for every new data bar. Place buy/sell logic here.\n\nBacktrader automatically handles order management (though you can customize it).",
+  "code": "import backtrader as bt\n\nclass SmaCross(bt.Strategy):\n    params = (('pfast', 10), ('pslow', 30),)\n\n    def __init__(self):\n        self.sma1 = bt.ind.SMA(period=self.params.pfast)\n        self.sma2 = bt.ind.SMA(period=self.params.pslow)\n        self.crossover = bt.ind.CrossOver(self.sma1, self.sma2)\n\n    def next(self):\n        if not self.position:\n            if self.crossover > 0: # Fast crosses above Slow\n                self.buy()\n        elif self.crossover < 0: # Fast crosses below Slow\n            self.close()\n\n# Usage\n# cerebro.addstrategy(SmaCross)\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ml-30",
+  "title": "Data Visualization Best Practices",
+  "category": "Python for Data Science",
+  "number": 30,
+  "duration": "10 min read",
+  "content": "# Data Visualization Best Practices\n\nCreating effective visualizations is an art and a science.\n\n## 1. Know Your Audience\n\n*   **Exploratory**: For yourself (speed over aesthetics).\n*   **Explanatory**: For others (clarity, story-telling, aesthetics).\n\n## 2. Choose the Right Chart\n\n*   **Comparison**: Bar chart.\n*   **Distribution**: Histogram, Box plot.\n*   **Relationship**: Scatter plot.\n*   **Composition**: Stacked bar, Pie (careful!).\n*   **Trend**: Line chart.\n\n## 3. Keep it Simple (Data-Ink Ratio)\n\n*   Remove chart junk (excessive grid lines, 3D effects, background colors).\n*   Maximize the ink used to represent data.\n\n## 4. Color Theory\n\n*   Use color to highlight, not distract.\n*   Be mindful of color blindness (avoid red/green combinations).\n*   Use sequential palettes for ordered data, diverging for data with a midpoint, categorical for distinct groups.\n\n## 5. Label Everything\n\n*   Always include title, axis labels, and legends.",
+  "code": "# No code, just concepts!"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "trade-20",
+  "title": "Calculating Returns",
+  "category": "Financial Data Analysis with Pandas",
+  "number": 20,
+  "duration": "15 min read",
+  "content": "# Calculating Returns\n\nThere are two main ways to calculate financial returns.\n\n## 1. Simple Returns\n`R = (P_t / P_t-1) - 1`\n*   Intuitive.\n*   Asset prices cannot be negative.\n*   Disadvantage: Not additive over time (e.g., +10% then -10% is not 0%).\n\n## 2. Log Returns\n`r = ln(P_t / P_t-1)`\n*   Additive over time (`sum(r) = Total Return`).\n*   Assumes continuous compounding.\n*   Used in most quantitative models.\n\n## Pandas Helper\n`df.pct_change()` calculates simple returns automatically.",
+  "code": "import pandas as pd\nimport numpy as np\n\nprices = pd.Series([100, 110, 99])\n\n# Simple Returns\nsimple_ret = prices.pct_change()\n\n# Log Returns\nlog_ret = np.log(prices / prices.shift(1))\n\nprint(\"Prices:\", prices.values)\nprint(\"Simple Returns:\", simple_ret.values)\nprint(\"Log Returns:\", log_ret.values)"
+}

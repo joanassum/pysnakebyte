@@ -1,0 +1,9 @@
+{
+  "id": "trade-71",
+  "title": "Predicting Price Direction with ML",
+  "category": "Machine Learning for Trading",
+  "number": 71,
+  "duration": "12 min read",
+  "content": "## Introduction\n\nMachine learning is revolutionizing algorithmic trading. In this lesson, we start with a fundamental classification problem: predicting whether the price of an asset will go up or down in the next time period.\n\n### The Process\n\n1.  **Data Collection**: Gather historical OHLCV data.\n2.  **Labeling**: Create the target variable. For example, if `Close[t+1] > Close[t]`, label is 1, else 0.\n3.  **Feature Generation**: Create technical indicators (RSI, SMA, MACD) to use as features.\n4.  **Training**: Train a classifier (e.g., Logistic Regression, Random Forest).\n5.  **Evaluation**: Assess accuracy, precision, and recall.\n\n### Stationarity\n\nFinancial time series are non-stationary. We often work with returns (percent change) rather than raw prices to stabilize the mean and variance.",
+  "code": "import numpy as np\nimport pandas as pd\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.metrics import accuracy_score\n\n# 1. Load Data (assuming DataFrame 'df' with 'Close')\n# df['Return'] = df['Close'].pct_change()\n# df.dropna(inplace=True)\n\n# 2. Create Target (1 if next return > 0, else 0)\n# df['Target'] = np.where(df['Return'].shift(-1) > 0, 1, 0)\n\n# 3. Create Features (Simple Lagged Returns)\n# df['Lag1'] = df['Return'].shift(1)\n# df['Lag2'] = df['Return'].shift(2)\n# df.dropna(inplace=True)\n\n# 4. Split Data\n# X = df[['Lag1', 'Lag2']]\n# y = df['Target']\n# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)\n\n# 5. Train Model\n# model = RandomForestClassifier(n_estimators=100)\n# model.fit(X_train, y_train)\n\n# 6. Evaluate\n# preds = model.predict(X_test)\n# print(f'Accuracy: {accuracy_score(y_test, preds):.2f}')"
+}

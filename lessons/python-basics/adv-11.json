@@ -1,0 +1,9 @@
+{
+  "id": "adv-11",
+  "title": "Testing with pytest",
+  "category": "Advanced Topics",
+  "number": 97,
+  "duration": "10 min read",
+  "content": "## Testing with pytest\n\nTesting is a crucial part of software development. `pytest` is a popular third-party testing framework for Python that makes writing simple and scalable tests easy.\n\n### Why pytest?\n\n- **Simple syntax:** Use standard `assert` statements.\n- **Auto-discovery:** Automatically finds files named `test_*.py` or `*_test.py`.\n- **Fixtures:** Powerful setup and teardown logic.\n\n### Basic Test\n\n```python\n# test_math.py\ndef add(x, y):\n    return x + y\n\ndef test_add():\n    assert add(1, 2) == 3\n```\n\n### Fixtures\n\nFixtures allow you to provide data or objects to your tests.\n\n```python\nimport pytest\n\n@pytest.fixture\ndef sample_data():\n    return {\"name\": \"Alice\", \"age\": 30}\n\ndef test_data(sample_data):\n    assert sample_data[\"name\"] == \"Alice\"\n```\n\n### Parametrization\n\nRun the same test with different inputs.\n\n```python\n@pytest.mark.parametrize(\"input,expected\", [\n    (1, 2),\n    (2, 4),\n    (3, 6),\n])\ndef test_double(input, expected):\n    assert input * 2 == expected\n```\n",
+  "code": "import pytest\n\n# The function to test\ndef multiply(a, b):\n    return a * b\n\n# 1. Write a test case for multiply\ndef test_multiply():\n    pass\n\n# 2. Write a test case that expects a failure (optional, requires import)\n# def test_fail():\n#     assert multiply(2, 2) == 5\n"
+}

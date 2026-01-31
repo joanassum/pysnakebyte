@@ -1,0 +1,9 @@
+{
+  "id": "ml-95",
+  "title": "Training Neural Networks",
+  "category": "Deep Learning",
+  "number": 95,
+  "duration": "15 min read",
+  "content": "## Training Neural Networks\n\nTraining a neural network involves finding the optimal weights that minimize the loss function.\n\n### Backpropagation\n\nThe core algorithm for training is **Backpropagation**.\n1.  **Forward Pass**: Input data flows through the network to generate predictions.\n2.  **Calculate Loss**: Compare predictions with actual labels.\n3.  **Backward Pass**: Propagate the error backward through the network. Calculate the gradient of the loss function with respect to each weight using the chain rule.\n4.  **Update Weights**: Adjust weights in the opposite direction of the gradient to reduce error.\n\n### Epochs and Batch Size\n\n*   **Epoch**: One complete pass through the entire training dataset.\n*   **Batch Size**: The number of samples processed before the model is updated.\n\n```python\nhistory = model.fit(\n    X_train, y_train,\n    epochs=20,\n    batch_size=32,\n    validation_split=0.2\n)\n```\n",
+  "code": "# Assuming 'model' is defined from the previous lesson\n# and X_train, y_train are available\n\n# This is a conceptual snippet. In a real environment, we'd need data.\n\n# TODO: Fit the model\n# history = model.fit(\n#     X_train,\n#     y_train,\n#     epochs=10,\n#     batch_size=16,\n#     validation_split=0.1,\n#     verbose=1\n# )\n\n# Visualize training history\n# import matplotlib.pyplot as plt\n# plt.plot(history.history['loss'], label='train loss')\n# plt.plot(history.history['val_loss'], label='val loss')\n# plt.legend()\n# plt.show()"
+}

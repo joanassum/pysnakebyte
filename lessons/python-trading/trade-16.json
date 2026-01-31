@@ -1,0 +1,9 @@
+{
+  "id": "trade-16",
+  "title": "Concatenating and Merging",
+  "category": "Financial Data Analysis with Pandas",
+  "number": 16,
+  "duration": "15 min read",
+  "content": "# Concatenating and Merging\n\nYou often need to combine datasets, like merging price data with fundamental data, or combining multiple stocks into one DataFrame.\n\n## Concat\nStacking data on top of each other (adding rows) or side-by-side (adding columns).\n\n```python\npd.concat([df1, df2], axis=1) # Combine columns (Side-by-side)\n```\n\n## Merge\nDatabase-style joins (Inner, Outer, Left, Right). Useful for aligning data on timestamps.\n\n```python\npd.merge(prices, earnings, on='Date', how='left')\n```",
+  "code": "import pandas as pd\n\n# Stock A\ndf_a = pd.DataFrame({'AAPL': [150, 152]}, index=[1, 2])\n# Stock B\ndf_b = pd.DataFrame({'GOOG': [2800, 2820]}, index=[1, 2])\n\n# Combine side-by-side\nportfolio = pd.concat([df_a, df_b], axis=1)\nprint(\"Portfolio:\")\nprint(portfolio)"
+}

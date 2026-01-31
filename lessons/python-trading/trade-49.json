@@ -1,0 +1,9 @@
+{
+  "id": "trade-49",
+  "title": "Machine Learning: Logistic Regression",
+  "category": "Building Trading Strategies",
+  "number": 49,
+  "duration": "15 min read",
+  "content": "# ML for Signal Generation\n\nInstead of hard-coded rules (RSI < 30), we can train a model to predict the probability of price going up based on features.\n\n## Logistic Regression\nUsed for binary classification (Up/Down).\n\n## Features (X)\n- Lagged returns\n- Technical Indicators (RSI, MA distance)\n- Volume changes\n\n## Target (y)\n- 1 if Price(t+1) > Price(t)\n- 0 otherwise\n\n**Warning**: Financial data is noisy. Simple models often outperform complex ones due to lower overfitting.",
+  "code": "import pandas as pd\nimport numpy as np\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import accuracy_score\n\n# Mock Data\nN = 1000\ndf = pd.DataFrame(np.random.randn(N, 3), columns=['f1', 'f2', 'f3'])\n# Create target: somewhat dependent on f1\ndf['target'] = np.where(df['f1'] > 0, 1, 0)\n# Add noise to target (flip 30% of labels)\nmask = np.random.rand(N) < 0.3\ndf.loc[mask, 'target'] = 1 - df.loc[mask, 'target']\n\nX = df[['f1', 'f2', 'f3']]\ny = df['target']\n\n# Train/Test Split (Time-series split is better, but using random for simple demo)\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, shuffle=False)\n\n# Model\nmodel = LogisticRegression()\nmodel.fit(X_train, y_train)\n\n# Predict\npreds = model.predict(X_test)\nacc = accuracy_score(y_test, preds)\n\nprint(f\"Accuracy: {acc:.2f}\")\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "trade-75",
+  "title": "Random Forests and Gradient Boosting",
+  "category": "Machine Learning for Trading",
+  "number": 75,
+  "duration": "16 min read",
+  "content": "## Tree-Based Models\n\nDecision trees are intuitive but prone to overfitting. Ensembles are powerful for trading.\n\n### Random Forests\n\nBagging method. Builds many trees on bootstrapped data and averages predictions. Robust to noise and reduced variance.\n\n### Gradient Boosting (XGBoost, LightGBM, CatBoost)\n\nBoosting method. Builds trees sequentially, correcting errors of previous trees. Often achieves state-of-the-art results on tabular financial data.\n\n### Feature Importance\n\nTree models provide feature importance scores, helping identify which indicators actually drive price changes.",
+  "code": "import xgboost as xgb\nfrom sklearn.metrics import accuracy_score\n\n# Prepare DMatrix for XGBoost (optimized data structure)\n# dtrain = xgb.DMatrix(X_train, label=y_train)\n# dtest = xgb.DMatrix(X_test, label=y_test)\n\n# params = {\n#     'max_depth': 3,\n#     'eta': 0.1,\n#     'objective': 'binary:logistic',\n#     'eval_metric': 'logloss'\n# }\n\n# num_round = 100\n# bst = xgb.train(params, dtrain, num_round)\n\n# preds_prob = bst.predict(dtest)\n# preds_class = [1 if p > 0.5 else 0 for p in preds_prob]"
+}

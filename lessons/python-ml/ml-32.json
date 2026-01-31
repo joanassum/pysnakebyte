@@ -1,0 +1,9 @@
+{
+  "id": "ml-32",
+  "title": "Probability Basics",
+  "category": "Python for Data Science",
+  "number": 32,
+  "duration": "12 min read",
+  "content": "# Probability Basics\n\nProbability is the foundation of inferential statistics and machine learning.\n\n## Core Concepts\n\n*   **Experiment**: A procedure that yields one of a given set of outcomes.\n*   **Sample Space (S)**: The set of all possible outcomes.\n*   **Event (E)**: A subset of the sample space.\n\n## Probability Formula\n\n$$P(E) = \\frac{\\text{Number of favorable outcomes}}{\\text{Total number of outcomes}}$$\n\n## Rules of Probability\n\n1.  $0 \\le P(E) \\le 1$\n2.  $P(S) = 1$\n3.  **Complement Rule**: $P(\\text{not } E) = 1 - P(E)$\n4.  **Addition Rule**: $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$\n5.  **Multiplication Rule**: $P(A \\cap B) = P(A) \\times P(B|A)$\n\n## Conditional Probability\n\nThe probability of an event occurring given that another event has already occurred.\n\n$$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$$",
+  "code": "# Simulating a coin toss\nimport random\n\noutcomes = ['Heads', 'Tails']\nprint(random.choice(outcomes))"
+}

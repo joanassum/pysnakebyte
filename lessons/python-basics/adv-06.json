@@ -1,0 +1,9 @@
+{
+  "id": "adv-06",
+  "title": "Context Managers Advanced",
+  "category": "Advanced Topics",
+  "number": 92,
+  "duration": "10 min read",
+  "content": "## Context Managers Advanced\n\nContext managers allow you to allocate and release resources precisely when you want to. The most widely used example of context managers is the `with` statement.\n\n### The `with` Statement\n\n```python\nwith open('file.txt', 'w') as f:\n    f.write('Hello World')\n```\n\n### Custom Context Managers (Class-based)\n\nTo create a custom context manager, you need to implement `__enter__` and `__exit__` methods.\n\n```python\nclass MyContext:\n    def __enter__(self):\n        print(\"Entering\")\n        return self\n\n    def __exit__(self, exc_type, exc_value, traceback):\n        print(\"Exiting\")\n\nwith MyContext() as x:\n    print(\"Inside\")\n```\n\n### `contextlib` and `@contextmanager`\n\nPython provides a decorator to create context managers more easily using generators.\n\n```python\nfrom contextlib import contextmanager\n\n@contextmanager\ndef my_context():\n    print(\"Entering\")\n    yield\n    print(\"Exiting\")\n\nwith my_context():\n    print(\"Inside\")\n```\n",
+  "code": "from contextlib import contextmanager\nimport time\n\n# 1. Create a context manager `Timer` that prints the time taken to execute a block of code\nclass Timer:\n    def __enter__(self):\n        self.start = time.time()\n        return self\n\n    def __exit__(self, *args):\n        self.end = time.time()\n        print(f\"Time taken: {self.end - self.start:.4f} seconds\")\n\n# with Timer():\n#     time.sleep(1)\n\n# 2. Re-implement the above using @contextmanager\n@contextmanager\ndef timer_func():\n    # Your code here\n    yield\n    # Your code here\n"
+}

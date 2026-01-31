@@ -1,0 +1,9 @@
+{
+  "id": "challenge-17",
+  "title": "Word Frequency",
+  "difficulty": "medium",
+  "description": "# Word Frequency\n\nWrite a function that counts the frequency of each word in a string.\n\n## Example\n\n```python\nresult = solution(\"the quick brown fox jumps over the lazy dog\")\nprint(result)\n# Output: {'the': 2, 'quick': 1, 'brown': 1, 'fox': 1, 'jumps': 1, 'over': 1, 'lazy': 1, 'dog': 1}\n```\n\n## Requirements\n\n- Accept a string of words separated by spaces\n- Return a dictionary with word counts\n- Words should be case-insensitive (convert to lowercase)\n- Handle empty strings (return empty dict)",
+  "short_description": "Count word occurrences",
+  "starter_code": "def solution(text):\n    # Return a dict with word frequencies\n    pass\n\n# Test your solution\nprint(solution('the cat and the dog'))  # Should print {'the': 2, 'cat': 1, 'and': 1, 'dog': 1}",
+  "test_code": "result = solution('the quick brown fox jumps over the lazy dog')\nassert result['the'] == 2, 'Test 1 failed: \"the\" should appear 2 times'\nassert result['quick'] == 1, 'Test 2 failed'\nassert solution('') == {}, 'Test 3 failed: empty string'\nassert solution('hello hello hello')['hello'] == 3, 'Test 4 failed'\nresult2 = solution('Hello HELLO hello')\nassert result2.get('hello', 0) == 3 or result2.get('Hello', 0) + result2.get('HELLO', 0) + result2.get('hello', 0) == 3, 'Test 5 failed: case insensitive'\nprint('PASSED')"
+}

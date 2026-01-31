@@ -1,0 +1,9 @@
+{
+  "id": "trade-40",
+  "title": "Geometric Brownian Motion & Monte Carlo",
+  "category": "Quantitative Finance Basics",
+  "number": 40,
+  "duration": "15 min read",
+  "content": "# Monte Carlo Simulations with GBM\n\nGeometric Brownian Motion (GBM) is a stochastic process often used to model stock prices in the Black-Scholes model.\n\n$$ dS_t = \\mu S_t dt + \\sigma S_t dW_t $$\n\nBy simulating this process thousands of times (Monte Carlo), we can estimate the probability of a stock price reaching a certain level or valuing options.\n\n## Steps\n1. Define drift ($\\mu$) and volatility ($\\sigma$).\n2. Generate random paths.\n3. Analyze the distribution of terminal prices.",
+  "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\n# Parameters\nS0 = 100      # Initial stock price\nmu = 0.05     # Expected return\nsigma = 0.2   # Volatility\nT = 1.0       # Time horizon (1 year)\ndt = 0.01     # Time step\nN = int(T / dt) # Number of steps\nnum_sims = 100 # Number of simulations\n\n# Simulation\nplt.figure(figsize=(10,6))\nfinal_prices = []\n\nfor _ in range(num_sims):\n    prices = [S0]\n    for _ in range(N):\n        # GBM formula\n        shock = np.random.normal(0, 1)\n        price = prices[-1] * np.exp((mu - 0.5 * sigma**2) * dt + sigma * np.sqrt(dt) * shock)\n        prices.append(price)\n    final_prices.append(prices[-1])\n    plt.plot(prices, lw=0.5, alpha=0.6)\n\nplt.title('Monte Carlo Simulation (GBM)')\nplt.xlabel('Time Steps')\nplt.ylabel('Price')\nplt.show()\n\nprint(f\"Expected Price: {np.mean(final_prices):.2f}\")\n"
+}

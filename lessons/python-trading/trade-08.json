@@ -1,0 +1,9 @@
+{
+  "id": "trade-08",
+  "title": "Types of Orders",
+  "category": "Introduction to Algorithmic Trading",
+  "number": 8,
+  "duration": "12 min read",
+  "content": "# Types of Orders\n\nWhen your algorithm decides to trade, it must send a specific order type to the broker.\n\n## 1. Market Order\n*   **Execute immediately** at the best available current price.\n*   **Risk**: Slippage (Price might change before execution).\n*   **Use case**: Need to get in/out NOW.\n\n## 2. Limit Order\n*   Buy or sell only at a **specific price or better**.\n*   **Risk**: Order might never be filled if price doesn't reach your limit.\n*   **Use case**: Entering at a specific technical level.\n\n## 3. Stop Order (Stop-Loss)\n*   Becomes a market order once a specific price (Stop Price) is reached.\n*   **Use case**: Protecting against downside risk.\n\n## 4. Stop-Limit Order\n*   Becomes a limit order once the stop price is hit.",
+  "code": "# Simulating Order Logic\ncurrent_price = 150.50\n\n# Strategy parameters\nlimit_buy_price = 149.00\nstop_loss_price = 145.00\n\ndef check_limit_buy(market_price, limit_price):\n    if market_price <= limit_price:\n        return \"Limit Buy Executed!\"\n    return \"Waiting for price to drop...\"\n\nprint(f\"Current: {current_price}, Limit: {limit_buy_price}\")\nprint(check_limit_buy(current_price, limit_buy_price))"
+}

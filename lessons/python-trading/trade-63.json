@@ -1,0 +1,9 @@
+{
+  "id": "trade-63",
+  "title": "Fetching Market Data",
+  "category": "Connecting to Brokers (APIs)",
+  "number": 63,
+  "duration": "10 min read",
+  "content": "# Retrieving Price History\n\nBefore executing a strategy, we need data.\n\n## Types of Data\n1. **Ticker**: Current best bid/ask and last price.\n2. **Order Book**: List of pending buy/sell orders (Depth).\n3. **Klines / Candles**: Historical OHLCV data (Open, High, Low, Close, Volume).\n\n## Pagination\nAPIs often limit the number of candles per request (e.g., 500 or 1000). You may need to loop to get long history.",
+  "code": "import requests\nimport pandas as pd\nfrom datetime import datetime\n\n# Binance Public API Example for Klines\nbase_url = \"https://api.binance.com\"\nendpoint = \"/api/v3/klines\"\nparams = {\n    \"symbol\": \"BTCUSDT\",\n    \"interval\": \"1d\",\n    \"limit\": 5\n}\n\nr = requests.get(base_url + endpoint, params=params)\ndata = r.json()\n\n# Convert to DataFrame\ndf = pd.DataFrame(data, columns=['open_time', 'open', 'high', 'low', 'close', 'vol', 'close_time', 'qav', 'num_trades', 'tb_base', 'tb_quote', 'ignore'])\ndf['open_time'] = pd.to_datetime(df['open_time'], unit='ms')\ndf = df[['open_time', 'close', 'vol']]\nprint(df)\n"
+}

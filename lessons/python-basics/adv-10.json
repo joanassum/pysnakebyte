@@ -1,0 +1,9 @@
+{
+  "id": "adv-10",
+  "title": "Async Programming Intro",
+  "category": "Advanced Topics",
+  "number": 96,
+  "duration": "12 min read",
+  "content": "## Async Programming Introduction\n\nAsynchronous programming is a method of concurrent programming where a process operates independently of other processes. It is often used for I/O-bound tasks.\n\n### `async` and `await`\n\nPython uses `async` and `await` keywords to define and call asynchronous functions (coroutines).\n\n```python\nimport asyncio\n\nasync def say_after(delay, what):\n    await asyncio.sleep(delay)\n    print(what)\n\nasync def main():\n    print(f\"started at {time.strftime('%X')}\")\n\n    await say_after(1, 'hello')\n    await say_after(2, 'world')\n\n    print(f\"finished at {time.strftime('%X')}\")\n\nasyncio.run(main())\n```\n\n### `asyncio.gather`\n\nTo run coroutines concurrently:\n\n```python\nasync def main():\n    await asyncio.gather(\n        say_after(1, 'hello'),\n        say_after(2, 'world')\n    )\n```\n",
+  "code": "import asyncio\nimport time\n\n# 1. Write an async function that simulates downloading a file (using sleep)\nasync def download_file(filename, duration):\n    print(f\"Starting download: {filename}\")\n    # wait here\n    print(f\"Finished download: {filename}\")\n\n# 2. Run 3 downloads concurrently\nasync def main():\n    pass\n    # await asyncio.gather(...)\n\n# asyncio.run(main())\n"
+}

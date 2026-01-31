@@ -1,0 +1,9 @@
+{
+  "id": "trade-25",
+  "title": "Bollinger Bands",
+  "category": "Technical Analysis Indicators",
+  "number": 25,
+  "duration": "15 min read",
+  "content": "# Bollinger Bands\n\nBollinger Bands consist of a middle band with two outer bands that expand and contract based on volatility.\n\n## Components\n1.  **Middle Band**: 20-day SMA.\n2.  **Upper Band**: Middle Band + (2 * Standard Deviation).\n3.  **Lower Band**: Middle Band - (2 * Standard Deviation).\n\n## Signals\n*   **Squeeze**: Low volatility period, often precedes a breakout.\n*   **Mean Reversion**: Price touching outer bands often reverts to the mean.",
+  "code": "import pandas as pd\n\ndf = pd.DataFrame({'Close': [100, 102, 101, 103, 100, 98, 105, 107, 106, 105]})\n\nwindow = 5\ndf['SMA'] = df['Close'].rolling(window=window).mean()\ndf['STD'] = df['Close'].rolling(window=window).std()\n\ndf['Upper'] = df['SMA'] + (2 * df['STD'])\ndf['Lower'] = df['SMA'] - (2 * df['STD'])\n\nprint(df.tail())"
+}

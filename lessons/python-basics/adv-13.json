@@ -1,0 +1,9 @@
+{
+  "id": "adv-13",
+  "title": "Working with APIs",
+  "category": "Advanced Topics",
+  "number": 99,
+  "duration": "10 min read",
+  "content": "## Working with APIs\n\nInteracting with web APIs is a common task. The `requests` library is the standard way to make HTTP requests in Python.\n\n### Making a GET Request\n\n```python\nimport requests\n\nresponse = requests.get('https://api.github.com')\nprint(response.status_code)\nprint(response.json())\n```\n\n### Status Codes\n\n- **200 OK**: Request succeeded.\n- **404 Not Found**: Resource not found.\n- **500 Server Error**: Something went wrong on the server.\n\n### Making a POST Request\n\n```python\ndata = {'key': 'value'}\nresponse = requests.post('https://httpbin.org/post', json=data)\nprint(response.json())\n```\n\n### Headers and Authentication\n\n```python\nheaders = {'Authorization': 'Bearer YOUR_TOKEN'}\nresponse = requests.get(url, headers=headers)\n```\n",
+  "code": "import requests\n\n# 1. Fetch data from a sample API\nurl = \"https://jsonplaceholder.typicode.com/todos/1\"\n\n# response = requests.get(url)\n# if response.status_code == 200:\n#     data = response.json()\n#     print(f\"Title: {data['title']}\")\n\n# 2. Handle a 404 error\n# bad_url = \"https://jsonplaceholder.typicode.com/todos/99999\"\n"
+}

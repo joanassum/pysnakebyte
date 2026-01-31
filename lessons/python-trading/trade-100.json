@@ -1,0 +1,9 @@
+{
+  "id": "trade-100",
+  "title": "Project: Grid Trading Bot",
+  "category": "Advanced Trading Projects",
+  "number": 100,
+  "duration": "18 min read",
+  "content": "## Ranging Markets\n\nGrid trading profits from normal market noise in a sideways market. It requires no prediction of direction.\n\n### Mechanism\n\n1.  Define a range (e.g., $100 - $110).\n2.  Place buy orders at $100, $102, $104...\n3.  Place sell orders at $106, $108, $110...\n4.  When a buy executes at $102, place a corresponding sell at $104 to lock in profit.\n\n### Risk\n\nIf price leaves the range (trends strongly), you are left with \"bag holding\" (price drops) or missed opportunity (price skyrockets).",
+  "code": "# grid_levels = [100, 102, 104, 106, 108, 110]\n# orders = {}\n\n# def on_tick(current_price):\n#     for level in grid_levels:\n#         if current_price <= level and level not in orders:\n#             # Buy\n#             orders[level] = 'bought'\n#             # Place Sell limit at level + step"
+}

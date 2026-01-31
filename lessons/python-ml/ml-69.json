@@ -1,0 +1,9 @@
+{
+  "id": "ml-69",
+  "title": "Gradient Boosting Regression",
+  "category": "Regression",
+  "number": 69,
+  "duration": "12 min read",
+  "content": "## Boosting Power\n\nGradient Boosting works by sequentially adding predictors to an ensemble, each one correcting its predecessor. It fits a new predictor to the *residual errors* made by the previous predictor.\n\n### Key Implementations\n\n1.  **GradientBoostingRegressor** (Scikit-Learn): Good for small to medium datasets.\n2.  **XGBoost / LightGBM / CatBoost**: Optimized libraries for speed and performance (often used in competitions).\n\n### Hyperparameters\n\n- `learning_rate`: Scales the contribution of each tree. (Lower rate requires more trees).\n- `n_estimators`: Number of boosting stages.\n- `max_depth`: Depth of individual trees.\n",
+  "code": "from sklearn.ensemble import GradientBoostingRegressor\nfrom sklearn.datasets import make_regression\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import mean_squared_error\n\nX, y = make_regression(random_state=42)\nX_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)\n\n# Train Gradient Boosting\ngbr = GradientBoostingRegressor(\n    n_estimators=100, \n    learning_rate=0.1, \n    max_depth=3, \n    random_state=42\n)\ngbr.fit(X_train, y_train)\n\n# Predict\ny_pred = gbr.predict(X_test)\n\nrmse = mean_squared_error(y_test, y_pred, squared=False)\nprint(f\"RMSE: {rmse:.4f}\")\n\n# Early Stopping (Optional)\n# Monitor validation error to stop training when it stops improving"
+}

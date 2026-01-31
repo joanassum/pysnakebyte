@@ -1,0 +1,9 @@
+{
+  "id": "ml-50",
+  "title": "Model Evaluation Metrics",
+  "category": "ML Fundamentals",
+  "number": 50,
+  "duration": "12 min read",
+  "content": "## Measuring Success\n\nChoosing the right metric is as important as choosing the right algorithm.\n\n### Classification Metrics\n\n- **Accuracy**: (TP + TN) / Total. Good for balanced classes.\n- **Precision**: TP / (TP + FP). Important when false positives are costly (e.g., spam).\n- **Recall (Sensitivity)**: TP / (TP + FN). Important when false negatives are costly (e.g., disease diagnosis).\n- **F1 Score**: Harmonic mean of Precision and Recall.\n- **ROC-AUC**: Area Under the Receiver Operating Characteristic Curve.\n\n### Regression Metrics\n\n- **MAE (Mean Absolute Error)**: Average absolute difference.\n- **MSE (Mean Squared Error)**: Average squared difference (penalizes large errors).\n- **RMSE (Root Mean Squared Error)**: Square root of MSE, same unit as target.\n- **R-squared ($R^2$)**: Proportion of variance explained by the model.\n",
+  "code": "from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, mean_squared_error, r2_score\nimport numpy as np\n\n# Classification Example\ny_true_cls = [0, 1, 1, 0, 1, 0, 1, 1]\ny_pred_cls = [0, 1, 0, 0, 1, 1, 1, 1]\n\nprint(\"Classification Metrics:\")\nprint(f\"Accuracy: {accuracy_score(y_true_cls, y_pred_cls):.2f}\")\nprint(f\"Precision: {precision_score(y_true_cls, y_pred_cls):.2f}\")\nprint(f\"Recall: {recall_score(y_true_cls, y_pred_cls):.2f}\")\nprint(f\"F1 Score: {f1_score(y_true_cls, y_pred_cls):.2f}\")\n\n# Regression Example\ny_true_reg = [3.0, -0.5, 2.0, 7.0]\ny_pred_reg = [2.5, 0.0, 2.1, 7.8]\n\nprint(\"\\nRegression Metrics:\")\nprint(f\"MSE: {mean_squared_error(y_true_reg, y_pred_reg):.2f}\")\nprint(f\"R2 Score: {r2_score(y_true_reg, y_pred_reg):.2f}\")"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ml-61",
+  "title": "Linear Regression",
+  "category": "Regression",
+  "number": 61,
+  "duration": "10 min read",
+  "content": "## Simple Linear Regression\n\nLinear Regression is the \"Hello World\" of Machine Learning. It attempts to model the relationship between two variables by fitting a linear equation to observed data.\n\n$$ y = mx + b $$\n\n- $y$: Dependent variable (Target)\n- $x$: Independent variable (Feature)\n- $m$: Slope (Coefficient)\n- $b$: Intercept\n\n### The Cost Function\n\nThe goal is to find the values of $m$ and $b$ that minimize the **Mean Squared Error (MSE)** between the predicted and actual values.\n\n### Assumptions\n\n1.  **Linearity**: The relationship between X and y is linear.\n2.  **Independence**: Observations are independent.\n3.  **Homoscedasticity**: The variance of residual is the same for any value of X.\n4.  **Normality**: For any fixed value of X, Y is normally distributed.\n",
+  "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.linear_model import LinearRegression\n\n# Generate random data\nnp.random.seed(0)\nX = 2 * np.random.rand(100, 1)\ny = 4 + 3 * X + np.random.randn(100, 1)\n\n# Train model\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# Predict\nX_new = np.array([[0], [2]])\ny_predict = model.predict(X_new)\n\nprint(f\"Intercept (b): {model.intercept_[0]:.2f}\")\nprint(f\"Slope (m): {model.coef_[0][0]:.2f}\")\n\n# Plot\nplt.scatter(X, y, color='blue', alpha=0.5, label='Data')\nplt.plot(X_new, y_predict, color='red', linewidth=2, label='Prediction')\nplt.legend()\nplt.show()"
+}

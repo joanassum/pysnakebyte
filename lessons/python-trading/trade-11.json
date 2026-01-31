@@ -1,0 +1,9 @@
+{
+  "id": "trade-11",
+  "title": "Importing Financial Data",
+  "category": "Financial Data Analysis with Pandas",
+  "number": 11,
+  "duration": "10 min read",
+  "content": "# Importing Financial Data\n\nWhile APIs are great, often your data will come in CSV or Excel files. Pandas makes reading these trivial.\n\n## Reading CSVs\n`pd.read_csv()` is the workhorse function.\n\n### Key Parameters\n*   `index_col`: Which column to use as the index (usually 'Date').\n*   `parse_dates`: Automatically convert date strings to datetime objects.\n\n```python\ndf = pd.read_csv('AAPL.csv', index_col='Date', parse_dates=True)\n```\n\n## Reading Excel\n`pd.read_excel()` works similarly but requires the `openpyxl` dependency.",
+  "code": "import pandas as pd\nimport io\n\n# Simulating a CSV string\ncsv_data = \"\"\"Date,Open,High,Low,Close,Volume\n2023-01-01,100,105,99,102,1000\n2023-01-02,102,103,101,101,1500\n\"\"\"\n\n# Reading from the string\ndf = pd.read_csv(io.StringIO(csv_data), index_col='Date', parse_dates=True)\n\nprint(\"DataFrame from CSV:\")\nprint(df)\nprint(\"\\nIndex Type:\", type(df.index))"
+}

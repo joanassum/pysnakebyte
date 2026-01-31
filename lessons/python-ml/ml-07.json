@@ -1,0 +1,9 @@
+{
+  "id": "ml-07",
+  "title": "NumPy Arrays",
+  "category": "Python for Data Science",
+  "number": 7,
+  "duration": "12 min read",
+  "content": "# NumPy Arrays\n\nCreating and understanding arrays is the first step in using NumPy.\n\n## Creating Arrays\n\nYou can create arrays from Python lists or using built-in functions.\n\n```python\nimport numpy as np\n\n# From list\na = np.array([1, 2, 3])\n\n# Zeros and Ones\nz = np.zeros((2, 2))\no = np.ones((3, 3))\n\n# Ranges\nr = np.arange(0, 10, 2)  # [0, 2, 4, 6, 8]\nl = np.linspace(0, 1, 5) # 5 points between 0 and 1\n```\n\n## Array Attributes\n\n*   `ndarray.ndim`: Number of dimensions (axes).\n*   `ndarray.shape`: Dimensions of the array (rows, columns).\n*   `ndarray.size`: Total number of elements.\n*   `ndarray.dtype`: Data type of elements (e.g., `int64`, `float64`).\n\n## Indexing and Slicing\n\nAccessing elements is similar to Python lists but extends to multiple dimensions.\n\n```python\na = np.array([[1, 2, 3], [4, 5, 6]])\nprint(a[0, 1])  # Element at row 0, col 1 -> 2\nprint(a[:, 1])  # All rows, col 1 -> [2, 5]\n```",
+  "code": "import numpy as np\n\n# Create a 2x3 matrix of ones\nmatrix = np.ones((2, 3))\nprint(\"Matrix:\\n\", matrix)\nprint(\"Shape:\", matrix.shape)"
+}

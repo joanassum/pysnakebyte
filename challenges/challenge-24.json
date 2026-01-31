@@ -1,0 +1,9 @@
+{
+  "id": "challenge-24",
+  "title": "LRU Cache",
+  "difficulty": "hard",
+  "description": "# LRU Cache\n\nImplement a Least Recently Used (LRU) cache class.\n\nAn LRU cache evicts the least recently used item when the cache reaches its capacity.\n\n## Example\n\n```python\ncache = solution(2)  # capacity of 2\ncache.put(1, 1)\ncache.put(2, 2)\nprint(cache.get(1))  # Output: 1\ncache.put(3, 3)      # evicts key 2\nprint(cache.get(2))  # Output: -1 (not found)\ncache.put(4, 4)      # evicts key 1\nprint(cache.get(1))  # Output: -1 (not found)\nprint(cache.get(3))  # Output: 3\nprint(cache.get(4))  # Output: 4\n```\n\n## Requirements\n\n- Return a class/object with get(key) and put(key, value) methods\n- get(key): Return value if exists, -1 otherwise\n- put(key, value): Insert/update key-value pair\n- Evict LRU item when capacity is exceeded\n- Both operations should be O(1) time complexity",
+  "short_description": "Implement LRU cache",
+  "starter_code": "class LRUCache:\n    def __init__(self, capacity):\n        # Initialize the cache\n        pass\n    \n    def get(self, key):\n        # Return value or -1 if not found\n        pass\n    \n    def put(self, key, value):\n        # Add or update key-value pair\n        pass\n\n# Test your solution\ncache = LRUCache(2)\ncache.put(1, 1)\ncache.put(2, 2)\nprint(cache.get(1))  # Should print 1",
+  "test_code": "cache = solution(2)\ncache.put(1, 1)\ncache.put(2, 2)\nassert cache.get(1) == 1, 'Test 1 failed'\ncache.put(3, 3)\nassert cache.get(2) == -1, 'Test 2 failed: 2 should be evicted'\ncache.put(4, 4)\nassert cache.get(1) == -1, 'Test 3 failed: 1 should be evicted'\nassert cache.get(3) == 3, 'Test 4 failed'\nassert cache.get(4) == 4, 'Test 5 failed'\ncache2 = solution(1)\ncache2.put(1, 1)\ncache2.put(2, 2)\nassert cache2.get(1) == -1, 'Test 6 failed: capacity 1 test'\nassert cache2.get(2) == 2, 'Test 7 failed'\nprint('PASSED')"
+}

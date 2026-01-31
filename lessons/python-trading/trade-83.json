@@ -1,0 +1,9 @@
+{
+  "id": "trade-83",
+  "title": "Event-Driven Architecture in Python",
+  "category": "Live Trading System Architecture",
+  "number": 83,
+  "duration": "16 min read",
+  "content": "## The Event Loop\n\nMarkets are event-driven. Prices change, orders fill, timers expire. Your system should react to these events.\n\n### Asyncio\n\nPython's `asyncio` library is perfect for IO-bound trading bots. It allows handling thousands of network connections concurrently.\n\n### Event Queues\n\nDecouple components using queues. The Data Handler pushes a `MarketEvent` to the queue. The Strategy consumes it and pushes an `OrderEvent`.",
+  "code": "import asyncio\nfrom collections import deque\n\n# event_queue = deque()\n\n# async def market_data_producer():\n#     while True:\n#         # Simulate receiving data\n#         event_queue.append({'type': 'MARKET', 'symbol': 'BTC/USD', 'price': 50000})\n#         await asyncio.sleep(1)\n\n# async def strategy_consumer():\n#     while True:\n#         if event_queue:\n#             event = event_queue.popleft()\n#             print(f\"Processing: {event}\")\n#             # Logic to generate signal\n#         await asyncio.sleep(0.1)\n\n# async def main():\n#     await asyncio.gather(market_data_producer(), strategy_consumer())\n\n# # asyncio.run(main())"
+}

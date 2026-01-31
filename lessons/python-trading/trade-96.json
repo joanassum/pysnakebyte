@@ -1,0 +1,9 @@
+{
+  "id": "trade-96",
+  "title": "Project: Options Pricing and Greeks",
+  "category": "Advanced Trading Projects",
+  "number": 96,
+  "duration": "20 min read",
+  "content": "## Black-Scholes Model\n\nCalculate the theoretical price of European options.\n\n### The Greeks\n\n- **Delta**: Sensitivity to price of underlying.\n- **Gamma**: Sensitivity of Delta to price.\n- **Theta**: Time decay.\n- **Vega**: Sensitivity to volatility.\n- **Rho**: Sensitivity to interest rates.\n\nUsing these metrics, traders hedge their portfolios (Delta Neutrality).",
+  "code": "import numpy as np\nfrom scipy.stats import norm\n\n# def black_scholes(S, K, T, r, sigma, type='call'):\n#     d1 = (np.log(S/K) + (r + 0.5*sigma**2)*T) / (sigma*np.sqrt(T))\n#     d2 = d1 - sigma*np.sqrt(T)\n#     if type == 'call':\n#         return S*norm.cdf(d1) - K*np.exp(-r*T)*norm.cdf(d2)\n#     else:\n#         return K*np.exp(-r*T)*norm.cdf(-d2) - S*norm.cdf(-d1)"
+}

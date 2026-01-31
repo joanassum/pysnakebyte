@@ -1,0 +1,9 @@
+{
+  "id": "trade-10",
+  "title": "Building a Simple Mock Backtester",
+  "category": "Introduction to Algorithmic Trading",
+  "number": 10,
+  "duration": "20 min read",
+  "content": "# Building a Simple Mock Backtester\n\nBefore using complex frameworks, let's build a simple loop-based backtester to understand the mechanics.\n\n## Core Logic\n1.  Initialize `cash` and `position` (number of shares).\n2.  Loop through historical data bar by bar.\n3.  Check strategy logic (Buy signal? Sell signal?).\n4.  Update `cash` and `position` based on trades.\n5.  Calculate `portfolio_value` at each step (`cash + position * current_price`).\n\n## Vectorized Backtesting\nFor simple strategies (like Moving Average Crossover), we can use Pandas vectorization instead of loops for speed, but loops allow for more complex logic (like path-dependent stops).",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Mock Data\nprices = [100, 101, 102, 101, 99, 98, 100, 103, 105]\ndates = pd.date_range('2023-01-01', periods=len(prices))\ndf = pd.DataFrame({'Close': prices}, index=dates)\n\n# Strategy: Buy if price > 101, Sell if price < 99\ncash = 1000\nshares = 0\nlog = []\n\nfor date, row in df.iterrows():\n    price = row['Close']\n    \n    if price > 101 and cash > price:\n        # Buy 1 share\n        shares += 1\n        cash -= price\n        log.append(f\"BUY at {price} on {date.date()}\")\n    elif price < 99 and shares > 0:\n        # Sell all\n        cash += shares * price\n        shares = 0\n        log.append(f\"SELL at {price} on {date.date()}\")\n        \nfinal_value = cash + (shares * prices[-1])\nprint(\"Trade Log:\", log)\nprint(f\"Final Portfolio Value: ${final_value}\")"
+}

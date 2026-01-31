@@ -1,0 +1,9 @@
+{
+  "id": "trade-47",
+  "title": "Seasonality & Calendar Effects",
+  "category": "Building Trading Strategies",
+  "number": 47,
+  "duration": "10 min read",
+  "content": "# Seasonality in Trading\n\nSeasonality refers to recurring patterns in asset prices at specific times of the year, month, week, or day.\n\n## Examples\n- **Sell in May and Go Away**: Stocks historically underperform in summer months.\n- **Turn-of-the-Month Effect**: Stocks tend to rise in the last few days and first few days of the month.\n- **Day-of-Week**: Specific days (e.g., Monday) may have different average returns.\n\nAnalyzing seasonality requires grouping returns by the time component (Month, Weekday) and checking for statistical significance.",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Mock Data (Multi-year)\ndates = pd.date_range(start='2010-01-01', end='2020-12-31')\nreturns = pd.Series(np.random.randn(len(dates))/100, index=dates)\n# Add fake seasonality: January returns higher\nis_jan = dates.month == 1\nreturns[is_jan] += 0.001\n\n# Analysis\ndf = pd.DataFrame({'returns': returns})\ndf['month'] = df.index.month\n\nmonthly_stats = df.groupby('month')['returns'].mean() * 100 # In percent\nprint(\"Average Monthly Returns (%):\")\nprint(monthly_stats)\n\n# Plotting conceptual\n# monthly_stats.plot(kind='bar')\n"
+}

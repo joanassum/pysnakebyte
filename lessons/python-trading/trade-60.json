@@ -1,0 +1,9 @@
+{
+  "id": "trade-60",
+  "title": "Avoiding Look-Ahead Bias",
+  "category": "Backtesting Frameworks",
+  "number": 60,
+  "duration": "10 min read",
+  "content": "# Look-Ahead Bias\n\nLook-ahead bias occurs when your strategy uses information during the backtest that would not have been available in real-time.\n\n## Common Causes\n- Using the `Close` price of the current bar to decide entry *on the same bar*. (In reality, you don't know the Close until the bar ends).\n- Calculation errors in indicators (using `shift(-1)` instead of `shift(1)`).\n- Using corporate actions (splits/dividends) data before they were announced.\n\n## Prevention\n- Trade on the *next* Open.\n- Use event-driven frameworks which enforce time rules.",
+  "code": "import pandas as pd\n\n# Example of Look-Ahead Bias (Wrong!)\n# Strategy: Buy today if tomorrow's price is higher (Impossible to know)\ndf = pd.DataFrame({'close': [100, 101, 102, 99]})\ndf['signal_WRONG'] = df['close'].shift(-1) > df['close'] \n\n# Correct Approach\n# Strategy: Buy today if yesterday's price was lower\ndf['signal_RIGHT'] = df['close'] > df['close'].shift(1)\n"
+}

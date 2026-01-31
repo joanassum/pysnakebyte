@@ -1,0 +1,9 @@
+{
+  "id": "ml-57",
+  "title": "Hyperparameter Tuning",
+  "category": "Scikit-Learn",
+  "number": 57,
+  "duration": "10 min read",
+  "content": "## Parameters vs. Hyperparameters\n\n- **Model Parameters**: Learned from the data during training (e.g., weights in linear regression).\n- **Hyperparameters**: Set before training; they control the learning process (e.g., K in KNN, C in SVM, Depth of Decision Tree).\n\n### Why Tune?\n\nChoosing the optimal hyperparameters can significantly improve model performance. A model with default settings is rarely the best performing one.\n\n### Common Hyperparameters\n\n- **KNN**: `n_neighbors`\n- **SVM**: `C`, `kernel`, `gamma`\n- **Random Forest**: `n_estimators`, `max_depth`\n- **Ridge/Lasso**: `alpha`\n",
+  "code": "from sklearn.neighbors import KNeighborsClassifier\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import cross_val_score\nimport matplotlib.pyplot as plt\n\nX, y = load_iris(return_X_y=True)\n\n# Search for optimal K\nk_values = range(1, 31)\ncv_scores = []\n\nfor k in k_values:\n    knn = KNeighborsClassifier(n_neighbors=k)\n    scores = cross_val_score(knn, X, y, cv=10, scoring='accuracy')\n    cv_scores.append(scores.mean())\n\n# Find best K\nbest_k = k_values[cv_scores.index(max(cv_scores))]\nprint(f\"Best K: {best_k}\")\n\nplt.plot(k_values, cv_scores)\nplt.xlabel('Value of K for KNN')\nplt.ylabel('Cross-Validated Accuracy')\nplt.show()"
+}

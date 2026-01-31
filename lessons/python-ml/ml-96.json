@@ -1,0 +1,9 @@
+{
+  "id": "ml-96",
+  "title": "Optimization Algorithms",
+  "category": "Deep Learning",
+  "number": 96,
+  "duration": "12 min read",
+  "content": "## Optimization Algorithms\n\nOptimizers determine how the network weights are updated during training.\n\n### Gradient Descent Variants\n\n1.  **Batch Gradient Descent**: Uses the entire dataset to compute the gradient. Slow but stable.\n2.  **Stochastic Gradient Descent (SGD)**: Uses a single sample. Fast but noisy.\n3.  **Mini-Batch Gradient Descent**: Uses a batch of samples. Best of both worlds.\n\n### Advanced Optimizers\n\n1.  **Momentum**: Accelerates SGD in the relevant direction and dampens oscillations.\n2.  **RMSprop**: Adapts the learning rate for each parameter.\n3.  **Adam (Adaptive Moment Estimation)**: Combines Momentum and RMSprop. It is the default choice for most problems due to its speed and effectiveness.\n\n```python\nfrom tensorflow.keras.optimizers import Adam, SGD\n\nopt = Adam(learning_rate=0.001)\nmodel.compile(optimizer=opt, ...)\n```\n",
+  "code": "import tensorflow as tf\n\n# TODO: Create an SGD optimizer with learning_rate=0.01 and momentum=0.9\nsgd = \n\n# TODO: Create an Adam optimizer with learning_rate=0.001\nadam = \n\n# Usage in model compilation:\n# model.compile(optimizer=adam, loss='sparse_categorical_crossentropy', metrics=['accuracy'])"
+}

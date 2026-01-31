@@ -1,0 +1,9 @@
+{
+  "id": "trade-53",
+  "title": "Introduction to Backtrader",
+  "category": "Backtesting Frameworks",
+  "number": 53,
+  "duration": "10 min read",
+  "content": "# Backtrader\n\nBacktrader is a popular Python framework for event-driven backtesting. It supports multiple data feeds, indicators, and brokers.\n\n## Key Components\n- **Cerebro**: The brain/engine that runs the backtest.\n- **Strategy**: The user-defined class containing the logic (`next` method).\n- **DataFeed**: Supplies the historical data.\n- **Analyzer**: Computes statistics (Sharpe, Drawdown) after the run.",
+  "code": "import backtrader as bt\nimport datetime\n\n# Create a Cerebro entity\ncerebro = bt.Cerebro()\n\n# Add a strategy (Empty for now)\nclass TestStrategy(bt.Strategy):\n    def next(self):\n        print(f'{self.datas[0].datetime.date(0)} - Close: {self.datas[0].close[0]:.2f}')\n\ncerebro.addstrategy(TestStrategy)\n\n# Create a Data Feed (using random data generator for demo)\ndata = bt.feeds.GenericCSVData(\n    dataname='mock_data.csv', # Needs a file\n    fromdate=datetime.datetime(2020, 1, 1),\n    todate=datetime.datetime(2020, 12, 31),\n    nullvalue=0.0,\n    dtformat=('%Y-%m-%d'),\n    datetime=0,\n    open=1, high=2, low=3, close=4, volume=5, openinterest=-1\n)\n\n# In this mocked env we can't run it without the CSV, \n# but this is the setup structure.\n# cerebro.adddata(data)\n# cerebro.run()\n"
+}

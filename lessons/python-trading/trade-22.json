@@ -1,0 +1,9 @@
+{
+  "id": "trade-22",
+  "title": "Exponential Moving Average (EMA)",
+  "category": "Technical Analysis Indicators",
+  "number": 22,
+  "duration": "10 min read",
+  "content": "# Exponential Moving Average (EMA)\n\nThe EMA places a greater weight and significance on the most recent data points. It reacts more significantly to recent price changes than a simple moving average (SMA).\n\n## Calculation\n`EMA_today = (Value_today * (Smoothing / (1 + Days))) + EMA_yesterday * (1 - (Smoothing / (1 + Days)))`\n\n## Why use EMA?\n*   Less lag than SMA.\n*   Better for identifying short-term trend reversals.",
+  "code": "import pandas as pd\n\ndf = pd.DataFrame({'Close': [10, 11, 12, 14, 15, 14, 13]})\n\n# Calculate 3-period EMA\n# adjust=False calculates the recursive formula exactly\ndf['EMA_3'] = df['Close'].ewm(span=3, adjust=False).mean()\n\nprint(df)"
+}

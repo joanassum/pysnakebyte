@@ -1,0 +1,9 @@
+{
+  "id": "ml-58",
+  "title": "Grid Search",
+  "category": "Scikit-Learn",
+  "number": 58,
+  "duration": "10 min read",
+  "content": "## Exhaustive Search\n\n`GridSearchCV` is a method to perform hyperparameter tuning. It exhaustively generates candidates from a grid of parameter values specified with the `param_grid` parameter.\n\n### How it Works\n\n1.  Define a dictionary of hyperparameters and values to test.\n2.  `GridSearchCV` trains a model for every combination.\n3.  It uses Cross-Validation to evaluate each combination.\n4.  It returns the combination with the best CV score.\n\n### Pros and Cons\n- **Pro**: Guaranteed to find the best combination within the grid.\n- **Con**: Computationally expensive, especially with many parameters.\n",
+  "code": "from sklearn.model_selection import GridSearchCV\nfrom sklearn.svm import SVC\nfrom sklearn.datasets import load_iris\n\nX, y = load_iris(return_X_y=True)\n\n# Define the parameter grid\nparam_grid = {\n    'C': [0.1, 1, 10, 100],\n    'gamma': [1, 0.1, 0.01, 0.001],\n    'kernel': ['rbf', 'linear']\n}\n\n# Create Grid Search object\ngrid = GridSearchCV(SVC(), param_grid, refit=True, verbose=2)\n\n# Fit (this runs cross-validation for all combinations)\ngrid.fit(X, y)\n\nprint(f\"Best Parameters: {grid.best_params_}\")\nprint(f\"Best Score: {grid.best_score_:.4f}\")"
+}

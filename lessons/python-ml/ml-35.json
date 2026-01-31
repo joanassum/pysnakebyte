@@ -1,0 +1,9 @@
+{
+  "id": "ml-35",
+  "title": "Hypothesis Testing",
+  "category": "Python for Data Science",
+  "number": 35,
+  "duration": "18 min read",
+  "content": "# Hypothesis Testing\n\nA statistical method used to decide whether the data at hand sufficiently support a particular hypothesis.\n\n## Steps\n\n1.  **Null Hypothesis ($H_0$)**: The status quo (no effect/difference).\n2.  **Alternative Hypothesis ($H_1$ or $H_a$)**: The claim we want to test.\n3.  **Significance Level ($\\alpha$)**: Threshold for rejection (usually 0.05).\n4.  **Calculate p-value**: Probability of observing the data given $H_0$ is true.\n5.  **Decision**: If p-value < $\\alpha$, reject $H_0$.\n\n## Common Tests\n\n*   **T-test**: Compare means of two groups.\n    ```python\n    from scipy import stats\n    stat, p_val = stats.ttest_ind(group1, group2)\n    ```\n*   **ANOVA**: Compare means of 3+ groups.\n*   **Chi-Square**: Test for independence of categorical variables.\n\n## Errors\n\n*   **Type I**: Reject true $H_0$ (False Positive).\n*   **Type II**: Fail to reject false $H_0$ (False Negative).",
+  "code": "from scipy import stats\nimport numpy as np\n\n# Test if the mean of a sample is different from 0\nsample = np.random.normal(0.5, 1, 100)\nt_stat, p_val = stats.ttest_1samp(sample, 0)\n\nprint(f\"P-value: {p_val}\")"
+}

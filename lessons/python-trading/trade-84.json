@@ -1,0 +1,9 @@
+{
+  "id": "trade-84",
+  "title": "Managing State and Persistence",
+  "category": "Live Trading System Architecture",
+  "number": 84,
+  "duration": "12 min read",
+  "content": "## State is Critical\n\nIf your bot crashes, does it know it has an open position? Relying on memory variables is dangerous.\n\n### Databases\n\n- **SQLite**: Great for single-process local bots. Simple file-based storage.\n- **PostgreSQL/TimescaleDB**: Best for time-series data and robust production systems.\n- **Redis**: Fast key-value store, excellent for caching current state or pub/sub messaging.\n\n### What to Persist?\n\n- **Trade History**: Every fill.\n- **Open Positions**: Current inventory.\n- **Order State**: Pending, Partially Filled, Filled, Cancelled.",
+  "code": "import sqlite3\n\n# conn = sqlite3.connect('trading.db')\n# c = conn.cursor()\n\n# # Create table\n# c.execute('''CREATE TABLE IF NOT EXISTS trades\n#              (timestamp text, symbol text, side text, qty real, price real)''')\n\n# def log_trade(symbol, side, qty, price):\n#     c.execute(\"INSERT INTO trades VALUES (datetime('now'), ?, ?, ?, ?)\",\n#               (symbol, side, qty, price))\n#     conn.commit()\n\n# log_trade('ETH/USD', 'buy', 0.5, 3000.0)"
+}

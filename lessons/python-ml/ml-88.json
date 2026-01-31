@@ -1,0 +1,9 @@
+{
+  "id": "ml-88",
+  "title": "Anomaly Detection",
+  "category": "Unsupervised Learning",
+  "number": 88,
+  "duration": "12 min read",
+  "content": "## Anomaly Detection\n\nAnomaly detection (or outlier detection) is the identification of rare items, events, or observations which raise suspicions by differing significantly from the majority of the data.\n\n### Techniques\n\n1.  **Isolation Forest**: Builds an ensemble of random trees. Anomalies are isolated closer to the root of the tree (shorter path length) because they are easier to separate.\n2.  **One-Class SVM**: Learns a decision boundary around the normal data points. Anything outside is an anomaly.\n3.  **Local Outlier Factor (LOF)**: Measures the local density deviation of a given data point with respect to its neighbors.\n\n### Isolation Forest Implementation\n\n```python\nfrom sklearn.ensemble import IsolationForest\n\nclf = IsolationForest(contamination=0.1) # Expect 10% outliers\nclf.fit(X)\ny_pred = clf.predict(X)\n\n# 1 = Normal, -1 = Outlier\n```\n",
+  "code": "from sklearn.ensemble import IsolationForest\nfrom sklearn.datasets import make_blobs\nimport numpy as np\n\n# Generate data with some outliers\nX, _ = make_blobs(n_samples=300, centers=1, cluster_std=0.60, random_state=42)\n# Add outliers\nX[-10:] = np.random.uniform(low=-6, high=6, size=(10, 2))\n\n# TODO: Initialize IsolationForest with contamination=0.03\nclf = \n\n# TODO: Fit and predict\n# pred = \n\n# Count anomalies\n# n_anomalies = list(pred).count(-1)\n# print(f\"Number of anomalies detected: {n_anomalies}\")"
+}

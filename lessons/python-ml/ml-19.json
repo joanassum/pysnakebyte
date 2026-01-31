@@ -1,0 +1,9 @@
+{
+  "id": "ml-19",
+  "title": "Groupby Operations",
+  "category": "Python for Data Science",
+  "number": 19,
+  "duration": "15 min read",
+  "content": "# Groupby Operations\n\nThe \"Split-Apply-Combine\" paradigm is a powerful pattern for data analysis.\n\n1.  **Split**: Break data into groups based on criteria.\n2.  **Apply**: Apply a function to each group independently.\n3.  **Combine**: Combine results into a data structure.\n\n## Creating Groups\n\n```python\ngrouped = df.groupby('Category')\n```\n\n## Aggregating Groups\n\n```python\n# Mean of each group\ngrouped.mean()\n\n# Sum of 'Sales' for each group\ngrouped['Sales'].sum()\n```\n\n## Transformation\n\nReturns an object indexed the same size as the one being grouped.\n\n```python\n# Standardize data within groups\nz_score = lambda x: (x - x.mean()) / x.std()\ndf.groupby('Category').transform(z_score)\n```\n\n## Filtration\n\nDiscard some groups.\n\n```python\n# Keep groups with mean value > 10\ndf.groupby('Category').filter(lambda x: x['Value'].mean() > 10)\n```",
+  "code": "import pandas as pd\n\ndf = pd.DataFrame({\n    'Key': ['A', 'B', 'A', 'B'],\n    'Data': [10, 20, 30, 40]\n})\n\nprint(df.groupby('Key').sum())"
+}

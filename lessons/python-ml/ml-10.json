@@ -1,0 +1,9 @@
+{
+  "id": "ml-10",
+  "title": "NumPy Linear Algebra",
+  "category": "Python for Data Science",
+  "number": 10,
+  "duration": "15 min read",
+  "content": "# NumPy Linear Algebra\n\nLinear algebra is central to machine learning. NumPy provides a robust `linalg` module.\n\n## Dot Product\n\nThe dot product is a fundamental operation.\n\n```python\na = np.array([1, 2])\nb = np.array([3, 4])\ndot = np.dot(a, b) # 1*3 + 2*4 = 11\n# Or using @ operator (Python 3.5+)\ndot = a @ b\n```\n\n## Matrix Multiplication\n\n```python\nA = np.array([[1, 2], [3, 4]])\nB = np.array([[5, 6], [7, 8]])\nprod = A @ B\n```\n\n## Common Operations\n\n*   `np.linalg.inv()`: Inverse of a matrix.\n*   `np.linalg.det()`: Determinant of a matrix.\n*   `np.linalg.eig()`: Eigenvalues and eigenvectors.\n*   `np.transpose()` or `A.T`: Transpose of a matrix.\n\n## Solving Linear Systems\n\nSolve `Ax = b` for `x`:\n\n```python\nx = np.linalg.solve(A, b)\n```",
+  "code": "import numpy as np\n\nA = np.array([[1, 2], [3, 4]])\nB = np.eye(2) # Identity matrix\n\nprint(\"Matrix A:\\n\", A)\nprint(\"Matrix product with Identity:\\n\", A @ B)"
+}

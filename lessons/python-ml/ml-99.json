@@ -1,0 +1,9 @@
+{
+  "id": "ml-99",
+  "title": "Recurrent Neural Networks",
+  "category": "Deep Learning",
+  "number": 99,
+  "duration": "15 min read",
+  "content": "## Recurrent Neural Networks (RNNs)\n\nRNNs are designed for sequential data (time series, text, audio). Unlike feedforward networks, RNNs have loops, allowing information to persist.\n\n### The Problem with Vanilla RNNs\n\nStandard RNNs suffer from the **vanishing gradient problem**, making it hard for them to learn long-term dependencies.\n\n### LSTM and GRU\n\nTo solve this, advanced architectures were introduced:\n1.  **Long Short-Term Memory (LSTM)**: Uses a cell state and three gates (forget, input, output) to regulate information flow.\n2.  **Gated Recurrent Unit (GRU)**: A simplified version of LSTM with two gates (update, reset). Faster to train.\n\n### Implementation\n\n```python\nfrom tensorflow.keras.layers import LSTM, Embedding\n\nmodel = Sequential()\nmodel.add(Embedding(input_dim=10000, output_dim=32))\nmodel.add(LSTM(32))\nmodel.add(Dense(1, activation='sigmoid'))\n```\n",
+  "code": "import tensorflow as tf\nfrom tensorflow.keras.models import Sequential\nfrom tensorflow.keras.layers import SimpleRNN, LSTM, Dense, Embedding\n\n# TODO: Build an LSTM model for text classification\nmodel = Sequential()\n\n# 1. Add Embedding layer (vocab_size=1000, embedding_dim=32)\nmodel.add(Embedding(input_dim=1000, output_dim=32))\n\n# 2. Add LSTM layer with 64 units\n\n# 3. Add Dense output layer\n\nmodel.summary()"
+}

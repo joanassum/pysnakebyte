@@ -1,0 +1,9 @@
+{
+  "id": "ml-29",
+  "title": "Interactive Plots with Plotly",
+  "category": "Python for Data Science",
+  "number": 29,
+  "duration": "15 min read",
+  "content": "# Interactive Plots with Plotly\n\nPlotly is a library for creating interactive, web-based visualizations.\n\n## Plotly Express\n\nA high-level interface for Plotly, similar to Seaborn.\n\n```python\nimport plotly.express as px\n\ndf = px.data.iris()\nfig = px.scatter(df, x=\"sepal_width\", y=\"sepal_length\", color=\"species\")\nfig.show()\n```\n\n## Key Features\n\n*   **Interactivity**: Zoom, pan, hover tooltips by default.\n*   **Web-ready**: Exports to HTML effortlessly.\n*   **3D Plots**: easy 3D scatter and surface plots.\n\n## Common Charts\n\n*   `px.line()`\n*   `px.bar()`\n*   `px.scatter_3d()`\n*   `px.choropleth()` (Maps)\n\n## Saving\n\n```python\nfig.write_html(\"plot.html\")\n```",
+  "code": "# Note: Plotly requires a browser or notebook renderer to show plots\nimport plotly.express as px\n\nprint(\"Plotly Express imported as px\")"
+}

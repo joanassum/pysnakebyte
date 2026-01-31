@@ -1,0 +1,9 @@
+{
+  "id": "trade-35",
+  "title": "Value at Risk (VaR)",
+  "category": "Quantitative Finance Basics",
+  "number": 35,
+  "duration": "15 min read",
+  "content": "# Value at Risk (VaR)\n\nVaR asks the question: \"What is my worst-case loss, with X% confidence, over the next N days?\"\n\n## Historical Method\n1.  Calculate historical daily returns.\n2.  Sort them from worst to best.\n3.  Find the cutoff for the worst 5% (for 95% Confidence).\n\n## Parametric Method\nAssumes normal distribution. `VaR = Mean - (Z-score * StdDev)`.",
+  "code": "import numpy as np\n\n# Mock daily returns (1000 days)\nreturns = np.random.normal(0.0005, 0.01, 1000)\n\n# 95% Confidence VaR (Historical)\nvar_95 = np.percentile(returns, 5)\n\nprint(f\"95% VaR (Daily): {var_95:.2%}\")\nprint(f\"Interpretation: With 95% confidence, we will not lose more than {abs(var_95):.2%} in one day.\")"
+}

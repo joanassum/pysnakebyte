@@ -1,0 +1,9 @@
+{
+  "id": "challenge-22",
+  "title": "Find Missing Number",
+  "difficulty": "hard",
+  "description": "# Find Missing Number\n\nWrite a function that finds the missing number in a sequence from 1 to n.\n\nGiven a list containing n distinct numbers taken from 1 to n+1, find the one number that is missing.\n\n## Example\n\n```python\nresult = solution([1, 2, 4, 5, 6])\nprint(result)  # Output: 3\n\nresult = solution([3, 7, 1, 2, 8, 4, 5])\nprint(result)  # Output: 6\n```\n\n## Requirements\n\n- Accept a list of n distinct numbers from 1 to n+1 with one missing\n- Return the missing number\n- Must work in O(n) time complexity\n- Handle edge cases (missing 1 or missing n+1)",
+  "short_description": "Find missing in 1-n sequence",
+  "starter_code": "def solution(lst):\n    # Find the missing number in sequence 1 to n\n    pass\n\n# Test your solution\nprint(solution([1, 2, 4, 5, 6]))  # Should print 3",
+  "test_code": "assert solution([1, 2, 4, 5, 6]) == 3, 'Test 1 failed'\nassert solution([3, 7, 1, 2, 8, 4, 5]) == 6, 'Test 2 failed'\nassert solution([2, 3, 4, 5]) == 1, 'Test 3 failed: missing first'\nassert solution([1, 2, 3, 4]) == 5, 'Test 4 failed: missing last'\nassert solution([1]) == 2, 'Test 5 failed: single element'\nassert solution([2]) == 1, 'Test 6 failed: missing 1 with single element'\nprint('PASSED')"
+}

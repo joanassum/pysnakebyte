@@ -1,0 +1,9 @@
+{
+  "id": "ml-75",
+  "title": "Random Forest Classification",
+  "category": "Classification Algorithms",
+  "number": 75,
+  "duration": "15 min read",
+  "content": "## Random Forest Classification\n\nRandom Forest is an **ensemble learning** method that operates by constructing a multitude of decision trees at training time. It outputs the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees.\n\n### Bagging (Bootstrap Aggregating)\n\nRandom Forest uses a technique called Bagging:\n1.  **Bootstrapping**: Train each tree on a random subset of the data sampled *with replacement*.\n2.  **Feature Randomness**: When splitting a node, search for the best feature among a random subset of features.\n\n### Why Random Forest?\n\n*   **High Accuracy**: Often produces highly accurate classifiers.\n*   **Robustness**: Reduces overfitting compared to a single Decision Tree.\n*   **Feature Importance**: Can estimate which variables are important in the classification.\n\n### Implementation\n\n```python\nfrom sklearn.ensemble import RandomForestClassifier\n\nrf_clf = RandomForestClassifier(\n    n_estimators=100,  # Number of trees\n    max_depth=5,       # Max depth of each tree\n    n_jobs=-1,         # Use all processors\n    random_state=42\n)\nrf_clf.fit(X_train, y_train)\n```\n",
+  "code": "from sklearn.ensemble import RandomForestClassifier\nfrom sklearn.datasets import load_digits\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import classification_report\n\ndata = load_digits()\nX, y = data.data, data.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# TODO: Initialize RandomForestClassifier with 100 trees\nrf = \n\n# TODO: Fit the model\n\n# TODO: Generate predictions\n# y_pred = \n\n# print(classification_report(y_test, y_pred))"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "trade-09",
+  "title": "Trading Costs and Slippage",
+  "category": "Introduction to Algorithmic Trading",
+  "number": 9,
+  "duration": "12 min read",
+  "content": "# Trading Costs and Slippage\n\nNew algorithmic traders often fail because they ignore costs. A strategy that makes 1% profit but costs 1.5% in fees is a losing strategy.\n\n## Components of Cost\n\n1.  **Commissions**: Fee paid to broker per trade or per share.\n2.  **Spread**: The difference between the Bid (highest buyer) and Ask (lowest seller). You usually buy at Ask and sell at Bid.\n3.  **Slippage**: The difference between the expected price of a trade and the price at which the trade is executed. High in fast-moving markets or with large orders.\n\n## Modeling Costs\nIn backtesting, always add a penalty for costs.\n\n`Net Profit = Gross Profit - (Commissions + Slippage + Spread)`",
+  "code": "gross_profit = 500.00\ntrade_size_shares = 100\nprice = 50.00\n\n# Assumptions\ncommission_per_share = 0.005 # $0.005 per share\nspread = 0.02 # 2 cents spread\nslippage_pct = 0.0001 # 1 basis point\n\ntotal_commission = trade_size_shares * commission_per_share\ncost_of_spread = (spread / 2) * trade_size_shares # Paying half the spread on entry\ncost_of_slippage = (price * slippage_pct) * trade_size_shares\n\ntotal_costs = total_commission + cost_of_spread + cost_of_slippage\nnet_profit = gross_profit - total_costs\n\nprint(f\"Gross Profit: ${gross_profit}\")\nprint(f\"Total Costs: ${total_costs:.2f}\")\nprint(f\"Net Profit: ${net_profit:.2f}\")"
+}

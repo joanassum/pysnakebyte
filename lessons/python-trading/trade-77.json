@@ -1,0 +1,9 @@
+{
+  "id": "trade-77",
+  "title": "Sentiment Analysis from Financial News",
+  "category": "Machine Learning for Trading",
+  "number": 77,
+  "duration": "15 min read",
+  "content": "## NLP in Finance\n\nMarket moves are often driven by news before charts update. NLP allows us to quantify text.\n\n### Approaches\n\n1.  **Lexicon-Based**: Counting positive/negative words (e.g., Loughran-McDonald dictionary specific to finance).\n2.  **Transformer Models**: BERT, FinBERT. These understand context (e.g., \"short\" has a different meaning in finance than general English).\n\n### Pipeline\n\nScrape headlines -> Tokenize -> Model Inference -> Sentiment Score (-1 to 1) -> Merge with Price Data as a feature.",
+  "code": "from transformers import pipeline\n\n# Load specific financial sentiment pipeline\n# classifier = pipeline('sentiment-analysis', model='ProsusAI/finbert')\n\n# headlines = [\n#     \"Company X reports record earnings breakdown.\",\n#     \"Uncertainty looms over the merger deal.\"\n# ]\n\n# results = classifier(headlines)\n# for headline, res in zip(headlines, results):\n#     print(f\"Text: {headline}\")\n#     print(f\"Sentiment: {res['label']}, Score: {res['score']:.4f}\")"
+}

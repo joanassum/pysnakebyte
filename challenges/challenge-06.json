@@ -1,0 +1,9 @@
+{
+  "id": "challenge-06",
+  "title": "Count Vowels",
+  "difficulty": "easy",
+  "description": "# Count Vowels\n\nWrite a function that counts the number of vowels in a given string.\n\n## Example\n\n```python\nresult = solution(\"hello\")\nprint(result)  # Output: 2\n\nresult = solution(\"AEIOU\")\nprint(result)  # Output: 5\n```\n\n## Requirements\n\n- Accept one string parameter\n- Return the count of vowels (a, e, i, o, u)\n- Handle both uppercase and lowercase vowels\n- Return 0 for strings with no vowels",
+  "short_description": "Count vowels in a string",
+  "starter_code": "def solution(s):\n    # Return the count of vowels (a, e, i, o, u) in the string\n    pass\n\n# Test your solution\nprint(solution('hello world'))  # Should print 3",
+  "test_code": "assert solution('hello') == 2, 'Test 1 failed'\nassert solution('AEIOU') == 5, 'Test 2 failed'\nassert solution('xyz') == 0, 'Test 3 failed: no vowels'\nassert solution('') == 0, 'Test 4 failed: empty string'\nassert solution('aEiOu') == 5, 'Test 5 failed: mixed case'\nassert solution('Python Programming') == 4, 'Test 6 failed'\nprint('PASSED')"
+}

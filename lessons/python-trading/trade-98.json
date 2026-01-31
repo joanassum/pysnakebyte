@@ -1,0 +1,9 @@
+{
+  "id": "trade-98",
+  "title": "Project: HFT Simulation",
+  "category": "Advanced Trading Projects",
+  "number": 98,
+  "duration": "18 min read",
+  "content": "## Microstructure Simulation\n\nTrue HFT requires FPGAs and C++, but we can simulate the logic in Python to understand Order Book dynamics.\n\n### Limit Order Book (LOB)\n\nMaintain a data structure of Bids and Asks sorted by price and time. Simulate order matching.\n\n### Strategy: Order Flow Imbalance\n\nIf the buy volume in the order book is significantly higher than sell volume, price is likely to tick up due to buying pressure.",
+  "code": "# class OrderBook:\n#     def __init__(self):\n#         self.bids = {} # Price -> Qty\n#         self.asks = {}\n\n#     def update(self, side, price, qty):\n#         # Update logic\n#         pass\n    \n#     def get_imbalance(self):\n#         total_bid_vol = sum(self.bids.values())\n#         total_ask_vol = sum(self.asks.values())\n#         return (total_bid_vol - total_ask_vol) / (total_bid_vol + total_ask_vol)"
+}

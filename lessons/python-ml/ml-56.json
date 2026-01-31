@@ -1,0 +1,9 @@
+{
+  "id": "ml-56",
+  "title": "Pipeline Building",
+  "category": "Scikit-Learn",
+  "number": 56,
+  "duration": "10 min read",
+  "content": "## Streamlining ML Workflows\n\nA `Pipeline` in Scikit-Learn chains together multiple steps (preprocessing, feature selection, model training) into a single object. This ensures that the same steps are applied to both training and test data, preventing data leakage.\n\n### Benefits\n\n1.  **Convenience**: You only have to call `fit` and `predict` once on your data.\n2.  **Safety**: Pipelines help avoid leaking statistics from your test data into the trained model.\n3.  **Tuning**: You can grid search over parameters of all estimators in the pipeline at once.\n\n### Structure\n\nA pipeline consists of a sequence of transformers and a final estimator.\n",
+  "code": "from sklearn.pipeline import Pipeline, make_pipeline\nfrom sklearn.preprocessing import StandardScaler\nfrom sklearn.svm import SVC\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\n\n# Load data\nX, y = load_iris(return_X_y=True)\nX_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)\n\n# Method 1: Explicit naming\npipe = Pipeline([\n    ('scaler', StandardScaler()),\n    ('svc', SVC())\n])\n\n# Method 2: make_pipeline (names auto-generated)\npipe_short = make_pipeline(StandardScaler(), SVC())\n\n# Fit the pipeline\npipe.fit(X_train, y_train)\n\n# Predict using the pipeline\nscore = pipe.score(X_test, y_test)\nprint(f\"Pipeline Test Score: {score:.2f}\")"
+}

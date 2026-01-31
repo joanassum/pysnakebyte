@@ -1,0 +1,9 @@
+{
+  "id": "ml-21",
+  "title": "Introduction to Matplotlib",
+  "category": "Python for Data Science",
+  "number": 21,
+  "duration": "10 min read",
+  "content": "# Introduction to Matplotlib\n\nMatplotlib is the grandfather of Python visualization libraries. It provides a comprehensive system for creating static, animated, and interactive visualizations.\n\n## Pyplot Interface\n\nMost users interact with Matplotlib via the `pyplot` interface, which mimics MATLAB style.\n\n```python\nimport matplotlib.pyplot as plt\n```\n\n## Basic Plotting Workflow\n\n1.  **Prepare Data**: Typically NumPy arrays or Pandas DataFrames.\n2.  **Create Plot**: `plt.plot()`, `plt.bar()`, etc.\n3.  **Customize**: Add labels, title, legend.\n4.  **Show/Save**: `plt.show()` or `plt.savefig()`.\n\n## Anatomy of a Plot\n\n*   **Figure**: The whole window/page.\n*   **Axes**: The plotting area (where data goes).\n*   **Axis**: X and Y scales.\n*   **Title**, **Legend**, **Labels**.\n\n```python\nx = [1, 2, 3]\ny = [4, 5, 6]\nplt.plot(x, y)\nplt.title(\"Simple Plot\")\nplt.xlabel(\"X Axis\")\nplt.ylabel(\"Y Axis\")\nplt.show()\n```",
+  "code": "import matplotlib.pyplot as plt\n\nplt.plot([1, 2, 3, 4])\nplt.ylabel('some numbers')\n# In non-interactive environments, use plt.show() or check the image output"
+}

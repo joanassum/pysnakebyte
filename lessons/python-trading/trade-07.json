@@ -1,0 +1,9 @@
+{
+  "id": "trade-07",
+  "title": "Visualizing Stock Data",
+  "category": "Introduction to Algorithmic Trading",
+  "number": 7,
+  "duration": "15 min read",
+  "content": "# Visualizing Stock Data\n\nVisualizing price action is essential for debugging strategies and analyzing markets. `Matplotlib` is the standard library, but Pandas makes it easy to access.\n\n## Plotting Basics\n\n*   **Line Chart**: Good for closing prices.\n*   **Candlestick Chart**: Shows OHLC (requires `mplfinance`).\n*   **Volume Bars**: Often plotted below price.\n\n## Subplots\nUseful for plotting Price and Indicators (like RSI or Moving Averages) separately but aligned by time.",
+  "code": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Generate fake price data\ndates = pd.date_range(start='2023-01-01', periods=100)\nprices = 100 + np.cumsum(np.random.randn(100))\n\ndf = pd.DataFrame(prices, index=dates, columns=['Price'])\n\n# Calculate a Moving Average\ndf['SMA_20'] = df['Price'].rolling(window=20).mean()\n\n# Plot\nplt.figure(figsize=(10, 6))\nplt.plot(df.index, df['Price'], label='Price')\nplt.plot(df.index, df['SMA_20'], label='20-Day SMA', linestyle='--')\nplt.title('Stock Price with Moving Average')\nplt.legend()\nplt.grid(True)\nplt.show()"
+}

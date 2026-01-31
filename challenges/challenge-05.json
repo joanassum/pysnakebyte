@@ -1,0 +1,9 @@
+{
+  "id": "challenge-05",
+  "title": "Find Maximum",
+  "difficulty": "easy",
+  "description": "# Find Maximum\n\nWrite a function that finds the maximum value in a list of numbers.\n\n## Example\n\n```python\nresult = solution([1, 5, 3, 9, 2])\nprint(result)  # Output: 9\n\nresult = solution([-1, -5, -3])\nprint(result)  # Output: -1\n```\n\n## Requirements\n\n- Accept a list of numbers\n- Return the maximum value\n- Handle negative numbers\n- You may assume the list is not empty",
+  "short_description": "Find max in a list",
+  "starter_code": "def solution(lst):\n    # Return the maximum value in the list\n    pass\n\n# Test your solution\nprint(solution([1, 5, 3, 9, 2]))  # Should print 9",
+  "test_code": "assert solution([1, 5, 3, 9, 2]) == 9, 'Test 1 failed'\nassert solution([-1, -5, -3]) == -1, 'Test 2 failed'\nassert solution([42]) == 42, 'Test 3 failed: single element'\nassert solution([1, 1, 1, 1]) == 1, 'Test 4 failed: all same'\nassert solution([-10, 0, 10]) == 10, 'Test 5 failed'\nassert solution([100, 99, 98, 97]) == 100, 'Test 6 failed'\nprint('PASSED')"
+}

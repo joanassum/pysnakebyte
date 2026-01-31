@@ -1,0 +1,9 @@
+{
+  "id": "trade-78",
+  "title": "Reinforcement Learning for Trading Agents",
+  "category": "Machine Learning for Trading",
+  "number": 78,
+  "duration": "20 min read",
+  "content": "## The Agent-Environment Loop\n\nIn RL, an **Agent** interacts with an **Environment** (the market) by taking **Actions** (Buy, Sell, Hold) to maximize a **Reward** (Profit, Sharpe Ratio).\n\n### Key Concepts\n\n- **State**: Current market conditions (prices, holdings, balance).\n- **Action Space**: Discrete (Buy/Sell) or Continuous (Position Size).\n- **Reward Function**: Crucial design choice. Simply using PnL is often too noisy. Differential Sharpe Ratio is popular.\n\n### Algorithms\n\n- **DQN (Deep Q-Network)**: For discrete actions.\n- **PPO (Proximal Policy Optimization)**: Stable and effective for continuous control.",
+  "code": "# Concept using a library like Stable Baselines3\n# import gym\n# from stable_baselines3 import PPO\n# from stable_baselines3.common.vec_env import DummyVecEnv\n\n# # Create custom trading environment inheriting from gym.Env\n# # env = MyTradingEnv(df)\n# # env = DummyVecEnv([lambda: env])\n\n# # Initialize Agent\n# # model = PPO('MlpPolicy', env, verbose=1)\n\n# # Train\n# # model.learn(total_timesteps=10000)\n\n# # Test\n# # obs = env.reset()\n# # action, _ = model.predict(obs)"
+}

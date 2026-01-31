@@ -1,0 +1,9 @@
+{
+  "id": "ml-92",
+  "title": "Perceptrons and Activation Functions",
+  "category": "Deep Learning",
+  "number": 92,
+  "duration": "12 min read",
+  "content": "## Perceptrons and Activation Functions\n\n### The Perceptron\n\nThe simplest type of neural network is the Perceptron, a single-layer neural network. It can only solve linearly separable problems.\n\n### Activation Functions\n\nActivation functions introduce **non-linearity** into the network, allowing it to learn complex patterns.\n\n1.  **Sigmoid**: $1 / (1 + e^{-z})$. Output: (0, 1). Used in output layer for binary classification. Problem: Vanishing gradient.\n2.  **Tanh (Hyperbolic Tangent)**: $(e^z - e^{-z}) / (e^z + e^{-z})$. Output: (-1, 1). Zero-centered, generally better than sigmoid for hidden layers.\n3.  **ReLU (Rectified Linear Unit)**: $max(0, z)$. Output: [0, infinity). Most popular for hidden layers. Solves vanishing gradient, computationally efficient.\n4.  **Softmax**: $e^{z_i} / \\sum e^{z_j}$. Output: Probability distribution summing to 1. Used in output layer for multi-class classification.\n\n### Implementation\n\n```python\nimport numpy as np\n\ndef relu(z):\n    return np.maximum(0, z)\n\ndef softmax(z):\n    exp_z = np.exp(z - np.max(z)) # Stability fix\n    return exp_z / exp_z.sum(axis=0)\n```\n",
+  "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\n# Define activation functions\ndef sigmoid(z): return 1 / (1 + np.exp(-z))\ndef tanh(z): return np.tanh(z)\ndef relu(z): return np.maximum(0, z)\n\n# Generate z values\nz = np.linspace(-5, 5, 100)\n\n# TODO: Plot Sigmoid\nplt.figure(figsize=(10, 6))\nplt.plot(z, sigmoid(z), label='Sigmoid')\n\n# TODO: Plot Tanh\nplt.plot(z, tanh(z), label='Tanh')\n\n# TODO: Plot ReLU\nplt.plot(z, relu(z), label='ReLU')\n\nplt.legend()\nplt.grid(True)\nplt.title(\"Activation Functions\")\nplt.show()"
+}

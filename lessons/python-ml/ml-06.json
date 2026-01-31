@@ -1,0 +1,9 @@
+{
+  "id": "ml-06",
+  "title": "Introduction to NumPy",
+  "category": "Python for Data Science",
+  "number": 6,
+  "duration": "10 min read",
+  "content": "# Introduction to NumPy\n\nNumPy (Numerical Python) is the foundational library for scientific computing in Python. It provides support for large, multi-dimensional arrays and matrices, along with a collection of high-level mathematical functions to operate on these arrays.\n\n## Why NumPy?\n\n*   **Performance**: NumPy arrays are implemented in C and are much faster than Python lists for numerical operations.\n*   **Functionality**: Offers extensive tools for linear algebra, Fourier transform, and random number generation.\n*   **Memory Efficiency**: Arrays use less memory than lists.\n\n## Importing NumPy\n\nThe standard convention is to import NumPy as `np`.\n\n```python\nimport numpy as np\n```\n\n## The `ndarray` Object\n\nThe core of NumPy is the `ndarray` (n-dimensional array) object. It is a grid of values, all of the same type, and is indexed by a tuple of non-negative integers.",
+  "code": "import numpy as np\n\n# Create a simple array\narr = np.array([1, 2, 3, 4, 5])\nprint(\"Array:\", arr)\nprint(\"Type:\", type(arr))"
+}

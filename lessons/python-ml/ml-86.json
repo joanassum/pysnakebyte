@@ -1,0 +1,9 @@
+{
+  "id": "ml-86",
+  "title": "Principal Component Analysis",
+  "category": "Unsupervised Learning",
+  "number": 86,
+  "duration": "15 min read",
+  "content": "## Principal Component Analysis (PCA)\n\nPCA is a linear dimensionality reduction technique. It identifies the combination of attributes (principal components) that account for the most variance in the data.\n\n### How it Works\n\n1.  **Standardize** the data.\n2.  Compute the **Covariance Matrix** of the features.\n3.  Calculate **Eigenvectors** and **Eigenvalues** of the covariance matrix.\n4.  **Sort** Eigenvectors by Eigenvalues in descending order.\n5.  **Select** top $k$ Eigenvectors (Principal Components).\n6.  **Transform** the original data onto the new $k$-dimensional subspace.\n\n### Explained Variance\n\nThe explained variance ratio tells us how much information (variance) is attributed to each principal component.\n\n### Implementation\n\n```python\nfrom sklearn.decomposition import PCA\n\npca = PCA(n_components=2) # Reduce to 2 dimensions\nX_pca = pca.fit_transform(X_scaled)\n\nprint(pca.explained_variance_ratio_)\n```\n",
+  "code": "from sklearn.decomposition import PCA\nfrom sklearn.datasets import load_iris\nfrom sklearn.preprocessing import StandardScaler\nimport matplotlib.pyplot as plt\n\ndata = load_iris()\nX = data.data\ny = data.target\n\n# 1. Standardize the data\nscaler = StandardScaler()\nX_scaled = scaler.fit_transform(X)\n\n# TODO: Initialize PCA with n_components=2\npca = \n\n# TODO: Fit and transform X_scaled\n# X_pca = \n\n# Visualize\n# plt.scatter(X_pca[:, 0], X_pca[:, 1], c=y, cmap='viridis')\n# plt.xlabel('First Principal Component')\n# plt.ylabel('Second Principal Component')\n# plt.show()"
+}

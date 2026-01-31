@@ -1,0 +1,9 @@
+{
+  "id": "trade-29",
+  "title": "Implementing a Crossover Strategy",
+  "category": "Technical Analysis Indicators",
+  "number": 29,
+  "duration": "20 min read",
+  "content": "# Implementing a Crossover Strategy\n\nThe \"Golden Cross\" occurs when a short-term moving average crosses above a long-term moving average.\n\n## Strategy Rules\n1.  **Buy**: SMA_50 > SMA_200 (Golden Cross)\n2.  **Sell**: SMA_50 < SMA_200 (Death Cross)\n\n## Implementation\nWe can use Pandas vectorization to find these points.\n`signal = np.where(sma50 > sma200, 1, 0)`",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Generate dummy data\ndates = pd.date_range('2022-01-01', periods=100)\nprices = 100 + np.cumsum(np.random.randn(100))\ndf = pd.DataFrame({'Close': prices}, index=dates)\n\n# Indicators\ndf['SMA_10'] = df['Close'].rolling(10).mean()\ndf['SMA_30'] = df['Close'].rolling(30).mean()\n\n# Signals (1 = Buy, 0 = Hold/Neutral)\n# We shift by 1 to avoid look-ahead bias (trading on the close of the same day)\ndf['Signal'] = np.where(df['SMA_10'] > df['SMA_30'], 1, 0)\ndf['Position'] = df['Signal'].shift(1)\n\nprint(df.tail())"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "trade-48",
+  "title": "Sentiment Analysis for Trading",
+  "category": "Building Trading Strategies",
+  "number": 48,
+  "duration": "12 min read",
+  "content": "# Trading on Sentiment\n\nSentiment analysis involves gauging the mood of the market from textual data (news headlines, tweets, earnings call transcripts).\n\n## Approaches\n1. **Dictionary-based**: Counting positive/negative words (e.g., Loughran-McDonald dictionary for finance).\n2. **NLP Models**: Using transformers (BERT, FinBERT) to classify text as Bullish, Bearish, or Neutral.\n\n## Strategy\n- Calculate a daily sentiment score.\n- Buy if sentiment is strongly positive (or rising).\n- Sell if sentiment is strongly negative.",
+  "code": "# Conceptual Example using VADER (simple library)\n# In practice, use specialized libraries or APIs\n# from nltk.sentiment.vader import SentimentIntensityAnalyzer\n# sia = SentimentIntensityAnalyzer()\n\nheadlines = [\n    \"Company A reports record earnings, stock soars\",\n    \"Company B faces lawsuit, CEO steps down\",\n    \"Market remains flat awaiting Fed decision\"\n]\n\n# Mock Sentiment Scoring\ndef get_sentiment(text):\n    if \"soars\" in text or \"record\" in text:\n        return 0.8\n    elif \"lawsuit\" in text or \"steps down\" in text:\n        return -0.8\n    else:\n        return 0.0\n\nscores = [get_sentiment(h) for h in headlines]\nprint(list(zip(headlines, scores)))\n\n# Strategy Logic\n# if avg_score > threshold: Buy\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "trade-06",
+  "title": "Intro to Pandas for Time Series",
+  "category": "Introduction to Algorithmic Trading",
+  "number": 6,
+  "duration": "20 min read",
+  "content": "# Intro to Pandas for Time Series\n\nPandas is the most important library for financial data analysis. It introduces the `DataFrame` and `Series`.\n\n## The DateTime Index\nFinancial data is inherently time-indexed. Pandas allows powerful slicing and resampling.\n\n```python\ndf.loc['2023-01']  # Select all data from Jan 2023\n```\n\n## Resampling\nChanging the frequency of data (e.g., from minute bars to hourly bars).\n\n```python\ndf.resample('1H').agg({'Open': 'first', 'High': 'max', 'Low': 'min', 'Close': 'last'})\n```",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Create a date range\ndates = pd.date_range(start='2023-01-01', periods=5, freq='D')\n\n# Create a DataFrame\ndf = pd.DataFrame({\n    'Close': [100, 102, 101, 103, 105],\n    'Volume': [1000, 1500, 1200, 1800, 2000]\n}, index=dates)\n\nprint(df)\n\n# Access data by date\nprint(\"\\nData for Jan 2nd:\")\nprint(df.loc['2023-01-02'])"
+}

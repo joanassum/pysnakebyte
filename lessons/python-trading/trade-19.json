@@ -1,0 +1,9 @@
+{
+  "id": "trade-19",
+  "title": "Time Shifting and Lagging",
+  "category": "Financial Data Analysis with Pandas",
+  "number": 19,
+  "duration": "10 min read",
+  "content": "# Time Shifting and Lagging\n\nIn backtesting, you often need to compare today's value with yesterday's value (to calculate change) or compare today's signal with tomorrow's return (to calculate profit).\n\n## Shift\n`df.shift(n)` moves data down `n` rows.\n\n### Use Cases\n1.  **Returns**: `Price / Price.shift(1) - 1`\n2.  **Lagged Features**: Using yesterday's volume to predict today's price.\n\n## Diff\n`df.diff(n)` calculates the difference `Value_t - Value_t-n`.",
+  "code": "import pandas as pd\n\ndf = pd.DataFrame({'Price': [100, 102, 105, 101]})\n\n# Previous Day's Price\ndf['Prev_Price'] = df['Price'].shift(1)\n\n# Calculate Return manually\ndf['Return'] = (df['Price'] / df['Prev_Price']) - 1\n\nprint(df)"
+}

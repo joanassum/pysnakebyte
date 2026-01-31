@@ -1,0 +1,9 @@
+{
+  "id": "trade-21",
+  "title": "Simple Moving Average (SMA)",
+  "category": "Technical Analysis Indicators",
+  "number": 21,
+  "duration": "10 min read",
+  "content": "# Simple Moving Average (SMA)\n\nThe SMA is the unweighted mean of the previous `k` data points. It smooths out price action to identify the trend direction.\n\n## Calculation\n`SMA = (P1 + P2 + ... + Pk) / k`\n\n## Interpretation\n*   **Trend Following**: If Price > SMA, the trend is up.\n*   **Support/Resistance**: SMAs often act as dynamic support levels.\n*   **Lag**: SMAs lag current prices because they are based on past data.",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Fake data\ndf = pd.DataFrame({'Close': [10, 11, 12, 11, 13, 15, 14, 13, 15, 16]})\n\n# Calculate 3-period SMA\ndf['SMA_3'] = df['Close'].rolling(window=3).mean()\n\nprint(df)"
+}

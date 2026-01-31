@@ -1,0 +1,9 @@
+{
+  "id": "ml-55",
+  "title": "Encoding Categorical Variables",
+  "category": "Scikit-Learn",
+  "number": 55,
+  "duration": "10 min read",
+  "content": "## Handling Text Labels\n\nML models typically require numerical input. Categorical variables (e.g., \"Red\", \"Green\", \"Blue\") must be encoded.\n\n### Label Encoding\n\n- Converts each category to a number (0, 1, 2, ...).\n- Problem: Can introduce ordinal relationships where none exist (e.g., 2 > 0 implies Blue > Red).\n- Use for **Target** variables or ordinal features.\n- `LabelEncoder`\n\n### One-Hot Encoding\n\n- Creates a new binary column for each category.\n- No ordinal relationship implied.\n- Can lead to high dimensionality.\n- `OneHotEncoder` or `pd.get_dummies`\n",
+  "code": "from sklearn.preprocessing import LabelEncoder, OneHotEncoder\nimport pandas as pd\nimport numpy as np\n\n# Sample Data\ndata = ['cat', 'dog', 'bird', 'cat', 'bird']\n\n# Label Encoding\nle = LabelEncoder()\nencoded_labels = le.fit_transform(data)\nprint(f\"Label Encoded: {encoded_labels}\")\nprint(f\"Classes: {le.classes_}\")\n\n# One-Hot Encoding\n# Reshape because OHE expects 2D array\ndata_2d = np.array(data).reshape(-1, 1)\nohe = OneHotEncoder(sparse_output=False)\nencoded_ohe = ohe.fit_transform(data_2d)\nprint(f\"\\nOne-Hot Encoded:\\n{encoded_ohe}\")\nprint(f\"Categories: {ohe.categories_}\")"
+}

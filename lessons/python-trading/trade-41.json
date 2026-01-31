@@ -1,0 +1,9 @@
+{
+  "id": "trade-41",
+  "title": "Moving Average Crossover",
+  "category": "Building Trading Strategies",
+  "number": 41,
+  "duration": "10 min read",
+  "content": "# Moving Average Crossover\n\nThe Moving Average Crossover is one of the simplest trend-following strategies. It involves two moving averages: a fast one (shorter period) and a slow one (longer period).\n\n## Logic\n- **Buy Signal (Golden Cross)**: When the Fast MA crosses *above* the Slow MA. This suggests upward momentum.\n- **Sell Signal (Death Cross)**: When the Fast MA crosses *below* the Slow MA. This suggests downward momentum.\n\nCommon pairs include 50/200 day SMA (Simple Moving Average) or 12/26 day EMA (Exponential Moving Average).",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Mock Data\ndates = pd.date_range(start='2020-01-01', periods=300)\nprice = pd.Series(np.cumsum(np.random.randn(300)) + 100, index=dates)\n\n# Strategy\nshort_window = 20\nlong_window = 50\n\nsignals = pd.DataFrame(index=price.index)\nsignals['price'] = price\nsignals['short_mavg'] = price.rolling(window=short_window, min_periods=1, center=False).mean()\nsignals['long_mavg'] = price.rolling(window=long_window, min_periods=1, center=False).mean()\nsignals['signal'] = 0.0\n\n# Generate signals (start from long_window to avoid NaN)\nsignals['signal'][short_window:] = np.where(signals['short_mavg'][short_window:] > signals['long_mavg'][short_window:], 1.0, 0.0)   \n\n# Generate trading orders\nsignals['positions'] = signals['signal'].diff()\n\nprint(signals[signals['positions'] != 0].head())\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ml-33",
+  "title": "Probability Distributions",
+  "category": "Python for Data Science",
+  "number": 33,
+  "duration": "15 min read",
+  "content": "# Probability Distributions\n\nA function that describes the likelihood of obtaining the possible values that a random variable can assume.\n\n## Discrete Distributions\n\n*   **Bernoulli**: Two possible outcomes (0 or 1).\n*   **Binomial**: Number of successes in $n$ independent Bernoulli trials.\n    ```python\n    from scipy.stats import binom\n    # P(k=2 successes in n=10 trials with p=0.5)\n    prob = binom.pmf(k=2, n=10, p=0.5)\n    ```\n*   **Poisson**: Number of events in a fixed interval of time/space.\n\n## Continuous Distributions\n\n*   **Uniform**: All outcomes are equally likely.\n*   **Normal (Gaussian)**: Bell curve.\n*   **Exponential**: Time between events in a Poisson process.\n\n## Probability Mass Function (PMF) vs Probability Density Function (PDF)\n\n*   **PMF**: For discrete variables (probability at a specific point).\n*   **PDF**: For continuous variables (probability falls within a range).",
+  "code": "from scipy.stats import binom\n\n# Probability of getting exactly 5 heads in 10 tosses\nprint(binom.pmf(5, 10, 0.5))"
+}

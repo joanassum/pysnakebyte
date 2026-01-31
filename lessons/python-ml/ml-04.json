@@ -1,0 +1,9 @@
+{
+  "id": "ml-04",
+  "title": "Python Review for ML",
+  "category": "Python for Data Science",
+  "number": 4,
+  "duration": "15 min read",
+  "content": "# Python Review for Machine Learning\n\nBefore diving into libraries, let's review some core Python concepts essential for data manipulation.\n\n## List Comprehensions\n\nA concise way to create lists.\n\n```python\nsquares = [x**2 for x in range(10)]\n```\n\n## Functions and Lambda Expressions\n\nFunctions encapsulate logic, while lambdas are small anonymous functions.\n\n```python\ndef add(a, b): return a + b\nmultiply = lambda x, y: x * y\n```\n\n## Classes and Objects\n\nUnderstanding object-oriented programming is helpful when using libraries like Scikit-learn, which relies heavily on classes (e.g., Estimators, Transformers).\n\n## Dictionary Manipulations\n\nDictionaries are key for handling configuration and structured data.\n\n```python\ndata = {'name': 'Alice', 'age': 30}\nkeys = data.keys()\n```\n\n## Exception Handling\n\nRobust code handles errors gracefully using `try`, `except`, and `finally` blocks.",
+  "code": "# Create a list of even numbers from 0 to 20 using list comprehension\nevens = [x for x in range(21) if x % 2 == 0]\nprint(evens)"
+}

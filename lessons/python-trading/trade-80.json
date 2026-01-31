@@ -1,0 +1,9 @@
+{
+  "id": "trade-80",
+  "title": "Backtesting ML Strategies",
+  "category": "Machine Learning for Trading",
+  "number": 80,
+  "duration": "15 min read",
+  "content": "## Simulating the Past\n\nBacktesting applies your ML model's signals to historical data to estimate performance.\n\n### Vectorized vs. Event-Driven\n\n- **Vectorized**: Fast, calculates entire arrays at once. Good for initial research. Hard to model complex execution logic.\n- **Event-Driven**: Iterates row by row (or tick by tick). Slower but more realistic (handling orders, fills, slippage).\n\n### Pitfalls\n\n- **Look-ahead Bias**: Using tomorrow's data today.\n- **Overfitting**: Optimizing parameters until the backtest looks perfect.\n- **Transaction Costs**: Ignoring fees and slippage.",
+  "code": "import backtrader as bt\n\n# class MLStrategy(bt.Strategy):\n#     def __init__(self):\n#         self.model = load_pretrained_model()\n\n#     def next(self):\n#         # Get features from current data\n#         features = self.get_features(self.data)\n#         prediction = self.model.predict(features)\n        \n#         if prediction == 1 and not self.position:\n#             self.buy()\n#         elif prediction == 0 and self.position:\n#             self.sell()\n\n# cerebro = bt.Cerebro()\n# cerebro.addstrategy(MLStrategy)\n# cerebro.run()"
+}

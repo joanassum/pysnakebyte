@@ -1,0 +1,9 @@
+{
+  "id": "adv-02",
+  "title": "Dict Comprehensions",
+  "category": "Advanced Topics",
+  "number": 88,
+  "duration": "8 min read",
+  "content": "## Dictionary and Set Comprehensions\n\nJust like list comprehensions, Python supports dictionary and set comprehensions.\n\n### Dictionary Comprehensions\n\nDictionary comprehensions are similar to list comprehensions, but you specify a key-value pair.\n\n**Syntax:**\n```python\n{key: value for item in iterable}\n```\n\n**Example:**\n```python\nsquares = {x: x**2 for x in (2, 4, 6)}\n# Result: {2: 4, 4: 16, 6: 36}\n```\n\n### Set Comprehensions\n\nSet comprehensions use curly braces `{}` like dictionaries but only contain values (no keys).\n\n**Example:**\n```python\nunique_lengths = {len(w) for w in [\"apple\", \"banana\", \"apple\", \"pear\"]}\n# Result: {5, 6, 4}\n```\n\n### Practical Uses\n\n- Inverting a dictionary: `{v: k for k, v in original.items()}`\n- Filtering a dictionary: `{k: v for k, v in original.items() if v > 10}`\n",
+  "code": "# 1. Create a dictionary mapping numbers 1-5 to their cubes\n# cubes = ...\n\n# 2. Given this dictionary, create a new one with only prices > 50\nprices = {'apple': 40, 'banana': 10, 'mango': 100, 'dragonfruit': 200}\n# expensive_fruits = ...\n\n# 3. Create a set of the first letters of these words\nwords = [\"hello\", \"world\", \"python\", \"programming\", \"hello\"]\n# first_letters = ...\n"
+}

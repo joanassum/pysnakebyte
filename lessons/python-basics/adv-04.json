@@ -1,0 +1,9 @@
+{
+  "id": "adv-04",
+  "title": "Iterators",
+  "category": "Advanced Topics",
+  "number": 90,
+  "duration": "10 min read",
+  "content": "## Iterators and Iterables\n\nUnderstanding the iterator protocol is key to mastering Python's loops and comprehensions.\n\n### Concepts\n\n- **Iterable:** An object capable of returning its members one at a time. Examples: lists, tuples, strings. Defined by `__iter__()`.\n- **Iterator:** An object representing a stream of data. Defined by `__iter__()` and `__next__()`.\n\n### The Iterator Protocol\n\nTo make a custom object iterable, you implement:\n\n1. `__iter__(self)`: Returns the iterator object itself.\n2. `__next__(self)`: Returns the next item from the container. Raises `StopIteration` when there are no more items.\n\n### Example\n\n```python\nclass CountDown:\n    def __init__(self, start):\n        self.current = start\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        if self.current <= 0:\n            raise StopIteration\n        num = self.current\n        self.current -= 1\n        return num\n```\n",
+  "code": "# Create a custom iterator class `Fibonacci` that generates Fibonacci numbers up to a limit `max_val`\n\nclass Fibonacci:\n    def __init__(self, max_val):\n        self.max_val = max_val\n        self.a, self.b = 0, 1\n\n    def __iter__(self):\n        return self\n\n    def __next__(self):\n        # Your logic here\n        pass\n\n# Usage:\n# for n in Fibonacci(100):\n#    print(n)\n"
+}

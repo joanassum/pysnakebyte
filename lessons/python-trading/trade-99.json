@@ -1,0 +1,9 @@
+{
+  "id": "trade-99",
+  "title": "Project: Sentiment-Based Crypto Trader",
+  "category": "Advanced Trading Projects",
+  "number": 99,
+  "duration": "20 min read",
+  "content": "## Twitter/X & Reddit Analysis\n\nCrypto is heavily influenced by social sentiment. We will build a bot that trades based on volume of mentions and sentiment polarity.\n\n### Tools\n\n- **Twitter API / Tweepy**: Stream tweets for cashtags like $BTC, $ETH.\n- **VADER Sentiment**: Rule-based sentiment analysis tuned for social media.\n\n### Logic\n\nIf sentiment score > Threshold AND Tweet Volume > Moving Average, Buy.",
+  "code": "import tweepy\nfrom nltk.sentiment.vader import SentimentIntensityAnalyzer\n\n# sid = SentimentIntensityAnalyzer()\n\n# class MyStreamListener(tweepy.StreamListener):\n#     def on_status(self, status):\n#         text = status.text\n#         score = sid.polarity_scores(text)['compound']\n#         if score > 0.5:\n#             print(\"Bullish signal detected!\")\n#             # trigger_buy()"
+}

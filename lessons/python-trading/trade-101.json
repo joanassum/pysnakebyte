@@ -1,0 +1,9 @@
+{
+  "id": "trade-101",
+  "title": "Project: Triangular Arbitrage in Forex/Crypto",
+  "category": "Advanced Trading Projects",
+  "number": 101,
+  "duration": "16 min read",
+  "content": "## Exploiting Cross-Rates\n\nTriangular arbitrage involves trading three currencies to exploit discrepancies in their exchange rates.\n\n### The Loop\n\n1.  Start with USD.\n2.  Buy EUR (USD -> EUR).\n3.  Buy GBP (EUR -> GBP).\n4.  Sell GBP for USD (GBP -> USD).\n\nIf you end up with more USD than you started (minus fees), you have an arbitrage opportunity. This is very competitive and requires low latency.",
+  "code": "# rates = {\n#   'USD/EUR': 0.85,\n#   'EUR/GBP': 0.88,\n#   'GBP/USD': 1.35\n# }\n\n# # Path: USD -> EUR -> GBP -> USD\n# start_usd = 1000\n# eur = start_usd * rates['USD/EUR']\n# gbp = eur * rates['EUR/GBP']\n# end_usd = gbp * rates['GBP/USD']\n\n# profit = end_usd - start_usd\n# if profit > fee_threshold:\n#     execute_triangle()"
+}

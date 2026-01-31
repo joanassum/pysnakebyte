@@ -1,0 +1,9 @@
+{
+  "id": "trade-43",
+  "title": "RSI Momentum Strategy",
+  "category": "Building Trading Strategies",
+  "number": 43,
+  "duration": "10 min read",
+  "content": "# Relative Strength Index (RSI)\n\nRSI is a momentum oscillator that measures the speed and change of price movements. It oscillates between 0 and 100.\n\n## Logic\n- **Overbought (> 70)**: Suggests the asset may be overvalued and due for a correction (Sell).\n- **Oversold (< 30)**: Suggests the asset may be undervalued and due for a bounce (Buy).\n\nCalculation involves comparing the magnitude of recent gains to recent losses.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef calculate_rsi(data, window=14):\n    delta = data.diff()\n    gain = (delta.where(delta > 0, 0)).rolling(window=window).mean()\n    loss = (-delta.where(delta < 0, 0)).rolling(window=window).mean()\n    \n    rs = gain / loss\n    rsi = 100 - (100 / (1 + rs))\n    return rsi\n\n# Mock Data\ndates = pd.date_range(start='2020-01-01', periods=200)\nprice = pd.Series(np.cumsum(np.random.randn(200)) + 100, index=dates)\n\n# Strategy\nrsi = calculate_rsi(price)\nbuy_signals = rsi < 30\nsell_signals = rsi > 70\n\nprint(f\"RSI Values:\\n{rsi.tail()}\")\nprint(f\"Buy Signals:\\n{buy_signals[buy_signals].index}\")\n"
+}

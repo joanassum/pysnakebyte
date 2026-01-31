@@ -1,0 +1,9 @@
+{
+  "id": "ml-66",
+  "title": "Elastic Net",
+  "category": "Regression",
+  "number": 66,
+  "duration": "10 min read",
+  "content": "## Best of Both Worlds\n\nElastic Net is a middle ground between Ridge and Lasso Regression. It combines both L1 and L2 penalties.\n\n$$ Cost = MSE + r \\alpha \\sum |b_i| + \\frac{1-r}{2} \\alpha \\sum b_i^2 $$\n\nWhere $r$ is the mix ratio (l1_ratio).\n- $r=1$: Lasso\n- $r=0$: Ridge\n\n### When to use?\n\nElastic Net is generally preferred over Lasso since Lasso may behave erratically when the number of features is greater than the number of training instances or when several features are strongly correlated.\n",
+  "code": "from sklearn.linear_model import ElasticNet\nfrom sklearn.datasets import make_regression\nfrom sklearn.model_selection import train_test_split\n\n# Generate regression data\nX, y = make_regression(n_features=2, random_state=42)\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)\n\n# Elastic Net\n# l1_ratio=0.5 means 50% L1 and 50% L2\nelastic_net = ElasticNet(alpha=0.1, l1_ratio=0.5)\nelastic_net.fit(X_train, y_train)\n\nprint(f\"Coefficients: {elastic_net.coef_}\")\nprint(f\"Intercept: {elastic_net.intercept_:.2f}\")\nprint(f\"R2 Score: {elastic_net.score(X_test, y_test):.4f}\")"
+}

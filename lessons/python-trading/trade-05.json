@@ -1,0 +1,9 @@
+{
+  "id": "trade-05",
+  "title": "Intro to NumPy for Finance",
+  "category": "Introduction to Algorithmic Trading",
+  "number": 5,
+  "duration": "15 min read",
+  "content": "# Intro to NumPy for Finance\n\nNumPy (Numerical Python) provides the `ndarray` object, which is much faster than Python lists for numerical operations. It is the foundation of Pandas.\n\n## Vectorization\nInstead of looping through prices to calculate returns, NumPy allows element-wise operations.\n\n```python\nprices = np.array([100, 102, 101, 105])\n# Calculate daily change in one go\n```\n\n## Key Functions\n*   `np.mean()`: Average price/return.\n*   `np.std()`: Standard deviation (Volatility).\n*   `np.log()`: Log returns.\n*   `np.diff()`: Difference between elements.",
+  "code": "import numpy as np\n\nprices = np.array([100.0, 101.5, 102.0, 100.5, 99.0])\n\n# Calculate simple returns: (Price_t / Price_t-1) - 1\n# We slice the arrays to align them\nreturns = (prices[1:] / prices[:-1]) - 1\n\nprint(\"Prices:\", prices)\nprint(\"Returns:\", returns)\nprint(\"Mean Return:\", np.mean(returns))\nprint(\"Volatility (Std Dev):\", np.std(returns))"
+}

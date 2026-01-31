@@ -1,0 +1,9 @@
+{
+  "id": "trade-89",
+  "title": "Deployment Strategies (Docker/Cloud)",
+  "category": "Live Trading System Architecture",
+  "number": 89,
+  "duration": "15 min read",
+  "content": "## Running in the Cloud\n\nRunning on your laptop is risky (internet outage, power loss). Cloud VPS is standard.\n\n### Docker\n\nContainerize your bot. Ensures it runs the same everywhere. Simplifies dependency management.\n\n### Cloud Providers\n\n- **AWS (EC2)**: Industry standard. Use 't2.micro' for small bots.\n- **DigitalOcean/Vultr**: Simple, cheap VPS.\n\n### Process Management\n\nUse `systemd` or `Supervisor` (or Docker restart policies) to ensure the bot restarts automatically if it crashes.",
+  "code": "# Dockerfile example\n# FROM python:3.9-slim\n\n# WORKDIR /app\n\n# COPY requirements.txt .\n# RUN pip install --no-cache-dir -r requirements.txt\n\n# COPY . .\n\n# CMD [\"python\", \"main.py\"]"
+}

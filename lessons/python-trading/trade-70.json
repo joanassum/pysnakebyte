@@ -1,0 +1,9 @@
+{
+  "id": "trade-70",
+  "title": "Paper Trading vs Live Trading",
+  "category": "Connecting to Brokers (APIs)",
+  "number": 70,
+  "duration": "10 min read",
+  "content": "# Going Live\n\n## Paper Trading\nSimulated trading with fake money but real market data.\n- **Always** start here.\n- Verify logic, error handling, and API connections.\n- **Limitation**: Doesn't simulate liquidity or psychological pressure.\n\n## Live Trading\nReal money.\n- Start small (Minimum position size).\n- Monitor closely for the first few days.\n- Have a \"Kill Switch\" script ready to close all positions and stop the bot instantly if things go wrong.",
+  "code": "# Kill Switch Concept\ndef emergency_stop(api):\n    print(\"EMERGENCY STOP TRIGGERED\")\n    # Cancel open orders\n    # api.cancel_all_orders()\n    \n    # Close positions\n    # positions = api.get_positions()\n    # for pos in positions:\n    #     api.close_position(pos.symbol)\n    \n    print(\"All positions closed. Bot stopped.\")\n    exit()\n\n# if something_crazy_happens:\n#    emergency_stop(api)\n"
+}

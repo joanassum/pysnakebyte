@@ -1,0 +1,9 @@
+{
+  "id": "challenge-03",
+  "title": "Even or Odd",
+  "difficulty": "easy",
+  "description": "# Even or Odd\n\nWrite a function that determines if a given number is even or odd.\n\n## Example\n\n```python\nresult = solution(4)\nprint(result)  # Output: \"even\"\n\nresult = solution(7)\nprint(result)  # Output: \"odd\"\n```\n\n## Requirements\n\n- Accept one integer parameter\n- Return \"even\" if the number is even\n- Return \"odd\" if the number is odd\n- Handle negative numbers (e.g., -4 is even, -3 is odd)",
+  "short_description": "Check if number is even or odd",
+  "starter_code": "def solution(n):\n    # Return 'even' if n is even, 'odd' if n is odd\n    pass\n\n# Test your solution\nprint(solution(4))  # Should print 'even'\nprint(solution(7))  # Should print 'odd'",
+  "test_code": "assert solution(4) == 'even', 'Test 1 failed: 4 should be even'\nassert solution(7) == 'odd', 'Test 2 failed: 7 should be odd'\nassert solution(0) == 'even', 'Test 3 failed: 0 should be even'\nassert solution(-4) == 'even', 'Test 4 failed: -4 should be even'\nassert solution(-7) == 'odd', 'Test 5 failed: -7 should be odd'\nassert solution(1) == 'odd', 'Test 6 failed: 1 should be odd'\nprint('PASSED')"
+}

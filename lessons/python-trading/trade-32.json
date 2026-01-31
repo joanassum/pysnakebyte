@@ -1,0 +1,9 @@
+{
+  "id": "trade-32",
+  "title": "Maximum Drawdown (MDD)",
+  "category": "Quantitative Finance Basics",
+  "number": 32,
+  "duration": "12 min read",
+  "content": "# Maximum Drawdown (MDD)\n\nMDD measures the largest peak-to-trough decline in the value of a portfolio (before a new peak is achieved). It represents the worst-case scenario for an investor who bought at the top and sold at the bottom.\n\n## Calculation\n1.  Calculate Cumulative Returns (Wealth Index).\n2.  Calculate Running Maximum (High Water Mark).\n3.  Calculate Drawdown = (Wealth Index - High Water Mark) / High Water Mark.\n4.  MDD = Minimum of Drawdown.",
+  "code": "import pandas as pd\nimport numpy as np\n\nreturns = pd.Series([0.01, 0.02, -0.05, -0.05, 0.10, 0.02])\nwealth_index = (1 + returns).cumprod()\nprevious_peaks = wealth_index.cummax()\n\ndrawdown = (wealth_index - previous_peaks) / previous_peaks\nmdd = drawdown.min()\n\nprint(\"Wealth Index:\\n\", wealth_index.values)\nprint(\"Drawdown:\\n\", drawdown.values)\nprint(f\"Max Drawdown: {mdd:.2%}\")"
+}

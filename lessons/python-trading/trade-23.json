@@ -1,0 +1,9 @@
+{
+  "id": "trade-23",
+  "title": "MACD (Moving Average Convergence Divergence)",
+  "category": "Technical Analysis Indicators",
+  "number": 23,
+  "duration": "15 min read",
+  "content": "# MACD\n\nThe MACD is a trend-following momentum indicator that shows the relationship between two moving averages of a security's price.\n\n## Components\n1.  **MACD Line**: 12-period EMA - 26-period EMA\n2.  **Signal Line**: 9-period EMA of the MACD Line\n3.  **Histogram**: MACD Line - Signal Line\n\n## Signals\n*   **Bullish**: MACD crosses above Signal Line.\n*   **Bearish**: MACD crosses below Signal Line.",
+  "code": "import pandas as pd\n\nprices = [100, 101, 102, 104, 106, 105, 103, 102, 101, 100, 99]\ndf = pd.DataFrame({'Close': prices})\n\n# 1. Calculate the EMAs\nema_12 = df['Close'].ewm(span=12, adjust=False).mean()\nema_26 = df['Close'].ewm(span=26, adjust=False).mean()\n\n# 2. Calculate MACD Line\ndf['MACD'] = ema_12 - ema_26\n\n# 3. Calculate Signal Line\ndf['Signal'] = df['MACD'].ewm(span=9, adjust=False).mean()\n\n# 4. Histogram\ndf['Hist'] = df['MACD'] - df['Signal']\n\nprint(df.tail())"
+}

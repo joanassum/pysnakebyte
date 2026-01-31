@@ -1,0 +1,9 @@
+{
+  "id": "trade-30",
+  "title": "Implementing a Mean Reversion Strategy",
+  "category": "Technical Analysis Indicators",
+  "number": 30,
+  "duration": "20 min read",
+  "content": "# Implementing a Mean Reversion Strategy\n\nMean reversion assumes that prices will tend to return to the average over time. RSI is a classic tool for this.\n\n## Strategy Rules\n1.  **Buy**: RSI < 30 (Oversold)\n2.  **Sell**: RSI > 70 (Overbought)\n\n## Considerations\n*   **Trending Markets**: In a strong uptrend, RSI can stay overbought for weeks. Mean reversion fails here.\n*   **Filters**: Add a trend filter (e.g., only buy if price > SMA_200).",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Assume we have a calculate_rsi function or library\n# Here we mock RSI values\nrsi_values = [50, 40, 25, 20, 35, 60, 75, 80, 65]\ndf = pd.DataFrame({'RSI': rsi_values})\n\n# Logic\ndf['Signal'] = 0\ndf.loc[df['RSI'] < 30, 'Signal'] = 1  # Buy\ndf.loc[df['RSI'] > 70, 'Signal'] = -1 # Sell\n\nprint(df)"
+}

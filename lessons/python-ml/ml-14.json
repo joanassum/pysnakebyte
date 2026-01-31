@@ -1,0 +1,9 @@
+{
+  "id": "ml-14",
+  "title": "Reading and Writing Data",
+  "category": "Python for Data Science",
+  "number": 14,
+  "duration": "12 min read",
+  "content": "# Reading and Writing Data\n\nPandas supports input and output (I/O) from a wide variety of formats.\n\n## CSV (Comma Separated Values)\n\nMost common format.\n\n```python\n# Reading\ndf = pd.read_csv('data.csv')\n\n# Writing\ndf.to_csv('output.csv', index=False)\n```\n\n## Excel\n\nRequires `openpyxl` dependency.\n\n```python\n# Reading\ndf = pd.read_excel('data.xlsx', sheet_name='Sheet1')\n\n# Writing\ndf.to_excel('output.xlsx', sheet_name='NewSheet')\n```\n\n## JSON\n\n```python\ndf = pd.read_json('data.json')\n```\n\n## SQL\n\nUsing SQLAlchemy.\n\n```python\nfrom sqlalchemy import create_engine\nengine = create_engine('sqlite:///:memory:')\ndf.to_sql('table_name', engine)\nread_df = pd.read_sql('table_name', engine)\n```",
+  "code": "import pandas as pd\nimport io\n\ncsv_data = \"\"\"\nname,age,city\nAlice,30,New York\nBob,25,Los Angeles\n\"\"\"\n\n# Read from string\ndf = pd.read_csv(io.StringIO(csv_data))\nprint(df)"
+}

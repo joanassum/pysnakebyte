@@ -1,0 +1,9 @@
+{
+  "id": "adv-07",
+  "title": "Regular Expressions",
+  "category": "Advanced Topics",
+  "number": 93,
+  "duration": "12 min read",
+  "content": "## Regular Expressions\n\nRegular expressions (regex) are a powerful tool for various kinds of string manipulation. They are a domain-specific language (DSL) that is present as a library in most modern programming languages, not just Python.\n\n### The `re` Module\n\n```python\nimport re\n\npattern = r\"^Hello\"\nstring = \"Hello World\"\nresult = re.match(pattern, string)\n```\n\n### Common Functions\n\n- `re.match()`: Checks for a match only at the beginning of the string.\n- `re.search()`: Checks for a match anywhere in the string.\n- `re.findall()`: Returns a list of all matches.\n- `re.sub()`: Replaces matches with a string.\n\n### Metacharacters\n\n- `.`: Matches any character except newline.\n- `^`: Matches start of the string.\n- `$`: Matches end of the string.\n- `*`: Matches 0 or more repetitions.\n- `+`: Matches 1 or more repetitions.\n- `?`: Matches 0 or 1 repetition.\n- `[]`: Matches a set of characters.\n- `|`: Matches either or.\n- `()`: Groups regular expressions.\n",
+  "code": "import re\n\ntext = \"The quick brown fox jumps over the lazy dog. Contact: user@example.com\"\n\n# 1. Find all words starting with 't' or 'T'\n# t_words = ...\n\n# 2. Extract the email address\n# email_pattern = r\"...\"\n# email = ...\n\n# 3. Replace 'dog' with 'cat'\n# new_text = ...\n"
+}

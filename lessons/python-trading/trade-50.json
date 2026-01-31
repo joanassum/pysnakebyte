@@ -1,0 +1,9 @@
+{
+  "id": "trade-50",
+  "title": "Strategy Optimization & Overfitting",
+  "category": "Building Trading Strategies",
+  "number": 50,
+  "duration": "12 min read",
+  "content": "# Optimization vs. Overfitting\n\n## Optimization\nFinding the best parameters for a strategy (e.g., changing RSI window from 14 to 10).\n- Grid Search\n- Genetic Algorithms\n\n## Overfitting\nTailoring the strategy so closely to historical data that it captures noise instead of signal. It looks great in backtests but fails in live trading.\n\n## Detecting Overfitting\n1. **In-Sample vs Out-of-Sample**: Performance should remain stable on unseen data.\n2. **Parameter Stability**: Small changes in parameters should not drastically change performance.\n3. **Complexity Penalty**: Prefer simpler strategies.",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Conceptual Grid Search\nresults = []\nwindows = [10, 20, 30, 40, 50]\nthresholds = [1, 2, 3]\n\n# Mock 'backtest' function\ndef backtest_mock(window, threshold):\n    # Returns a random Sharpe ratio centered around a logic\n    # In reality, this runs the full strategy\n    base_performance = 1.0 - abs(window - 30)/100 # 30 is 'optimal'\n    noise = np.random.normal(0, 0.1)\n    return base_performance + noise\n\nfor w in windows:\n    for t in thresholds:\n        sharpe = backtest_mock(w, t)\n        results.append({'window': w, 'threshold': t, 'sharpe': sharpe})\n\nres_df = pd.DataFrame(results)\nbest_param = res_df.loc[res_df['sharpe'].idxmax()]\n\nprint(\"Best Parameters found in 'In-Sample' scan:\")\nprint(best_param)\n"
+}

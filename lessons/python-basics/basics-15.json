@@ -1,0 +1,9 @@
+{
+  "id": "basics-15",
+  "title": "Python REPL",
+  "category": "Python Basics",
+  "number": 15,
+  "duration": "6 min read",
+  "content": "## What is the REPL?\n\nREPL stands for **Read-Eval-Print Loop**. It is an interactive environment where you can type Python code and see the results immediately.\n\n*   **Read:** Python reads your input.\n*   **Eval:** It evaluates (runs) the code.\n*   **Print:** It prints the result.\n*   **Loop:** It loops back and waits for more input.\n\n## How to Access the REPL\n\nOpen your terminal or command prompt and type:\n\n```bash\npython\n# or\npython3\n```\n\nYou will see the Python version and the prompt `>>>`. This indicates Python is ready for your commands.\n\n## Using the REPL\n\nThe REPL is perfect for:\n\n1.  **Quick Math:** Use it like a calculator.\n2.  **Testing Code:** Try out a small snippet before putting it in a file.\n3.  **Help:** Use the `help()` function.\n\n### Examples\n\n```python\n>>> 2 + 2\n4\n>>> name = \"Alice\"\n>>> print(name)\nAlice\n>>> len(name)\n5\n```\n\n### The `_` Variable\n\nIn the REPL, the underscore `_` holds the result of the last expression evaluated.\n\n```python\n>>> 10 + 20\n30\n>>> _ * 2\n60\n```\n\n## Exiting the REPL\n\nTo leave the REPL and go back to your terminal:\n\n*   Type `exit()` and press Enter.\n*   Or press `Ctrl+D` (macOS/Linux) or `Ctrl+Z` then Enter (Windows).",
+  "code": "# The REPL is an interactive environment, so we can't fully simulate it here.\n# But you can run this code to see how Python evaluates expressions.\n\nprint(\"Simulating REPL behavior...\")\nprint(\">>> 5 + 5\")\nprint(5 + 5)\n\nprint(\">>> x = 10\")\nx = 10\nprint(\">>> x * 2\")\nprint(x * 2)"
+}

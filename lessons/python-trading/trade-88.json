@@ -1,0 +1,9 @@
+{
+  "id": "trade-88",
+  "title": "Logging, Monitoring, and Alerting Systems",
+  "category": "Live Trading System Architecture",
+  "number": 88,
+  "duration": "12 min read",
+  "content": "## Observability\n\nYou cannot watch the screen 24/7. Your system needs to tell you what it's doing.\n\n### Logging\n\nUse Python's `logging` module. Structure logs (JSON) for easy parsing. Log levels: INFO (orders), WARNING (latency), ERROR (crashes).\n\n### Alerting\n\n- **Telegram/Discord Bots**: Send messages to your phone for fills or errors.\n- **Email/SMS**: Critical alerts.\n\n### Monitoring Dashboards\n\n- **Grafana/Prometheus**: Visualize system health (API latency, CPU usage, open positions).",
+  "code": "import logging\n\n# Configure logging\n# logging.basicConfig(\n#     filename='trading.log',\n#     level=logging.INFO,\n#     format='%(asctime)s - %(levelname)s - %(message)s'\n# )\n\n# def place_order(symbol, qty):\n#     try:\n#         # api call...\n#         logging.info(f\"Placed buy order for {qty} {symbol}\")\n#     except Exception as e:\n#         logging.error(f\"Failed to place order: {e}\")\n#         send_telegram_alert(f\"CRITICAL: Order failed {e}\")"
+}

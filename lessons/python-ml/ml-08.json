@@ -1,0 +1,9 @@
+{
+  "id": "ml-08",
+  "title": "NumPy Operations",
+  "category": "Python for Data Science",
+  "number": 8,
+  "duration": "12 min read",
+  "content": "# NumPy Operations\n\nNumPy supports a wide range of mathematical operations that work element-wise on arrays.\n\n## Arithmetic Operations\n\nBasic operators `+`, `-`, `*`, `/` work element-wise.\n\n```python\na = np.array([1, 2, 3])\nb = np.array([4, 5, 6])\n\nprint(a + b) # [5, 7, 9]\nprint(a * b) # [4, 10, 18]\n```\n\n## Universal Functions (ufuncs)\n\nNumPy provides familiar mathematical functions such as `sin`, `cos`, `exp`, `sqrt`.\n\n```python\nprint(np.sqrt(a))\nprint(np.exp(a))\n```\n\n## Aggregate Functions\n\nCompute statistics over arrays.\n\n*   `np.sum()`: Sum of elements.\n*   `np.mean()`: Mean of elements.\n*   `np.min()`, `np.max()`: Minimum and maximum values.\n\nYou can specify the `axis` parameter to apply operations along a specific dimension (e.g., `axis=0` for columns, `axis=1` for rows).",
+  "code": "import numpy as np\n\narr = np.array([10, 20, 30, 40])\n\n# Multiply array by scalar\nprint(\"Doubled:\", arr * 2)\n\n# Calculate mean\nprint(\"Mean:\", np.mean(arr))"
+}

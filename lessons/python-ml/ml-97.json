@@ -1,0 +1,9 @@
+{
+  "id": "ml-97",
+  "title": "Regularization Techniques",
+  "category": "Deep Learning",
+  "number": 97,
+  "duration": "12 min read",
+  "content": "## Regularization Techniques\n\nDeep neural networks are prone to **overfitting** because they have so many parameters. Regularization helps generalize the model.\n\n### Techniques\n\n1.  **L1/L2 Regularization**: Adds a penalty term to the loss function based on the size of the weights (similar to Lasso/Ridge).\n2.  **Dropout**: Randomly drops (sets to zero) a fraction of neurons during training at each update. This prevents neurons from co-adapting too much.\n3.  **Early Stopping**: Stop training when the validation loss stops improving.\n\n### Implementation\n\n```python\nfrom tensorflow.keras.layers import Dropout\nfrom tensorflow.keras.regularizers import l2\nfrom tensorflow.keras.callbacks import EarlyStopping\n\n# Dropout\nmodel.add(Dense(64, activation='relu', kernel_regularizer=l2(0.01)))\nmodel.add(Dropout(0.5)) # 50% dropout\n\n# Early Stopping\ncallback = EarlyStopping(monitor='val_loss', patience=3)\nmodel.fit(..., callbacks=[callback])\n```\n",
+  "code": "from tensorflow.keras.models import Sequential\nfrom tensorflow.keras.layers import Dense, Dropout\nfrom tensorflow.keras.callbacks import EarlyStopping\n\nmodel = Sequential()\n\n# TODO: Add a Dense layer with Dropout\nmodel.add(Dense(64, activation='relu', input_shape=(20,)))\n# Add Dropout of 0.5\n\nmodel.add(Dense(1, activation='sigmoid'))\n\n# TODO: Define EarlyStopping callback\n# Stop if 'val_loss' doesn't improve for 5 epochs\nearly_stop = \n\n# model.compile(...)\n# model.fit(..., callbacks=[early_stop])"
+}

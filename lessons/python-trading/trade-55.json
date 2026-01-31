@@ -1,0 +1,9 @@
+{
+  "id": "trade-55",
+  "title": "Handling Commission and Slippage",
+  "category": "Backtesting Frameworks",
+  "number": 55,
+  "duration": "10 min read",
+  "content": "# Reality Factors: Commission & Slippage\n\nA backtest that ignores transaction costs is useless.\n\n## Commission\nFees paid to the broker. Can be fixed per trade or percentage of volume.\n\n## Slippage\nThe difference between the expected price of a trade and the price at which the trade is executed. Occurs due to market volatility or low liquidity.\n\nIn Backtrader, we configure the broker to simulate these.",
+  "code": "# Backtrader setup\n# cerebro = bt.Cerebro()\n\n# Set cash\n# cerebro.broker.setcash(100000.0)\n\n# Set commission (0.1%)\n# cerebro.broker.setcommission(commission=0.001) \n\n# Set slippage (Conceptual)\n# Backtrader has specific Slippage classes\n# cerebro.broker.set_slippage_perc(perc=0.0005)\n\n# print(f'Starting Portfolio Value: {cerebro.broker.getvalue():.2f}')\n# cerebro.run()\n# print(f'Final Portfolio Value: {cerebro.broker.getvalue():.2f}')\n"
+}

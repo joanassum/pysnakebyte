@@ -1,0 +1,9 @@
+{
+  "id": "trade-62",
+  "title": "Authentication (API Keys)",
+  "category": "Connecting to Brokers (APIs)",
+  "number": 62,
+  "duration": "10 min read",
+  "content": "# API Authentication\n\nTo trade, you must prove who you are. Brokers use **API Keys** and **Secrets**.\n\n## Safety Rules\n1. **Never share your Secret Key**.\n2. **Don't commit keys to GitHub**. Use Environment Variables (`.env`).\n3. **IP Whitelisting**: Restrict access to your IP only.\n\n## Signing Requests\nMost exchanges require you to sign requests using HMAC-SHA256 with your secret key to ensure the message wasn't tampered with.",
+  "code": "import os\nimport hmac\nimport hashlib\nimport time\n\n# Mock signing process\napi_key = \"my_public_key\"\napi_secret = \"my_secret_key\" # In real app: os.getenv('API_SECRET')\n\ndef sign_request(endpoint, params):\n    # Create query string or body\n    query_string = \"&\".join([f\"{k}={v}\" for k, v in params.items()])\n    timestamp = str(int(time.time() * 1000))\n    payload = timestamp + endpoint + query_string\n    \n    # Sign\n    signature = hmac.new(\n        api_secret.encode('utf-8'),\n        payload.encode('utf-8'),\n        hashlib.sha256\n    ).hexdigest()\n    \n    return signature\n\nprint(f\"Signature: {sign_request('/order', {'symbol': 'BTCUSDT'})}\")\n"
+}

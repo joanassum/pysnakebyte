@@ -1,0 +1,9 @@
+{
+  "id": "ml-03",
+  "title": "Jupyter Notebooks",
+  "category": "Python for Data Science",
+  "number": 3,
+  "duration": "12 min read",
+  "content": "# Jupyter Notebooks\n\nJupyter Notebooks are an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text.\n\n## Key Features\n\n*   **Interactive Coding**: Run code cells individually and see results immediately.\n*   **Rich Text**: Support for Markdown, LaTeX, and HTML.\n*   **Visualization**: Inline plotting with Matplotlib and other libraries.\n\n## Interface Overview\n\n*   **Kernel**: The computational engine that executes the code contained in the notebook.\n*   **Cells**: The building blocks of a notebook. Can be Code cells or Markdown cells.\n\n## Basic Shortcuts\n\n*   `Shift + Enter`: Run the current cell and select the next one.\n*   `Ctrl + Enter`: Run the selected cell.\n*   `A`: Insert cell above.\n*   `B`: Insert cell below.\n*   `M`: Change cell to Markdown.\n*   `Y`: Change cell to Code.\n\n## Magic Commands\n\nJupyter provides \"magic commands\" that start with `%`. For example, `%timeit` times the execution of a Python statement.",
+  "code": "# Try running this cell to see the output immediately below\nx = 10\ny = 20\nprint(f\"The sum of {x} and {y} is {x + y}\")"
+}

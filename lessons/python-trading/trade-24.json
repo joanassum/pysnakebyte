@@ -1,0 +1,9 @@
+{
+  "id": "trade-24",
+  "title": "Relative Strength Index (RSI)",
+  "category": "Technical Analysis Indicators",
+  "number": 24,
+  "duration": "15 min read",
+  "content": "# Relative Strength Index (RSI)\n\nRSI is a momentum oscillator that measures the speed and change of price movements. It oscillates between 0 and 100.\n\n## Calculation\nBased on average gains vs average losses over a period (default 14).\n\n## Interpretation\n*   **Overbought**: > 70 (Potential sell signal)\n*   **Oversold**: < 30 (Potential buy signal)\n*   **Divergence**: Price makes new high, RSI fails to make new high (Reversal warning).",
+  "code": "import pandas as pd\nimport numpy as np\n\ndef calculate_rsi(data, window=14):\n    delta = data.diff()\n    gain = (delta.where(delta > 0, 0)).rolling(window=window).mean()\n    loss = (-delta.where(delta < 0, 0)).rolling(window=window).mean()\n    \n    rs = gain / loss\n    rsi = 100 - (100 / (1 + rs))\n    return rsi\n\nprices = pd.Series([100, 102, 104, 103, 101, 99, 98, 97, 96, 95, 96, 98, 100, 102, 105])\nrsi = calculate_rsi(prices, window=5) # Short window for example\n\nprint(\"Prices:\", prices.values[-5:])\nprint(\"RSI:\", rsi.values[-5:])"
+}

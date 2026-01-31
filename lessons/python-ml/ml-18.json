@@ -1,0 +1,9 @@
+{
+  "id": "ml-18",
+  "title": "Data Aggregation",
+  "category": "Python for Data Science",
+  "number": 18,
+  "duration": "12 min read",
+  "content": "# Data Aggregation\n\nAggregation involves computing summary statistics about data.\n\n## Built-in Aggregation Methods\n\n*   `count()`: Number of non-null observations.\n*   `sum()`: Sum of values.\n*   `mean()`: Mean of values.\n*   `median()`: Median of values.\n*   `min()`, `max()`: Minimum and maximum.\n*   `std()`, `var()`: Standard deviation and variance.\n\n## Applying Aggregations\n\nThese can be applied to the whole DataFrame, specific columns, or rows.\n\n```python\n# Mean of all numerical columns\ndf.mean()\n\n# Sum of specific column\ndf['Sales'].sum()\n```\n\n## The `.agg()` Method\n\nApply multiple aggregation functions at once.\n\n```python\ndf.agg(['sum', 'mean'])\n\ndf.agg({'A': 'sum', 'B': 'min'}) # Dict mapping columns to functions\n```",
+  "code": "import pandas as pd\n\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [10, 20, 30]})\n\nprint(\"Sum:\\n\", df.sum())\nprint(\"Describe:\\n\", df.describe())"
+}

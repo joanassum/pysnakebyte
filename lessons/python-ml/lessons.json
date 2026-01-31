@@ -1,0 +1,175 @@
+{
+  "categories": [
+    {
+      "name": "Python for Data Science",
+      "id": "data-science",
+      "lessons": [
+        {"id": "ml-01", "title": "Introduction to Data Science", "number": 1},
+        {"id": "ml-02", "title": "Setting Up Your ML Environment", "number": 2},
+        {"id": "ml-03", "title": "Jupyter Notebooks", "number": 3},
+        {"id": "ml-04", "title": "Python Review for ML", "number": 4},
+        {"id": "ml-05", "title": "Working with Virtual Environments", "number": 5},
+        {"id": "ml-06", "title": "Introduction to NumPy", "number": 6},
+        {"id": "ml-07", "title": "NumPy Arrays", "number": 7},
+        {"id": "ml-08", "title": "NumPy Operations", "number": 8},
+        {"id": "ml-09", "title": "NumPy Broadcasting", "number": 9},
+        {"id": "ml-10", "title": "NumPy Linear Algebra", "number": 10}
+      ]
+    },
+    {
+      "name": "Pandas Fundamentals",
+      "id": "pandas",
+      "lessons": [
+        {"id": "ml-11", "title": "Introduction to Pandas", "number": 11},
+        {"id": "ml-12", "title": "Pandas Series", "number": 12},
+        {"id": "ml-13", "title": "Pandas DataFrames", "number": 13},
+        {"id": "ml-14", "title": "Reading and Writing Data", "number": 14},
+        {"id": "ml-15", "title": "Data Selection and Indexing", "number": 15},
+        {"id": "ml-16", "title": "Filtering Data", "number": 16},
+        {"id": "ml-17", "title": "Handling Missing Data", "number": 17},
+        {"id": "ml-18", "title": "Data Aggregation", "number": 18},
+        {"id": "ml-19", "title": "Groupby Operations", "number": 19},
+        {"id": "ml-20", "title": "Merging and Joining", "number": 20}
+      ]
+    },
+    {
+      "name": "Data Visualization",
+      "id": "visualization",
+      "lessons": [
+        {"id": "ml-21", "title": "Introduction to Matplotlib", "number": 21},
+        {"id": "ml-22", "title": "Line and Scatter Plots", "number": 22},
+        {"id": "ml-23", "title": "Bar Charts and Histograms", "number": 23},
+        {"id": "ml-24", "title": "Customizing Plots", "number": 24},
+        {"id": "ml-25", "title": "Subplots and Layouts", "number": 25},
+        {"id": "ml-26", "title": "Introduction to Seaborn", "number": 26},
+        {"id": "ml-27", "title": "Statistical Visualizations", "number": 27},
+        {"id": "ml-28", "title": "Heatmaps and Correlation", "number": 28},
+        {"id": "ml-29", "title": "Interactive Plots with Plotly", "number": 29},
+        {"id": "ml-30", "title": "Data Visualization Best Practices", "number": 30}
+      ]
+    },
+    {
+      "name": "Statistics for ML",
+      "id": "statistics",
+      "lessons": [
+        {"id": "ml-31", "title": "Descriptive Statistics", "number": 31},
+        {"id": "ml-32", "title": "Probability Basics", "number": 32},
+        {"id": "ml-33", "title": "Probability Distributions", "number": 33},
+        {"id": "ml-34", "title": "Normal Distribution", "number": 34},
+        {"id": "ml-35", "title": "Hypothesis Testing", "number": 35},
+        {"id": "ml-36", "title": "Confidence Intervals", "number": 36},
+        {"id": "ml-37", "title": "Correlation and Covariance", "number": 37},
+        {"id": "ml-38", "title": "A/B Testing", "number": 38},
+        {"id": "ml-39", "title": "Bayesian Statistics Intro", "number": 39},
+        {"id": "ml-40", "title": "Statistical Significance", "number": 40}
+      ]
+    },
+    {
+      "name": "Machine Learning Fundamentals",
+      "id": "ml-fundamentals",
+      "lessons": [
+        {"id": "ml-41", "title": "What is Machine Learning?", "number": 41},
+        {"id": "ml-42", "title": "Types of Machine Learning", "number": 42},
+        {"id": "ml-43", "title": "Supervised vs Unsupervised", "number": 43},
+        {"id": "ml-44", "title": "The ML Workflow", "number": 44},
+        {"id": "ml-45", "title": "Feature Engineering", "number": 45},
+        {"id": "ml-46", "title": "Train-Test Split", "number": 46},
+        {"id": "ml-47", "title": "Cross-Validation", "number": 47},
+        {"id": "ml-48", "title": "Bias-Variance Tradeoff", "number": 48},
+        {"id": "ml-49", "title": "Overfitting and Underfitting", "number": 49},
+        {"id": "ml-50", "title": "Model Evaluation Metrics", "number": 50}
+      ]
+    },
+    {
+      "name": "Scikit-Learn Essentials",
+      "id": "sklearn",
+      "lessons": [
+        {"id": "ml-51", "title": "Introduction to Scikit-Learn", "number": 51},
+        {"id": "ml-52", "title": "Scikit-Learn API Design", "number": 52},
+        {"id": "ml-53", "title": "Data Preprocessing", "number": 53},
+        {"id": "ml-54", "title": "Feature Scaling", "number": 54},
+        {"id": "ml-55", "title": "Encoding Categorical Variables", "number": 55},
+        {"id": "ml-56", "title": "Pipeline Building", "number": 56},
+        {"id": "ml-57", "title": "Hyperparameter Tuning", "number": 57},
+        {"id": "ml-58", "title": "Grid Search", "number": 58},
+        {"id": "ml-59", "title": "Random Search", "number": 59},
+        {"id": "ml-60", "title": "Model Selection", "number": 60}
+      ]
+    },
+    {
+      "name": "Regression Algorithms",
+      "id": "regression",
+      "lessons": [
+        {"id": "ml-61", "title": "Linear Regression", "number": 61},
+        {"id": "ml-62", "title": "Multiple Linear Regression", "number": 62},
+        {"id": "ml-63", "title": "Polynomial Regression", "number": 63},
+        {"id": "ml-64", "title": "Ridge Regression", "number": 64},
+        {"id": "ml-65", "title": "Lasso Regression", "number": 65},
+        {"id": "ml-66", "title": "Elastic Net", "number": 66},
+        {"id": "ml-67", "title": "Decision Tree Regression", "number": 67},
+        {"id": "ml-68", "title": "Random Forest Regression", "number": 68},
+        {"id": "ml-69", "title": "Gradient Boosting Regression", "number": 69},
+        {"id": "ml-70", "title": "Regression Model Comparison", "number": 70}
+      ]
+    },
+    {
+      "name": "Classification Algorithms",
+      "id": "classification",
+      "lessons": [
+        {"id": "ml-71", "title": "Logistic Regression", "number": 71},
+        {"id": "ml-72", "title": "K-Nearest Neighbors", "number": 72},
+        {"id": "ml-73", "title": "Support Vector Machines", "number": 73},
+        {"id": "ml-74", "title": "Decision Tree Classification", "number": 74},
+        {"id": "ml-75", "title": "Random Forest Classification", "number": 75},
+        {"id": "ml-76", "title": "Gradient Boosting Classification", "number": 76},
+        {"id": "ml-77", "title": "XGBoost", "number": 77},
+        {"id": "ml-78", "title": "Naive Bayes", "number": 78},
+        {"id": "ml-79", "title": "Multi-class Classification", "number": 79},
+        {"id": "ml-80", "title": "Classification Metrics Deep Dive", "number": 80}
+      ]
+    },
+    {
+      "name": "Unsupervised Learning",
+      "id": "unsupervised",
+      "lessons": [
+        {"id": "ml-81", "title": "Introduction to Clustering", "number": 81},
+        {"id": "ml-82", "title": "K-Means Clustering", "number": 82},
+        {"id": "ml-83", "title": "Hierarchical Clustering", "number": 83},
+        {"id": "ml-84", "title": "DBSCAN", "number": 84},
+        {"id": "ml-85", "title": "Dimensionality Reduction", "number": 85},
+        {"id": "ml-86", "title": "Principal Component Analysis", "number": 86},
+        {"id": "ml-87", "title": "t-SNE Visualization", "number": 87},
+        {"id": "ml-88", "title": "Anomaly Detection", "number": 88},
+        {"id": "ml-89", "title": "Association Rules", "number": 89},
+        {"id": "ml-90", "title": "Clustering Evaluation", "number": 90}
+      ]
+    },
+    {
+      "name": "Deep Learning with TensorFlow",
+      "id": "deep-learning",
+      "lessons": [
+        {"id": "ml-91", "title": "Introduction to Neural Networks", "number": 91},
+        {"id": "ml-92", "title": "Perceptrons and Activation Functions", "number": 92},
+        {"id": "ml-93", "title": "Building Your First Neural Network", "number": 93},
+        {"id": "ml-94", "title": "TensorFlow and Keras Basics", "number": 94},
+        {"id": "ml-95", "title": "Training Neural Networks", "number": 95},
+        {"id": "ml-96", "title": "Optimization Algorithms", "number": 96},
+        {"id": "ml-97", "title": "Regularization Techniques", "number": 97},
+        {"id": "ml-98", "title": "Convolutional Neural Networks", "number": 98},
+        {"id": "ml-99", "title": "Recurrent Neural Networks", "number": 99},
+        {"id": "ml-100", "title": "Transfer Learning", "number": 100}
+      ]
+    },
+    {
+      "name": "ML Projects & Deployment",
+      "id": "projects",
+      "lessons": [
+        {"id": "ml-101", "title": "End-to-End ML Project", "number": 101},
+        {"id": "ml-102", "title": "Model Persistence", "number": 102},
+        {"id": "ml-103", "title": "Building ML APIs with Flask", "number": 103},
+        {"id": "ml-104", "title": "Model Deployment Strategies", "number": 104},
+        {"id": "ml-105", "title": "ML Best Practices & Next Steps", "number": 105}
+      ]
+    }
+  ]
+}

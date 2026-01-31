@@ -1,0 +1,9 @@
+{
+  "id": "ml-93",
+  "title": "Building Your First Neural Network",
+  "category": "Deep Learning",
+  "number": 93,
+  "duration": "15 min read",
+  "content": "## Building Your First Neural Network\n\nLet's build a Multi-Layer Perceptron (MLP) using Scikit-Learn to classify digits.\n\n### Architecture\n\n*   **Input Layer**: 64 neurons (8x8 pixel images flattened).\n*   **Hidden Layers**: We decide the number of layers and neurons. Let's say 2 layers with 100 and 50 neurons.\n*   **Output Layer**: 10 neurons (digits 0-9).\n\n### MLPClassifier\n\nScikit-Learn provides `MLPClassifier` which is great for learning the concepts, though libraries like TensorFlow or PyTorch are preferred for large-scale deep learning.\n\n```python\nfrom sklearn.neural_network import MLPClassifier\n\nmlp = MLPClassifier(\n    hidden_layer_sizes=(100, 50),\n    activation='relu',\n    solver='adam',\n    max_iter=500\n)\nmlp.fit(X_train, y_train)\n```\n",
+  "code": "from sklearn.neural_network import MLPClassifier\nfrom sklearn.datasets import load_digits\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import accuracy_score\n\n# Load data\ndata = load_digits()\nX, y = data.data, data.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# TODO: Initialize MLPClassifier\n# Try hidden_layer_sizes=(64, 32)\nmlp = \n\n# TODO: Fit the model\n\n# TODO: Predict and evaluate\n# y_pred = \n# print(f\"Accuracy: {accuracy_score(y_test, y_pred)}\")"
+}

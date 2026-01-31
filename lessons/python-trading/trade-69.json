@@ -1,0 +1,9 @@
+{
+  "id": "trade-69",
+  "title": "Building a Simple Trading Bot Structure",
+  "category": "Connecting to Brokers (APIs)",
+  "number": 69,
+  "duration": "15 min read",
+  "content": "# Bot Architecture\n\nA robust bot typically follows a loop:\n\n1. **Wait**: Sleep until next interval (e.g., start of new candle).\n2. **Fetch**: Get latest data (Price, Portfolio).\n3. **Analyze**: Update indicators, check entry/exit rules.\n4. **Execute**: Send orders if signals trigger.\n5. **Log**: Record actions for debugging.\n\nUse `try...except` blocks around the main loop to prevent crashes.",
+  "code": "import time\nfrom datetime import datetime\n\ndef run_bot():\n    print(\"Bot Started...\")\n    while True:\n        try:\n            now = datetime.now()\n            print(f\"[{now}] Fetching Data...\")\n            \n            # Logic here\n            price = 100 # fetch_price()\n            ma = 99 # calculate_ma()\n            \n            if price > ma:\n                print(\"Signal: BUY\")\n                # place_order(...)\n            \n            # Sleep 60 seconds\n            time.sleep(60) \n            \n        except KeyboardInterrupt:\n            print(\"Stopping...\")\n            break\n        except Exception as e:\n            print(f\"Crash prevented: {e}\")\n            time.sleep(10)\n\n# run_bot()\n"
+}

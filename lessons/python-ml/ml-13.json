@@ -1,0 +1,9 @@
+{
+  "id": "ml-13",
+  "title": "Pandas DataFrames",
+  "category": "Python for Data Science",
+  "number": 13,
+  "duration": "15 min read",
+  "content": "# Pandas DataFrames\n\nA DataFrame is a tabular data structure comprised of rows and columns, similar to a spreadsheet or SQL table.\n\n## Creating DataFrames\n\n```python\nimport pandas as pd\n\ndata = {\n    'Name': ['Alice', 'Bob', 'Charlie'],\n    'Age': [25, 30, 35],\n    'City': ['New York', 'Los Angeles', 'Chicago']\n}\n\ndf = pd.DataFrame(data)\n```\n\n## Inspecting Data\n\n*   `df.head()`: View first 5 rows.\n*   `df.tail()`: View last 5 rows.\n*   `df.info()`: Summary of index, columns, and memory usage.\n*   `df.describe()`: Statistical summary of numerical columns.\n*   `df.shape`: Dimensions (rows, columns).\n*   `df.columns`: Column names.\n\n## Accessing Columns\n\n```python\nages = df['Age']\n# or\nages = df.Age\n```\n\n## Adding/Dropping Columns\n\n```python\ndf['Senior'] = df['Age'] > 60\ndf.drop('City', axis=1, inplace=True)\n```",
+  "code": "import pandas as pd\n\ndata = {'A': [1, 2, 3], 'B': [4, 5, 6]}\ndf = pd.DataFrame(data)\n\nprint(\"DataFrame:\\n\", df)\nprint(\"Info:\")\ndf.info()"
+}

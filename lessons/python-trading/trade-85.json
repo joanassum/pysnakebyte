@@ -1,0 +1,9 @@
+{
+  "id": "trade-85",
+  "title": "Real-time Data Ingestion and Websockets",
+  "category": "Live Trading System Architecture",
+  "number": 85,
+  "duration": "14 min read",
+  "content": "## Streaming Data\n\nPolling REST APIs is too slow and hits rate limits. Websockets provide a persistent connection for pushing data updates.\n\n### Libraries\n\n- `websockets` (standard async library)\n- `socket.io`\n- Exchange specific SDKs often handle heartbeat management and reconnection logic.\n\n### Handling Disconnects\n\nYour system MUST handle connection drops. Implement exponential backoff reconnection logic to ensure resilience.",
+  "code": "import asyncio\nimport websockets\nimport json\n\n# async def bitfinex_ticker():\n#     uri = \"wss://api-pub.bitfinex.com/ws/2\"\n#     async with websockets.connect(uri) as websocket:\n#         # Subscribe\n#         msg = json.dumps({\n#             \"event\": \"subscribe\",\n#             \"channel\": \"ticker\",\n#             \"symbol\": \"tBTCUSD\"\n#         })\n#         await websocket.send(msg)\n        \n#         while True:\n#             response = await websocket.recv()\n#             data = json.loads(response)\n#             # Handle heartbeat and data\n#             if isinstance(data, list) and len(data) > 1 and data[1] != 'hb':\n#                  print(f\"Bid: {data[1][0]}, Ask: {data[1][2]}\")\n\n# # asyncio.run(bitfinex_ticker())"
+}

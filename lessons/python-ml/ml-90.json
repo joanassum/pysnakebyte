@@ -1,0 +1,9 @@
+{
+  "id": "ml-90",
+  "title": "Clustering Evaluation",
+  "category": "Unsupervised Learning",
+  "number": 90,
+  "duration": "10 min read",
+  "content": "## Clustering Evaluation\n\nEvaluating clustering models is harder than supervised models because there are usually no ground truth labels. We use internal evaluation metrics.\n\n### Silhouette Score\n\nMeasures how similar an object is to its own cluster (cohesion) compared to other clusters (separation).\n*   Ranges from -1 to +1.\n*   High value: Object is well matched to its own cluster and poorly matched to neighboring clusters.\n*   0: Near the decision boundary.\n*   Negative: Placed in the wrong cluster.\n\n### Davies-Bouldin Index\n\nThe average similarity measure of each cluster with its most similar cluster. Lower values indicate better clustering.\n\n### Calinski-Harabasz Index\n\nAlso known as the Variance Ratio Criterion. It is the ratio of the sum of between-clusters dispersion and of within-cluster dispersion. Higher is better.\n\n```python\nfrom sklearn.metrics import silhouette_score, davies_bouldin_score\n\nscore = silhouette_score(X, labels)\nprint(f\"Silhouette Score: {score}\")\n```\n",
+  "code": "from sklearn.metrics import silhouette_score\nfrom sklearn.cluster import KMeans\nfrom sklearn.datasets import make_blobs\n\nX, y = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)\n\n# Train two models\nkmeans_good = KMeans(n_clusters=4, random_state=42).fit(X)\nkmeans_bad = KMeans(n_clusters=2, random_state=42).fit(X)\n\n# TODO: Calculate Silhouette Score for the good model\nscore_good = \n\n# TODO: Calculate Silhouette Score for the bad model\nscore_bad = \n\n# print(f\"Score Good (k=4): {score_good}\")\n# print(f\"Score Bad (k=2): {score_bad}\")"
+}

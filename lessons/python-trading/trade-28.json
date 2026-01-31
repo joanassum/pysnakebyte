@@ -1,0 +1,9 @@
+{
+  "id": "trade-28",
+  "title": "On-Balance Volume (OBV)",
+  "category": "Technical Analysis Indicators",
+  "number": 28,
+  "duration": "10 min read",
+  "content": "# On-Balance Volume (OBV)\n\nOBV uses volume flow to predict changes in stock price. It assumes that volume precedes price.\n\n## Logic\n*   If Close > Prev Close: Add Volume to OBV.\n*   If Close < Prev Close: Subtract Volume from OBV.\n*   If Close = Prev Close: No change.\n\n## Interpretation\n*   **Divergence**: If price goes up but OBV goes down, the trend lacks volume support and might reverse.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({\n    'Close': [100, 102, 101, 103],\n    'Volume': [1000, 1500, 1200, 2000]\n})\n\n# Calculate OBV\nobv = [0]\nfor i in range(1, len(df)):\n    if df['Close'][i] > df['Close'][i-1]:\n        obv.append(obv[-1] + df['Volume'][i])\n    elif df['Close'][i] < df['Close'][i-1]:\n        obv.append(obv[-1] - df['Volume'][i])\n    else:\n        obv.append(obv[-1])\n        \ndf['OBV'] = obv\nprint(df)"
+}

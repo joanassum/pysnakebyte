@@ -1,0 +1,31 @@
+{
+  "courses": [
+    {
+      "id": "python-basics",
+      "title": "Python: Beginner to Advanced",
+      "description": "Master Python programming from the ground up. Start with basics and progress to advanced topics including OOP, file handling, and real-world projects.",
+      "icon": "🐍",
+      "lessonCount": 105,
+      "difficulty": "Beginner to Advanced",
+      "duration": "40 hours"
+    },
+    {
+      "id": "python-ml",
+      "title": "Python for Machine Learning",
+      "description": "Learn machine learning with Python. Cover data science fundamentals, popular ML libraries, neural networks, and build real AI projects.",
+      "icon": "🤖",
+      "lessonCount": 105,
+      "difficulty": "Intermediate to Advanced",
+      "duration": "50 hours"
+    },
+    {
+      "id": "python-trading",
+      "title": "Python for Trading",
+      "description": "Build algorithmic trading strategies with Python. Master financial data analysis, technical indicators, backtesting, and live trading APIs.",
+      "icon": "📈",
+      "lessonCount": 105,
+      "difficulty": "Intermediate",
+      "duration": "45 hours"
+    }
+  ]
+}

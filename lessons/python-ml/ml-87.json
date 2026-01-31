@@ -1,0 +1,9 @@
+{
+  "id": "ml-87",
+  "title": "t-SNE Visualization",
+  "category": "Unsupervised Learning",
+  "number": 87,
+  "duration": "12 min read",
+  "content": "## t-SNE (t-Distributed Stochastic Neighbor Embedding)\n\nt-SNE is a non-linear dimensionality reduction technique mostly used for **visualization** of high-dimensional data.\n\n### How it Works\n\n1.  **Similarity in High Dimension**: Calculates the probability that two points are neighbors in the high-dimensional space.\n2.  **Similarity in Low Dimension**: Calculates the probability in the low-dimensional space (usually 2D or 3D).\n3.  **Minimize Divergence**: Minimizes the difference (Kullback-Leibler divergence) between these two probability distributions.\n\n### PCA vs t-SNE\n\n*   **PCA**: Linear, preserves global structure, faster, deterministic.\n*   **t-SNE**: Non-linear, preserves local structure (clusters), slower, non-deterministic (random initialization).\n\n### Usage\n\n```python\nfrom sklearn.manifold import TSNE\n\ntsne = TSNE(n_components=2, perplexity=30, n_iter=1000)\nX_embedded = tsne.fit_transform(X)\n```\n",
+  "code": "from sklearn.manifold import TSNE\nfrom sklearn.datasets import load_digits\nimport matplotlib.pyplot as plt\n\n# Load small dataset\ndata = load_digits()\nX, y = data.data[:500], data.target[:500]\n\n# TODO: Initialize TSNE with 2 components\ntsne = \n\n# TODO: Fit and transform\n# X_tsne = \n\n# Visualize\n# plt.scatter(X_tsne[:, 0], X_tsne[:, 1], c=y, cmap='jet', alpha=0.7)\n# plt.colorbar()\n# plt.title(\"t-SNE visualization of Digits\")\n# plt.show()"
+}

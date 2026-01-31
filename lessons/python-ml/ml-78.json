@@ -1,0 +1,9 @@
+{
+  "id": "ml-78",
+  "title": "Naive Bayes",
+  "category": "Classification Algorithms",
+  "number": 78,
+  "duration": "10 min read",
+  "content": "## Naive Bayes Classifier\n\nNaive Bayes is a family of probabilistic algorithms based on **Bayes' Theorem** with the 'naive' assumption of conditional independence between every pair of features given the value of the class variable.\n\n### Bayes' Theorem\n\n$$ P(y|X) = \\frac{P(X|y) \\cdot P(y)}{P(X)} $$\n\n*   $P(y|X)$: Posterior probability (target given features).\n*   $P(X|y)$: Likelihood.\n*   $P(y)$: Prior probability.\n*   $P(X)$: Marginal likelihood.\n\n### Types of Naive Bayes\n\n1.  **Gaussian Naive Bayes**: For continuous data, assumes features follow a normal distribution.\n2.  **Multinomial Naive Bayes**: For discrete counts (e.g., text classification using word counts).\n3.  **Bernoulli Naive Bayes**: For binary/boolean features.\n\n### Implementation\n\n```python\nfrom sklearn.naive_bayes import GaussianNB\n\ngnb = GaussianNB()\ngnb.fit(X_train, y_train)\ny_pred = gnb.predict(X_test)\n```\n",
+  "code": "from sklearn.naive_bayes import GaussianNB\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\n\ndata = load_iris()\nX, y = data.data, data.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# TODO: Initialize Gaussian Naive Bayes\ngnb = \n\n# TODO: Train the model\n\n# TODO: Predict\n# y_pred = \n\n# Check accuracy\n# print(\"Accuracy:\", gnb.score(X_test, y_test))"
+}

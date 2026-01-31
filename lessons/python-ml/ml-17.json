@@ -1,0 +1,9 @@
+{
+  "id": "ml-17",
+  "title": "Handling Missing Data",
+  "category": "Python for Data Science",
+  "number": 17,
+  "duration": "15 min read",
+  "content": "# Handling Missing Data\n\nReal-world data is often incomplete. Pandas represents missing data as `NaN` (Not a Number) or `None`.\n\n## Detecting Missing Data\n\n*   `df.isnull()` or `df.isna()`: Returns boolean mask of null values.\n*   `df.notnull()`: Inverse of isnull.\n\n## Dropping Missing Data\n\nUse `dropna()` to remove rows or columns with missing values.\n\n```python\n# Drop rows with ANY missing value\ndf.dropna(how='any')\n\n# Drop rows where ALL values are missing\ndf.dropna(how='all')\n\n# Drop columns with missing values\ndf.dropna(axis=1)\n```\n\n## Filling Missing Data\n\nUse `fillna()` to replace missing values.\n\n```python\n# Fill with a scalar\ndf.fillna(0)\n\n# Fill with mean of the column\ndf.fillna(df.mean())\n\n# Forward fill (propagate last valid observation)\ndf.fillna(method='ffill')\n```",
+  "code": "import pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({'A': [1, np.nan, 3], 'B': [4, 5, np.nan]})\nprint(\"Original:\\n\", df)\nprint(\"Filled:\\n\", df.fillna(0))"
+}

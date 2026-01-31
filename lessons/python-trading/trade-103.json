@@ -1,0 +1,9 @@
+{
+  "id": "trade-103",
+  "title": "Project: Implementing a TWAP/VWAP Execution Algo",
+  "category": "Advanced Trading Projects",
+  "number": 103,
+  "duration": "18 min read",
+  "content": "## Advanced Execution\n\nInstitutional investors don't just click \"Buy\". They use algos to minimize market impact.\n\n### TWAP (Time Weighted)\n\nSimple: Divide order size by N time intervals. Execute slice every T minutes.\n\n### VWAP (Volume Weighted)\n\nComplex: Estimate volume profile for the day (e.g., \"U\" shape). Execute more when market is active. Compare your execution price against the market VWAP benchmark.",
+  "code": "# # VWAP Profile (percentage of daily volume per hour)\n# profile = [0.1, 0.15, 0.2, 0.1, 0.1, 0.05, 0.3]\n# total_order = 10000\n\n# for pct in profile:\n#     qty_to_trade = total_order * pct\n#     # Wait for time slot\n#     # Execute qty_to_trade using Limit orders at mid-price\n#     pass"
+}

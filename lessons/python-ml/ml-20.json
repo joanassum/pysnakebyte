@@ -1,0 +1,9 @@
+{
+  "id": "ml-20",
+  "title": "Merging and Joining",
+  "category": "Python for Data Science",
+  "number": 20,
+  "duration": "15 min read",
+  "content": "# Merging and Joining\n\nCombine multiple DataFrames using database-style joins.\n\n## `pd.merge()`\n\nThe standard method for joining DataFrames.\n\n```python\npd.merge(left, right, how='inner', on='key')\n```\n\n### Join Types (`how`)\n\n*   `inner`: Intersection of keys (default).\n*   `outer`: Union of keys.\n*   `left`: Use keys from left frame only.\n*   `right`: Use keys from right frame only.\n\n### Merging on Indexes\n\n```python\npd.merge(left, right, left_index=True, right_index=True)\n```\n\n## `pd.concat()`\n\nStacking DataFrames along an axis (row-wise or column-wise).\n\n```python\n# Stack rows (append)\npd.concat([df1, df2])\n\n# Stack columns\npd.concat([df1, df2], axis=1)\n```\n\n## `df.join()`\n\nConvenient method for joining on index.\n\n```python\nleft.join(right)\n```",
+  "code": "import pandas as pd\n\ndf1 = pd.DataFrame({'key': ['b', 'd'], 'val1': [1, 3]})\ndf2 = pd.DataFrame({'key': ['b', 'a'], 'val2': [2, 4]})\n\nprint(pd.merge(df1, df2, on='key', how='outer'))"
+}

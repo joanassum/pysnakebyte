@@ -1,0 +1,9 @@
+{
+  "id": "ml-37",
+  "title": "Correlation and Covariance",
+  "category": "Statistics for ML",
+  "number": 37,
+  "duration": "10 min read",
+  "content": "## Correlation vs. Covariance\n\nBoth correlation and covariance measure the relationship and the dependency between two variables.\n\n### Covariance\n\nCovariance indicates the direction of the linear relationship between variables.\n- **Positive Covariance**: Both variables move in the same direction.\n- **Negative Covariance**: Variables move in opposite directions.\n\nHowever, covariance is not standardized, meaning its magnitude depends on the scale of the variables.\n\n### Correlation\n\nCorrelation is a standardized measure of the strength and direction of the linear relationship. The most common metric is Pearson's Correlation Coefficient ($r$), which ranges from -1 to 1.\n\n- $r = 1$: Perfect positive correlation\n- $r = -1$: Perfect negative correlation\n- $r = 0$: No linear correlation\n\n### In Machine Learning\n\nFeature selection often involves removing highly correlated features (multicollinearity) to improve model performance and interpretability.\n",
+  "code": "import numpy as np\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Create a sample dataset\ndata = {\n    'sq_ft': [1500, 2000, 2500, 3000, 3500],\n    'price': [300000, 400000, 550000, 600000, 750000],\n    'age': [10, 5, 20, 2, 8]\n}\ndf = pd.DataFrame(data)\n\n# Calculate Covariance\nprint(\"Covariance Matrix:\")\nprint(df.cov())\n\n# Calculate Correlation\nprint(\"\\nCorrelation Matrix:\")\nprint(df.corr())\n\n# Visualize\nplt.figure(figsize=(6, 4))\nsns.heatmap(df.corr(), annot=True, cmap='coolwarm')\nplt.show()"
+}

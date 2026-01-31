@@ -1,0 +1,9 @@
+{
+  "id": "ml-59",
+  "title": "Random Search",
+  "category": "Scikit-Learn",
+  "number": 59,
+  "duration": "10 min read",
+  "content": "## Efficient Search\n\n`RandomizedSearchCV` samples a fixed number of parameter settings from specified distributions. Unlike Grid Search, it doesn't try every combination.\n\n### Why use Random Search?\n\n- **Efficiency**: Often finds a good model much faster than Grid Search.\n- **Flexibility**: Can search continuous distributions, not just discrete lists.\n- **High Dimensionality**: Better when you have many hyperparameters, and some are more important than others.\n\n### Key Parameter\n- `n_iter`: The number of parameter settings that are sampled.\n",
+  "code": "from sklearn.model_selection import RandomizedSearchCV\nfrom sklearn.ensemble import RandomForestClassifier\nfrom scipy.stats import randint\nfrom sklearn.datasets import load_digits\n\nX, y = load_digits(return_X_y=True)\n\n# Define distributions\nparam_dist = {\n    'n_estimators': randint(10, 200),\n    'max_depth': [None] + list(range(10, 30)),\n    'max_features': ['sqrt', 'log2', None],\n    'min_samples_split': randint(2, 11)\n}\n\n# Create Random Search object\nrand_search = RandomizedSearchCV(\n    RandomForestClassifier(random_state=42),\n    param_distributions=param_dist,\n    n_iter=20,  # Try 20 random combinations\n    cv=5,\n    random_state=42\n)\n\nrand_search.fit(X, y)\n\nprint(f\"Best Params: {rand_search.best_params_}\")\nprint(f\"Best Score: {rand_search.best_score_:.4f}\")"
+}

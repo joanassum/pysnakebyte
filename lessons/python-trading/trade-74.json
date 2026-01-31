@@ -1,0 +1,9 @@
+{
+  "id": "trade-74",
+  "title": "Time Series Cross-Validation",
+  "category": "Machine Learning for Trading",
+  "number": 74,
+  "duration": "13 min read",
+  "content": "## The Trap of Standard K-Fold\n\nStandard K-Fold CV randomly shuffles data, which destroys the temporal order. In finance, this causes **look-ahead bias** (training on future data to predict the past).\n\n### Walk-Forward Validation\n\nUse an expanding or sliding window approach:\n- Train: Jan-Mar, Test: Apr\n- Train: Jan-Apr, Test: May\n\n### Purged K-Fold\n\nFinancial labels often overlap (e.g., return over next 5 days). If you split nearby samples, information leaks. **Purging** involves removing samples from the training set that overlap in time with the test set.",
+  "code": "from sklearn.model_selection import TimeSeriesSplit\nimport numpy as np\n\n# X = np.array([...]) # Features\n# y = np.array([...]) # Target\n\n# Standard Time Series Split (Expanding Window)\n# tscv = TimeSeriesSplit(n_splits=5)\n\n# for train_index, test_index in tscv.split(X):\n#     X_train, X_test = X[train_index], X[test_index]\n#     y_train, y_test = y[train_index], y[test_index]\n#     print(f'Train indices: {len(train_index)}, Test indices: {len(test_index)}')\n#     # Train and evaluate model here..."
+}

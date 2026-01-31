@@ -1,0 +1,9 @@
+{
+  "id": "trade-82",
+  "title": "Connecting to Broker APIs",
+  "category": "Live Trading System Architecture",
+  "number": 82,
+  "duration": "14 min read",
+  "content": "## Broker Interfaces\n\nTo trade, you need a gateway. Most modern brokers offer REST APIs and Websockets.\n\n### Popular Python-Friendly Brokers\n\n- **Interactive Brokers (IBKR)**: Uses `ib_insync` (wrapper around IB API). Great for global markets.\n- **Alpaca**: Commission-free, developer-first, great REST API.\n- **Binance/Coinbase**: For crypto, robust APIs.\n\n### REST vs. Websockets\n\n- **REST**: Request-Response. Good for placing orders, checking account balance.\n- **Websocket**: Streaming. Necessary for real-time market data and order updates.",
+  "code": "# Alpaca Example using alpaca-trade-api\n# pip install alpaca-trade-api\nimport alpaca_trade_api as tradeapi\nimport os\n\n# API_KEY = os.getenv('ALPACA_API_KEY')\n# SECRET_KEY = os.getenv('ALPACA_SECRET_KEY')\n# BASE_URL = 'https://paper-api.alpaca.markets'\n\n# api = tradeapi.REST(API_KEY, SECRET_KEY, BASE_URL, api_version='v2')\n\n# # Get Account Info\n# account = api.get_account()\n# print(f\"Buying Power: {account.buying_power}\")\n\n# # Submit Order\n# api.submit_order(\n#     symbol='AAPL',\n#     qty=1,\n#     side='buy',\n#     type='market',\n#     time_in_force='gtc'\n# )"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "challenge-10",
+  "title": "Prime Number",
+  "difficulty": "medium",
+  "description": "# Prime Number\n\nWrite a function that determines if a given number is a prime number.\n\nA prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.\n\n## Example\n\n```python\nresult = solution(7)\nprint(result)  # Output: True\n\nresult = solution(4)\nprint(result)  # Output: False\n```\n\n## Requirements\n\n- Accept one integer parameter\n- Return True if the number is prime, False otherwise\n- Numbers less than 2 are not prime",
+  "short_description": "Check if a number is prime",
+  "starter_code": "def solution(n):\n    # Return True if n is prime, False otherwise\n    pass\n\n# Test your solution\nprint(solution(7))   # Should print True\nprint(solution(10))  # Should print False",
+  "test_code": "assert solution(7) == True, 'Test 1 failed: 7 is prime'\nassert solution(4) == False, 'Test 2 failed: 4 is not prime'\nassert solution(2) == True, 'Test 3 failed: 2 is prime'\nassert solution(1) == False, 'Test 4 failed: 1 is not prime'\nassert solution(0) == False, 'Test 5 failed: 0 is not prime'\nassert solution(97) == True, 'Test 6 failed: 97 is prime'\nassert solution(100) == False, 'Test 7 failed: 100 is not prime'\nprint('PASSED')"
+}

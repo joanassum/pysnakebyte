@@ -1,0 +1,9 @@
+{
+  "id": "ml-51",
+  "title": "Introduction to Scikit-Learn",
+  "category": "Scikit-Learn",
+  "number": 51,
+  "duration": "8 min read",
+  "content": "## The Industry Standard for ML\n\nScikit-Learn (sklearn) is the most popular Python library for Machine Learning. It is built on top of NumPy, SciPy, and Matplotlib.\n\n### Key Features\n\n- **Simple and Efficient**: Tools for data mining and data analysis.\n- **Accessible**: Accessible to everybody, and reusable in various contexts.\n- **Wide Range of Algorithms**: Classification, Regression, Clustering, Dimensionality Reduction, etc.\n\n### Installation\n\n```bash\npip install scikit-learn\n```\n\n### General Workflow\n\n1.  Import model class.\n2.  Instantiate model with hyperparameters.\n3.  Fit model to data (`model.fit()`).\n4.  Predict on new data (`model.predict()`).\n",
+  "code": "import sklearn\nfrom sklearn.linear_model import LinearRegression\nimport numpy as np\n\nprint(f\"Scikit-Learn Version: {sklearn.__version__}\")\n\n# 1. Data\nX = np.array([[1], [2], [3], [4]])\ny = np.array([2, 4, 6, 8])\n\n# 2. Instantiate\nmodel = LinearRegression()\n\n# 3. Fit\nmodel.fit(X, y)\n\n# 4. Predict\nprediction = model.predict([[5]])\nprint(f\"Prediction for 5: {prediction[0]}\")"
+}

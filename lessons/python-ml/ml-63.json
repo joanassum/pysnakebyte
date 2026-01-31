@@ -1,0 +1,9 @@
+{
+  "id": "ml-63",
+  "title": "Polynomial Regression",
+  "category": "Regression",
+  "number": 63,
+  "duration": "10 min read",
+  "content": "## Modeling Non-Linear Relationships\n\nOften, relationships in nature are not straight lines. Polynomial regression allows us to model curves by adding powers of the original features.\n\n$$ y = b_0 + b_1 x + b_2 x^2 + ... + b_d x^d $$\n\n### How Scikit-Learn Handles It\n\nScikit-Learn treats polynomial regression as a special case of multiple linear regression. We first transform the features (add powers), and then fit a linear model.\n\n1.  **Transform**: $x \\rightarrow [x, x^2, x^3]$\n2.  **Fit**: Linear Regression on the transformed features.\n\n### Degree of Polynomial\n\n- **Low degree**: High Bias (Underfitting)\n- **High degree**: High Variance (Overfitting)\n",
+  "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.preprocessing import PolynomialFeatures\nfrom sklearn.linear_model import LinearRegression\n\n# Generate non-linear data\nnp.random.seed(0)\nm = 100\nX = 6 * np.random.rand(m, 1) - 3\ny = 0.5 * X**2 + X + 2 + np.random.randn(m, 1)\n\n# Transform features (Degree 2)\npoly_features = PolynomialFeatures(degree=2, include_bias=False)\nX_poly = poly_features.fit_transform(X)\n\nprint(f\"Original X[0]: {X[0]}\")\nprint(f\"Poly X[0]: {X_poly[0]}\") # [x, x^2]\n\n# Fit Linear Regression\nlin_reg = LinearRegression()\nlin_reg.fit(X_poly, y)\n\n# Plot\nX_new = np.linspace(-3, 3, 100).reshape(100, 1)\nX_new_poly = poly_features.transform(X_new)\ny_new = lin_reg.predict(X_new_poly)\n\nplt.scatter(X, y, alpha=0.5)\nplt.plot(X_new, y_new, 'r-', linewidth=2, label=\"Predictions\")\nplt.legend()\nplt.show()"
+}

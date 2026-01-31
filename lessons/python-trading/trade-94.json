@@ -1,0 +1,9 @@
+{
+  "id": "trade-94",
+  "title": "Project: Crypto Market Making Bot",
+  "category": "Advanced Trading Projects",
+  "number": 94,
+  "duration": "25 min read",
+  "content": "## Providing Liquidity\n\nMarket makers place both Buy (Bid) and Sell (Ask) limit orders to capture the spread. They profit from the difference, provided the market doesn't trend strongly against them.\n\n### Inventory Risk\n\nIf you buy BTC and price crashes, you lose money despite the spread. You must manage \"Inventory Skew\" by adjusting your prices to offload excess inventory.\n\n### Strategy\n\n1.  Calculate fair price (mid-price of order book).\n2.  Place Bid at `Fair - Spread/2`.\n3.  Place Ask at `Fair + Spread/2`.\n4.  Update orders frequently (every few seconds).",
+  "code": "# Simple Market Maker Logic\n# spread = 10.0\n# mid_price = (best_bid + best_ask) / 2\n\n# my_bid_price = mid_price - (spread / 2)\n# my_ask_price = mid_price + (spread / 2)\n\n# # Skew based on inventory\n# inventory_target = 0\n# current_inventory = 5\n# skew = (current_inventory - inventory_target) * skew_factor\n\n# my_bid_price -= skew\n# my_ask_price -= skew"
+}

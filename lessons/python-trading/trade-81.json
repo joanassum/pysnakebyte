@@ -1,0 +1,9 @@
+{
+  "id": "trade-81",
+  "title": "Components of a Live Trading Engine",
+  "category": "Live Trading System Architecture",
+  "number": 81,
+  "duration": "10 min read",
+  "content": "## From Backtest to Live\n\nA live trading system is complex software. It requires reliability, speed, and robustness.\n\n### Core Components\n\n1.  **Data Ingestion**: Receiving real-time market data (Quotes, Trades).\n2.  **Strategy Engine**: Processing data to generate signals.\n3.  **Order Management System (OMS)**: Creating, modifying, and tracking orders.\n4.  **Risk Management**: Checking limits before orders go out.\n5.  **Execution Gateway**: Communicating with the broker/exchange.\n\n### Architecture\n\n- **Monolithic**: Single script (easy to start, hard to scale).\n- **Microservices**: Decoupled components communicating via messaging (e.g., RabbitMQ, ZeroMQ).",
+  "code": "# Simple Class Structure Conceptualization\n\nclass DataHandler:\n    def get_latest_bar(self): pass\n\nclass Strategy:\n    def calculate_signal(self, data): pass\n\nclass RiskManager:\n    def check_risk(self, order): pass\n\nclass ExecutionHandler:\n    def execute_order(self, order): pass\n\nclass TradingEngine:\n    def __init__(self, data, strategy, risk, execution):\n        self.data = data\n        self.strategy = strategy\n        self.risk = risk\n        self.execution = execution\n    \n    def run(self):\n        while True:\n            # Event loop logic\n            pass"
+}

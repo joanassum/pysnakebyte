@@ -1,0 +1,9 @@
+{
+  "id": "trade-52",
+  "title": "Vectorized Backtesting with pandas",
+  "category": "Backtesting Frameworks",
+  "number": 52,
+  "duration": "10 min read",
+  "content": "# Vectorized Backtesting\n\nUsing pandas, we can implement a simple backtest in just a few lines of code.\n\n## Key Steps\n1. Calculate indicators and signals (0 or 1).\n2. Shift signals by 1 time step (to simulate entering at the *next* open/close after signal).\n3. Multiply shifted signals by market returns to get strategy returns.\n4. Calculate cumulative returns.",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Mock Data\ndates = pd.date_range(start='2020-01-01', periods=100)\nprice = pd.Series(np.cumsum(np.random.randn(100)) + 100, index=dates)\ndaily_rets = price.pct_change()\n\n# Strategy: Buy if price > prev price (Momentum)\nsignal = np.where(daily_rets > 0, 1, 0)\nsignal = pd.Series(signal, index=dates)\n\n# Backtest\n# Shift signal because we trade AFTER seeing the signal\nstrategy_rets = signal.shift(1) * daily_rets\n\n# Cumulative Returns\ncum_market = (1 + daily_rets).cumprod()\ncum_strategy = (1 + strategy_rets).cumprod()\n\nprint(f\"Market Return: {cum_market.iloc[-1]:.2f}\")\nprint(f\"Strategy Return: {cum_strategy.iloc[-1]:.2f}\")\n"
+}

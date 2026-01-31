@@ -1,0 +1,9 @@
+{
+  "id": "trade-15",
+  "title": "Expanding Windows",
+  "category": "Financial Data Analysis with Pandas",
+  "number": 15,
+  "duration": "10 min read",
+  "content": "# Expanding Windows\n\nUnlike rolling windows which have a fixed size, expanding windows start at the beginning of the time series and grow with each new data point.\n\n## Use Cases\n*   **Cumulative Return**: Total return from day 1 to today.\n*   **All-time High**: Highest price seen so far.\n*   **Cumulative Average**: Average price from the start.\n\n```python\ndf.expanding().max()  # Tracks the 'high water mark'\n```",
+  "code": "import pandas as pd\n\nprices = pd.Series([100, 102, 105, 103, 108, 107])\n\n# Expanding Max (All-time high so far)\nath = prices.expanding().max()\n\n# Cumulative Mean\ncum_avg = prices.expanding().mean()\n\ndf = pd.DataFrame({'Price': prices, 'ATH': ath, 'Cum_Avg': cum_avg})\nprint(df)"
+}

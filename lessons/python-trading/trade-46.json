@@ -1,0 +1,9 @@
+{
+  "id": "trade-46",
+  "title": "MACD Strategy",
+  "category": "Building Trading Strategies",
+  "number": 46,
+  "duration": "10 min read",
+  "content": "# MACD Strategy\n\nThe Moving Average Convergence Divergence (MACD) is a trend-following momentum indicator.\n\n## Components\n1. **MACD Line**: 12-period EMA - 26-period EMA.\n2. **Signal Line**: 9-period EMA of the MACD Line.\n3. **Histogram**: MACD Line - Signal Line.\n\n## Trading Logic\n- **Buy**: When the MACD line crosses *above* the Signal line.\n- **Sell**: When the MACD line crosses *below* the Signal line.\n- **Divergence**: When price makes a new high/low but MACD does not, signaling a potential reversal.",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Mock Data\ndates = pd.date_range(start='2020-01-01', periods=200)\nprice = pd.Series(np.cumsum(np.random.randn(200)) + 100, index=dates)\n\n# Parameters\nfast = 12\nslow = 26\nsignal_span = 9\n\n# Calculation\nema_fast = price.ewm(span=fast, adjust=False).mean()\nema_slow = price.ewm(span=slow, adjust=False).mean()\nmacd_line = ema_fast - ema_slow\nsignal_line = macd_line.ewm(span=signal_span, adjust=False).mean()\nhistogram = macd_line - signal_line\n\n# Signals\ndf = pd.DataFrame({'price': price, 'macd': macd_line, 'signal': signal_line})\ndf['buy_signal'] = np.where((df['macd'] > df['signal']) & (df['macd'].shift(1) <= df['signal'].shift(1)), 1, 0)\n\nprint(df[df['buy_signal'] == 1].head())\n"
+}

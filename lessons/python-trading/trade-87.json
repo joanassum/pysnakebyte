@@ -1,0 +1,9 @@
+{
+  "id": "trade-87",
+  "title": "Risk Management and Position Sizing Logic",
+  "category": "Live Trading System Architecture",
+  "number": 87,
+  "duration": "13 min read",
+  "content": "## Preservation of Capital\n\nRisk management is more important than the strategy itself. It prevents one bad trade or bug from wiping out the account.\n\n### Pre-Trade Checks\n\n- **Max Position Size**: Never put >X% of capital in one asset.\n- **Max Drawdown Limit**: Stop trading if daily loss > Y%.\n- **Kill Switch**: Hard stop button for the bot.\n\n### Kelly Criterion\n\nMathematical formula to determine optimal size based on win rate and reward/risk ratio. Often used at \"Half-Kelly\" to reduce volatility.",
+  "code": "# def calculate_position_size(account_balance, risk_per_trade, stop_loss_pct):\n#     \"\"\"\n#     Calculate quantity based on risk amount.\n#     risk_per_trade: Dollar amount to risk (e.g., $100)\n#     stop_loss_pct: % distance to stop loss (e.g., 0.02 for 2%)\n#     \"\"\"\n#     position_value = risk_per_trade / stop_loss_pct\n#     if position_value > account_balance:\n#         return account_balance # Or raise error\n#     return position_value\n\n# balance = 10000\n# risk = 100 # 1%\n# stop = 0.05 # 5% move\n# pos_size = calculate_position_size(balance, risk, stop)\n# print(f\"Position Size: ${pos_size}\")"
+}

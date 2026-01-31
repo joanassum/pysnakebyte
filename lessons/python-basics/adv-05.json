@@ -1,0 +1,9 @@
+{
+  "id": "adv-05",
+  "title": "Decorators",
+  "category": "Advanced Topics",
+  "number": 91,
+  "duration": "12 min read",
+  "content": "## Decorators\n\nDecorators allow you to modify the behavior of a function or class. They are usually called before the definition of a function you want to decorate.\n\n### Higher-Order Functions\n\nFunctions can accept other functions as arguments and return functions.\n\n### Basic Syntax\n\n```python\n@my_decorator\ndef my_function():\n    pass\n```\n\nThis is equivalent to:\n\n```python\ndef my_function():\n    pass\nmy_function = my_decorator(my_function)\n```\n\n### Writing a Decorator\n\nA decorator is a function that takes a function and returns a wrapper function.\n\n```python\ndef log_execution(func):\n    def wrapper(*args, **kwargs):\n        print(f\"Executing {func.__name__}\")\n        result = func(*args, **kwargs)\n        print(\"Finished execution\")\n        return result\n    return wrapper\n```\n\n### `functools.wraps`\n\nAlways use `@functools.wraps(func)` inside your wrapper to preserve the metadata (name, docstring) of the original function.\n",
+  "code": "import functools\nimport time\n\n# 1. Create a decorator `timer` that measures and prints the time a function takes to execute\n\ndef timer(func):\n    @functools.wraps(func)\n    def wrapper(*args, **kwargs):\n        # Start time\n        # Call function\n        # End time\n        # Print duration\n        # Return result\n        pass\n    return wrapper\n\n@timer\ndef slow_function():\n    time.sleep(1)\n    print(\"Function done\")\n\nslow_function()\n"
+}

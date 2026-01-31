@@ -1,0 +1,9 @@
+{
+  "id": "ml-54",
+  "title": "Feature Scaling",
+  "category": "Scikit-Learn",
+  "number": 54,
+  "duration": "10 min read",
+  "content": "## Why Scale Features?\n\nMany ML algorithms (e.g., SVM, K-Means, Linear Regression, Neural Networks) perform better or converge faster when features are on a similar scale.\n\n### Common Techniques\n\n1.  **Standardization (Z-score Normalization)**:\n    - Rescales data to have a mean of 0 and a standard deviation of 1.\n    - Robust to outliers.\n    - Used in SVM, Logistic Regression.\n    - `StandardScaler`\n\n2.  **Normalization (Min-Max Scaling)**:\n    - Rescales data to a fixed range, usually [0, 1].\n    - Sensitive to outliers.\n    - Used in Image Processing, Neural Networks.\n    - `MinMaxScaler`\n",
+  "code": "from sklearn.preprocessing import StandardScaler, MinMaxScaler\nimport numpy as np\n\ndata = np.array([[100, 0.001],\n                 [8, 0.05],\n                 [50, 0.005],\n                 [88, 0.07],\n                 [4, 0.1]])\n\nprint(\"Original Data:\\n\", data)\n\n# Standardization\nscaler_std = StandardScaler()\ndata_std = scaler_std.fit_transform(data)\nprint(\"\\nStandardized (Mean=0, Std=1):\\n\", data_std)\n\n# Normalization\nscaler_minmax = MinMaxScaler()\ndata_minmax = scaler_minmax.fit_transform(data)\nprint(\"\\nMin-Max Scaled (0-1):\\n\", data_minmax)"
+}

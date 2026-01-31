@@ -1,0 +1,9 @@
+{
+  "id": "challenge-20",
+  "title": "Longest Common Subsequence",
+  "difficulty": "hard",
+  "description": "# Longest Common Subsequence\n\nWrite a function that finds the length of the longest common subsequence (LCS) of two strings.\n\nA subsequence is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements.\n\n## Example\n\n```python\nresult = solution(\"abcde\", \"ace\")\nprint(result)  # Output: 3 (LCS is \"ace\")\n\nresult = solution(\"abc\", \"def\")\nprint(result)  # Output: 0 (no common subsequence)\n```\n\n## Requirements\n\n- Accept two strings\n- Return the length of the longest common subsequence\n- Handle empty strings",
+  "short_description": "Find LCS of two strings",
+  "starter_code": "def solution(s1, s2):\n    # Return the longest common subsequence\n    pass\n\n# Test your solution\nprint(solution('ABCDGH', 'AEDFHR'))  # Should print 'ADH'",
+  "test_code": "assert solution('abcde', 'ace') == 3, 'Test 1 failed'\nassert solution('abc', 'def') == 0, 'Test 2 failed'\nassert solution('abc', 'abc') == 3, 'Test 3 failed: identical strings'\nassert solution('', 'abc') == 0, 'Test 4 failed: empty string'\nassert solution('abcd', 'abdc') == 3, 'Test 5 failed'\nassert solution('AGGTAB', 'GXTXAYB') == 4, 'Test 6 failed'\nprint('PASSED')"
+}

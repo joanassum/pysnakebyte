@@ -1,0 +1,9 @@
+{
+  "id": "ml-102",
+  "title": "Model Persistence",
+  "category": "ML Projects",
+  "number": 102,
+  "duration": "10 min read",
+  "content": "## Model Persistence\n\nOnce you train a model, you don't want to retrain it every time you need to make a prediction. You need to **save** (serialize) the model to a file and **load** (deserialize) it later.\n\n### Pickle\n\nThe standard Python module for object serialization.\n\n```python\nimport pickle\n\n# Save\nwith open('model.pkl', 'wb') as f:\n    pickle.dump(model, f)\n\n# Load\nwith open('model.pkl', 'rb') as f:\n    loaded_model = pickle.load(f)\n```\n\n### Joblib\n\nOften more efficient than pickle for objects carrying large numpy arrays (which is common in sklearn).\n\n```python\nimport joblib\n\n# Save\njoblib.dump(model, 'model.joblib')\n\n# Load\nloaded_model = joblib.load('model.joblib')\n```\n\n### Security Warning\n\nNever load a pickle/joblib file from an untrusted source. It can execute arbitrary code.\n",
+  "code": "import joblib\nfrom sklearn.linear_model import LinearRegression\nimport numpy as np\nimport os\n\n# Train a dummy model\nX = np.array([[1], [2], [3]])\ny = np.array([2, 4, 6])\nmodel = LinearRegression()\nmodel.fit(X, y)\n\n# TODO: Save the model to 'my_model.joblib'\njoblib.dump(model, 'my_model.joblib')\n\n# Verify file exists\nif os.path.exists('my_model.joblib'):\n    print(\"Model saved successfully.\")\n\n# TODO: Load the model back\nloaded_model = joblib.load('my_model.joblib')\n\n# Verify prediction\npred = loaded_model.predict([[4]])\nprint(f\"Prediction for 4: {pred[0]:.2f}\")\n\n# Cleanup\nos.remove('my_model.joblib')"
+}

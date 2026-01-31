@@ -1,0 +1,9 @@
+{
+  "id": "ml-09",
+  "title": "NumPy Broadcasting",
+  "category": "Python for Data Science",
+  "number": 9,
+  "duration": "15 min read",
+  "content": "# NumPy Broadcasting\n\nBroadcasting is a powerful mechanism that allows NumPy to work with arrays of different shapes when performing arithmetic operations. It avoids the need to explicitly create copies of data.\n\n## The Broadcasting Rule\n\nTwo dimensions are compatible when:\n1.  They are equal, or\n2.  One of them is 1.\n\nIf these conditions are not met, a `ValueError: operands could not be broadcast together` exception is thrown.\n\n## Example: Scalar and Array\n\n```python\na = np.array([1, 2, 3])\nb = 2\nprint(a * b) # [2, 4, 6]\n```\nHere, the scalar `2` is conceptually \"stretched\" to match the shape of `a`.\n\n## Example: Matrix and Vector\n\n```python\nA = np.ones((3, 3))\nb = np.arange(3)\nprint(A + b)\n```\n`b` (shape (3,)) is broadcast across each row of `A` (shape (3, 3)).",
+  "code": "import numpy as np\n\n# Create a 3x3 matrix\nA = np.array([[1, 1, 1], \n              [2, 2, 2], \n              [3, 3, 3]])\n\n# Create a 1D array\nb = np.array([0, 1, 2])\n\n# Add them\nresult = A + b\nprint(\"Result:\\n\", result)"
+}

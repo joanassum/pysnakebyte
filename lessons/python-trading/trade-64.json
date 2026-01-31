@@ -1,0 +1,9 @@
+{
+  "id": "trade-64",
+  "title": "Placing Orders (Market vs Limit)",
+  "category": "Connecting to Brokers (APIs)",
+  "number": 64,
+  "duration": "12 min read",
+  "content": "# Order Types\n\n## Market Order\nExecutes immediately at the best available price.\n- **Pros**: Guaranteed execution (mostly).\n- **Cons**: Slippage (price might be worse than expected).\n\n## Limit Order\nExecutes only at a specific price (or better).\n- **Pros**: Price guarantee.\n- **Cons**: No execution guarantee (price might never reach your limit).",
+  "code": "# Mock function to place order\ndef place_order(symbol, side, quantity, order_type, price=None):\n    payload = {\n        \"symbol\": symbol,\n        \"side\": side,\n        \"type\": order_type,\n        \"quantity\": quantity\n    }\n    if order_type == \"LIMIT\":\n        payload[\"price\"] = price\n        payload[\"timeInForce\"] = \"GTC\" # Good Till Cancel\n        \n    print(f\"Sending Order: {payload}\")\n    # requests.post(url, headers=headers, data=payload)\n\nplace_order(\"AAPL\", \"BUY\", 10, \"MARKET\")\nplace_order(\"AAPL\", \"SELL\", 5, \"LIMIT\", price=155.50)\n"
+}

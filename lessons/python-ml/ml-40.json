@@ -1,0 +1,9 @@
+{
+  "id": "ml-40",
+  "title": "Statistical Significance",
+  "category": "Statistics for ML",
+  "number": 40,
+  "duration": "8 min read",
+  "content": "## What is Statistical Significance?\n\nStatistical significance helps quantify whether a result is likely due to chance or to some factor of interest. When a finding is significant, it means you can feel confident that it's real, not that you just got lucky (or unlucky) in choosing the sample.\n\n### Hypothesis Testing\n\n1.  **Null Hypothesis ($H_0$)**: There is no effect or difference.\n2.  **Alternative Hypothesis ($H_1$)**: There is an effect or difference.\n3.  **Alpha ($\\alpha$)**: The significance level, usually 0.05 (5%). This is the probability of rejecting the null hypothesis when it is true (Type I error).\n\n### The P-Value\n\nThe p-value is the probability of obtaining test results at least as extreme as the results actually observed, assuming that the null hypothesis is correct.\n\n- **p < 0.05**: Reject null hypothesis (Significant).\n- **p >= 0.05**: Fail to reject null hypothesis (Not Significant).\n\n### Common Tests\n- **T-test**: Compare means of two groups.\n- **ANOVA**: Compare means of 3+ groups.\n- **Chi-Square**: Compare categorical variables.\n",
+  "code": "import numpy as np\nfrom scipy import stats\n\n# Generate two samples\n# Sample 1: Mean 50, Std 10\n# Sample 2: Mean 55, Std 10\ns1 = np.random.normal(50, 10, 100)\ns2 = np.random.normal(55, 10, 100)\n\n# T-test\nt_stat, p_val = stats.ttest_ind(s1, s2)\n\nprint(f\"Sample 1 Mean: {np.mean(s1):.2f}\")\nprint(f\"Sample 2 Mean: {np.mean(s2):.2f}\")\nprint(f\"P-value: {p_val:.5f}\")\n\nif p_val < 0.05:\n    print(\"Difference is statistically significant.\")\nelse:\n    print(\"Difference is likely due to chance.\")"
+}

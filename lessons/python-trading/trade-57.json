@@ -1,0 +1,9 @@
+{
+  "id": "trade-57",
+  "title": "Zipline Bundle Ingestion",
+  "category": "Backtesting Frameworks",
+  "number": 57,
+  "duration": "10 min read",
+  "content": "# Zipline Framework\n\nZipline is an algorithmic trading library developed by Quantopian. It uses a bundle system to manage data.\n\n## Ingesting Data\nTo use Zipline, you usually \"ingest\" data bundles (e.g., Quandl, or custom CSVs) into a local database.\n\n`zipline ingest -b <bundle-name>`\n\n## Structure\nZipline uses `initialize(context)` and `handle_data(context, data)` functions, similar to the Quantopian platform.",
+  "code": "# Zipline strategy structure (conceptual)\n# from zipline.api import order, record, symbol\n\n# def initialize(context):\n#     context.asset = symbol('AAPL')\n\n# def handle_data(context, data):\n#     order(context.asset, 10)\n#     record(AAPL=data.current(context.asset, 'price'))\n\n# Running via CLI:\n# zipline run -f my_algo.py --start 2016-1-1 --end 2018-1-1 -o out.pickle\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ml-70",
+  "title": "Regression Model Comparison",
+  "category": "Regression",
+  "number": 70,
+  "duration": "12 min read",
+  "content": "## Putting it All Together\n\nLet's compare the performance of different regression algorithms on a single dataset.\n\n### The Dataset\n\nWe'll use the California Housing dataset to predict median house values.\n\n### Models to Compare\n\n1.  Linear Regression\n2.  Ridge Regression\n3.  Decision Tree Regressor\n4.  Random Forest Regressor\n5.  Gradient Boosting Regressor\n",
+  "code": "from sklearn.datasets import fetch_california_housing\nfrom sklearn.model_selection import cross_val_score, KFold\nfrom sklearn.linear_model import LinearRegression, Ridge\nfrom sklearn.tree import DecisionTreeRegressor\nfrom sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor\nimport matplotlib.pyplot as plt\n\n# Load Data\nhousing = fetch_california_housing()\nX, y = housing.data, housing.target\n# Use a subset for speed in this demo\nX, y = X[:1000], y[:1000]\n\n# Models\nmodels = [\n    ('Linear', LinearRegression()),\n    ('Ridge', Ridge()),\n    ('Tree', DecisionTreeRegressor()),\n    ('Forest', RandomForestRegressor(n_estimators=50)),\n    ('Boosting', GradientBoostingRegressor())\n]\n\nresults = []\nnames = []\n\nprint(\"RMSE Scores (Lower is better):\")\nfor name, model in models:\n    kf = KFold(n_splits=5, shuffle=True, random_state=42)\n    # scoring='neg_mean_squared_error' returns negative values\n    cv_scores = cross_val_score(model, X, y, cv=kf, scoring='neg_root_mean_squared_error')\n    # Convert to positive RMSE\n    rmse_scores = -cv_scores\n    results.append(rmse_scores)\n    names.append(name)\n    print(f\"{name}: {rmse_scores.mean():.4f} (+/- {rmse_scores.std():.4f})\")\n\n# Plot\nplt.boxplot(results, labels=names)\nplt.ylabel('RMSE')\nplt.title('Regression Model Comparison')\nplt.show()"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "trade-34",
+  "title": "Monte Carlo Simulations",
+  "category": "Quantitative Finance Basics",
+  "number": 34,
+  "duration": "15 min read",
+  "content": "# Monte Carlo Simulations\n\nMonte Carlo simulations model the probability of different outcomes in a process that cannot easily be predicted due to the intervention of random variables (like stock prices).\n\n## Application\nProjecting future portfolio value.\n\n## Geometric Brownian Motion (GBM)\nThe standard model for stock price dynamics:\n`dS = S * (mu * dt + sigma * dW)`",
+  "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\nS0 = 100      # Initial Price\nmu = 0.05     # Expected Return\nsigma = 0.2   # Volatility\nT = 1.0       # Time (1 year)\ndt = 1/252    # Daily steps\nN = int(T/dt) # Number of steps\n\n# Simulate 10 different paths\nfor i in range(10):\n    prices = [S0]\n    for t in range(N):\n        # Random shock\n        shock = np.random.normal(0, 1)\n        price = prices[-1] * np.exp((mu - 0.5 * sigma**2) * dt + sigma * np.sqrt(dt) * shock)\n        prices.append(price)\n    plt.plot(prices)\n\nplt.title(\"Monte Carlo Simulation\")\nplt.show()"
+}

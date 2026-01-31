@@ -1,0 +1,9 @@
+{
+  "id": "adv-01",
+  "title": "List Comprehensions",
+  "category": "Advanced Topics",
+  "number": 87,
+  "duration": "8 min read",
+  "content": "## List Comprehensions\n\nList comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.\n\n### Basic Syntax\n\n```python\nnew_list = [expression for item in iterable if condition]\n```\n\n### Comparison with Loops\n\n**Using a for loop:**\n```python\nsquares = []\nfor x in range(10):\n    squares.append(x**2)\n```\n\n**Using list comprehension:**\n```python\nsquares = [x**2 for x in range(10)]\n```\n\n### With Conditions\n\n```python\neven_squares = [x**2 for x in range(10) if x % 2 == 0]\n```\n\n### Nested List Comprehensions\n\nThe initial expression in a list comprehension can be any arbitrary expression, including another list comprehension.\n\n```python\nmatrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]\nflattened = [num for row in matrix for num in row]\n```",
+  "code": "# 1. Rewrite this loop as a list comprehension\nnumbers = [1, 2, 3, 4, 5]\ndoubled = []\nfor n in numbers:\n    doubled.append(n * 2)\n\nprint(f\"Doubled (Loop): {doubled}\")\n\n# Your code here:\n# doubled_comp = ...\n\n# 2. Filter out words shorter than 4 characters\nwords = [\"apple\", \"is\", \"good\", \"for\", \"you\"]\n# long_words = ...\n"
+}

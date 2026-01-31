@@ -1,0 +1,9 @@
+{
+  "id": "trade-39",
+  "title": "Value at Risk (VaR)",
+  "category": "Quantitative Finance Basics",
+  "number": 39,
+  "duration": "12 min read",
+  "content": "# Value at Risk (VaR)\n\nValue at Risk (VaR) is a statistic that quantifies the extent of possible financial losses within a firm, portfolio, or position over a specific time frame.\n\nFor example, if a portfolio has a one-day 95% VaR of \\$1 million, there is a 5% confidence level that the portfolio will fall in value by more than \\$1 million over a single day.\n\n## Methods to Calculate VaR\n1. **Historical Method**: Re-organize actual historical returns, putting them in order from worst to best.\n2. **Variance-Covariance Method**: Assumes returns are normally distributed.\n3. **Monte Carlo Simulation**: Develop a model for future price changes and run multiple hypothetical trials.",
+  "code": "import numpy as np\nimport pandas as pd\n\n# Mock Data\nnp.random.seed(42)\nreturns = pd.Series(np.random.randn(1000) / 100) # 1000 days of returns\n\n# Historical VaR\nconfidence_level = 0.95\nvar_95 = np.percentile(returns, 100 * (1 - confidence_level))\n\nprint(f\"Historical 95% VaR: {var_95:.4f}\")\n\n# Parametric VaR (Variance-Covariance)\nmu = returns.mean()\nsigma = returns.std()\nvar_95_param = stats.norm.ppf(1 - confidence_level, mu, sigma)\n\nprint(f\"Parametric 95% VaR: {var_95_param:.4f}\")\n\n# If we have $100,000 invested\ninvestment = 100000\nprint(f\"Value at Risk (Dollar amount): ${-var_95 * investment:.2f}\")\n"
+}

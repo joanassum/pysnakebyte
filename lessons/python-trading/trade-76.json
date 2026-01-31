@@ -1,0 +1,9 @@
+{
+  "id": "trade-76",
+  "title": "Deep Learning for Time Series (LSTM/GRU)",
+  "category": "Machine Learning for Trading",
+  "number": 76,
+  "duration": "18 min read",
+  "content": "## Recurrent Neural Networks (RNNs)\n\nStandard feed-forward networks ignore time. RNNs have memory. However, vanilla RNNs suffer from vanishing gradients.\n\n### LSTMs and GRUs\n\n- **LSTM (Long Short-Term Memory)**: Uses gates (input, output, forget) to manage long-term dependencies.\n- **GRU (Gated Recurrent Unit)**: Simplified version of LSTM, often faster and just as effective.\n\n### Data Preparation\n\nRequires 3D input shape: `(Samples, Time Steps, Features)`.\nExample: Look back 60 days (Time Steps) using 5 indicators (Features).",
+  "code": "import tensorflow as tf\nfrom tensorflow.keras.models import Sequential\nfrom tensorflow.keras.layers import LSTM, Dense, Dropout\n\n# Input shape: (Time_Steps, Features)\n# model = Sequential()\n# model.add(LSTM(units=50, return_sequences=True, input_shape=(60, 5)))\n# model.add(Dropout(0.2))\n# model.add(LSTM(units=50, return_sequences=False))\n# model.add(Dropout(0.2))\n# model.add(Dense(units=1)) # Predict next price or return\n\n# model.compile(optimizer='adam', loss='mean_squared_error')\n# model.fit(X_train, y_train, epochs=20, batch_size=32)"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "trade-102",
+  "title": "Project: Building a Custom Backtesting Engine",
+  "category": "Advanced Trading Projects",
+  "number": 102,
+  "duration": "25 min read",
+  "content": "## Why Build Your Own?\n\nExisting libraries (Backtrader, Zipline) are great but can be restrictive or slow. Building a simple vectorized engine clarifies how backtesting actually works.\n\n### Core Classes\n\n1.  **DataLoader**: Loads CSV/SQL data.\n2.  **Strategy**: Abstract base class for logic.\n3.  **Portfolio**: Tracks cash, positions, and equity curve.\n4.  **Engine**: Iterates through time (or vectorizes operations) and matches orders.\n\n### Vectorized Example\n\nCalculate signal array -> Shift signal by 1 (to avoid lookahead) -> Multiply by Returns to get Strategy Returns.",
+  "code": "import pandas as pd\nimport numpy as np\n\n# class VectorBacktester:\n#     def __init__(self, data):\n#         self.data = data\n    \n#     def run(self, signal_col):\n#         self.data['Strategy_Ret'] = self.data[signal_col].shift(1) * self.data['Returns']\n#         self.data['Equity_Curve'] = (1 + self.data['Strategy_Ret']).cumprod()\n#         return self.data['Equity_Curve'].iloc[-1]"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "trade-13",
+  "title": "Resampling and OHLC Conversion",
+  "category": "Financial Data Analysis with Pandas",
+  "number": 13,
+  "duration": "15 min read",
+  "content": "# Resampling and OHLC Conversion\n\nResampling changes the time frequency of your data (e.g., from Tick to Minute, or Minute to Hour).\n\n## Downsampling\nReducing frequency (e.g., 1-minute -> 5-minute).\n\n### OHLC Aggregation\nWhen downsampling, you can't just take the mean. You need:\n*   **Open**: First price of the bin.\n*   **High**: Max price.\n*   **Low**: Min price.\n*   **Close**: Last price.\n*   **Volume**: Sum.\n\n```python\ndf.resample('5T').agg({'Price': 'ohlc', 'Volume': 'sum'})\n```",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Generate minute data\ndates = pd.date_range('2023-01-01 09:30', periods=10, freq='T')\nprices = [100, 101, 102, 101, 100, 99, 98, 99, 100, 101]\n\ndf = pd.DataFrame({'Price': prices}, index=dates)\n\n# Resample to 5-minute bars (OHLC)\nohlc_dict = {'Price': 'ohlc'}\nfive_min_bars = df.resample('5T').agg(ohlc_dict)\n\nprint(\"Original Minute Data:\")\nprint(df)\nprint(\"\\n5-Minute OHLC Bars:\")\nprint(five_min_bars)"
+}

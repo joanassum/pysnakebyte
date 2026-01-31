@@ -1,0 +1,9 @@
+{
+  "id": "trade-12",
+  "title": "Handling Missing Data",
+  "category": "Financial Data Analysis with Pandas",
+  "number": 12,
+  "duration": "12 min read",
+  "content": "# Handling Missing Data\n\nFinancial data is notoriously messy. Holidays, server outages, and glitches cause missing data (`NaN`).\n\n## Detecting Missing Data\n*   `df.isna()`: Returns a boolean mask.\n*   `df.isna().sum()`: Counts missing values per column.\n\n## Solving the Issue\n1.  **Forward Fill (`ffill`)**: Propagate the last valid observation forward. Standard for price data.\n2.  **Backward Fill (`bfill`)**: Use next observation to fill gap. **Dangerous** (look-ahead bias).\n3.  **Interpolation**: Connect the dots linearly.\n4.  **Drop (`dropna`)**: Remove the row entirely.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({\n    'Price': [100, np.nan, 102, np.nan, 105],\n    'Volume': [1000, 1200, np.nan, 1400, 1500]\n}, index=pd.date_range('2023-01-01', periods=5))\n\nprint(\"Original:\")\nprint(df)\n\nprint(\"\\nForward Fill (Best for Prices):\")\nprint(df.ffill())"
+}

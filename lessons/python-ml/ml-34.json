@@ -1,0 +1,9 @@
+{
+  "id": "ml-34",
+  "title": "Normal Distribution",
+  "category": "Python for Data Science",
+  "number": 34,
+  "duration": "15 min read",
+  "content": "# Normal Distribution\n\nThe most important distribution in statistics. Many natural phenomena follow a normal distribution.\n\n## Characteristics\n\n*   Symmetric bell shape.\n*   Mean = Median = Mode.\n*   Defined by Mean ($\\mu$) and Standard Deviation ($\\sigma$).\n\n## Empirical Rule (68-95-99.7)\n\n*   68% of data falls within $\\mu \\pm 1\\sigma$\n*   95% of data falls within $\\mu \\pm 2\\sigma$\n*   99.7% of data falls within $\\mu \\pm 3\\sigma$\n\n## Standard Normal Distribution (Z)\n\nA normal distribution with $\\mu=0$ and $\\sigma=1$.\n\n$$Z = \\frac{X - \\mu}{\\sigma}$$\n\n## Generating Normal Data\n\n```python\nimport numpy as np\n# Mean=0, Std=1, 1000 samples\ndata = np.random.randn(1000)\n# or\ndata = np.random.normal(loc=0, scale=1, size=1000)\n```",
+  "code": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndata = np.random.normal(0, 1, 10000)\nplt.hist(data, bins=50, density=True)\n# plt.show()"
+}

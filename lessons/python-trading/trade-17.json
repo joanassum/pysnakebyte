@@ -1,0 +1,9 @@
+{
+  "id": "trade-17",
+  "title": "GroupBy Operations in Finance",
+  "category": "Financial Data Analysis with Pandas",
+  "number": 17,
+  "duration": "15 min read",
+  "content": "# GroupBy Operations in Finance\n\n`groupby` allows you to split data into groups, apply a function, and combine the results. \n\n## Financial Use Cases\n1.  **Seasonality**: Group by Month/Day of Week to find seasonal trends.\n    ```python\n    df.groupby(df.index.month).mean()\n    ```\n2.  **Sector Analysis**: Group stocks by sector to calculate average sector performance.\n3.  **Yearly Stats**: Calculate annual volatility.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndates = pd.date_range('2023-01-01', periods=20, freq='D')\nreturns = np.random.normal(0, 1, 20)\ndf = pd.DataFrame({'Return': returns}, index=dates)\n\n# Create a 'Day of Week' column (0=Mon, 6=Sun)\ndf['Day'] = df.index.dayofweek\n\n# Average return by Day of Week\navg_by_day = df.groupby('Day')['Return'].mean()\n\nprint(avg_by_day)"
+}

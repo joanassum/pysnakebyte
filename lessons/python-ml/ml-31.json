@@ -1,0 +1,9 @@
+{
+  "id": "ml-31",
+  "title": "Descriptive Statistics",
+  "category": "Python for Data Science",
+  "number": 31,
+  "duration": "12 min read",
+  "content": "# Descriptive Statistics\n\nDescriptive statistics summarize and describe the features of a dataset.\n\n## Measures of Central Tendency\n\n*   **Mean**: The average.\n    ```python\n    mean = np.mean(data)\n    ```\n*   **Median**: The middle value (robust to outliers).\n    ```python\n    median = np.median(data)\n    ```\n*   **Mode**: The most frequent value.\n    ```python\n    from scipy import stats\n    mode = stats.mode(data)\n    ```\n\n## Measures of Dispersion\n\n*   **Range**: Max - Min.\n*   **Variance**: Spread of numbers from the mean.\n    ```python\n    var = np.var(data)\n    ```\n*   **Standard Deviation**: Square root of variance.\n    ```python\n    std = np.std(data)\n    ```\n*   **Interquartile Range (IQR)**: Q3 - Q1.\n    ```python\n    q75, q25 = np.percentile(data, [75 ,25])\n    iqr = q75 - q25\n    ```\n\n## Skewness and Kurtosis\n\n*   **Skewness**: Measure of asymmetry.\n*   **Kurtosis**: Measure of \"tailedness\".",
+  "code": "import numpy as np\nfrom scipy import stats\n\ndata = [1, 2, 2, 3, 4, 100]\nprint(\"Mean:\", np.mean(data))\nprint(\"Median:\", np.median(data))"
+}

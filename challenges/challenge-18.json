@@ -1,0 +1,9 @@
+{
+  "id": "challenge-18",
+  "title": "Caesar Cipher",
+  "difficulty": "medium",
+  "description": "# Caesar Cipher\n\nWrite a function that encrypts text using the Caesar cipher.\n\nThe Caesar cipher shifts each letter by a fixed number of positions in the alphabet.\n\n## Example\n\n```python\nresult = solution(\"abc\", 3)\nprint(result)  # Output: \"def\"\n\nresult = solution(\"xyz\", 3)\nprint(result)  # Output: \"abc\"\n\nresult = solution(\"Hello, World!\", 5)\nprint(result)  # Output: \"Mjqqt, Btwqi!\"\n```\n\n## Requirements\n\n- Accept a string and a shift value\n- Shift only letters, preserve case\n- Keep non-letter characters unchanged\n- Handle wrap-around (z + 1 = a)",
+  "short_description": "Encrypt/decrypt text with Caesar cipher",
+  "starter_code": "def solution(text, shift):\n    # Return text encrypted with Caesar cipher (shift letters by 'shift')\n    pass\n\n# Test your solution\nprint(solution('abc', 1))  # Should print 'bcd'",
+  "test_code": "assert solution('abc', 3) == 'def', 'Test 1 failed'\nassert solution('xyz', 3) == 'abc', 'Test 2 failed: wrap around'\nassert solution('Hello, World!', 5) == 'Mjqqt, Btwqi!', 'Test 3 failed'\nassert solution('ABC', 26) == 'ABC', 'Test 4 failed: full rotation'\nassert solution('', 5) == '', 'Test 5 failed: empty string'\nassert solution('abc', 0) == 'abc', 'Test 6 failed: no shift'\nprint('PASSED')"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "challenge-19",
+  "title": "Quick Sort",
+  "difficulty": "hard",
+  "description": "# Quick Sort\n\nWrite a function that implements the quicksort algorithm to sort a list of numbers.\n\nQuicksort is a divide-and-conquer algorithm that picks a pivot element and partitions the array around it.\n\n## Example\n\n```python\nresult = solution([64, 34, 25, 12, 22, 11, 90])\nprint(result)  # Output: [11, 12, 22, 25, 34, 64, 90]\n\nresult = solution([5, 1, 4, 2, 8])\nprint(result)  # Output: [1, 2, 4, 5, 8]\n```\n\n## Requirements\n\n- Accept a list of numbers\n- Return a sorted list in ascending order\n- Implement the quicksort algorithm\n- Handle empty lists and single-element lists",
+  "short_description": "Implement quicksort algorithm",
+  "starter_code": "def solution(lst):\n    # Implement quicksort and return the sorted list\n    pass\n\n# Test your solution\nprint(solution([3, 6, 1, 8, 2, 9, 4]))  # Should print [1, 2, 3, 4, 6, 8, 9]",
+  "test_code": "assert solution([64, 34, 25, 12, 22, 11, 90]) == [11, 12, 22, 25, 34, 64, 90], 'Test 1 failed'\nassert solution([5, 1, 4, 2, 8]) == [1, 2, 4, 5, 8], 'Test 2 failed'\nassert solution([]) == [], 'Test 3 failed: empty list'\nassert solution([1]) == [1], 'Test 4 failed: single element'\nassert solution([3, 3, 3, 1, 1, 2, 2]) == [1, 1, 2, 2, 3, 3, 3], 'Test 5 failed: duplicates'\nassert solution([5, 4, 3, 2, 1]) == [1, 2, 3, 4, 5], 'Test 6 failed: reverse sorted'\nprint('PASSED')"
+}

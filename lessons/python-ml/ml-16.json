@@ -1,0 +1,9 @@
+{
+  "id": "ml-16",
+  "title": "Filtering Data",
+  "category": "Python for Data Science",
+  "number": 16,
+  "duration": "12 min read",
+  "content": "# Filtering Data\n\nFiltering is essential for isolating relevant data points.\n\n## Boolean Indexing\n\nYou can use logical operators `&` (and), `|` (or), and `~` (not).\n\n```python\n# Age > 25 AND City is 'New York'\nfilter_cond = (df['Age'] > 25) & (df['City'] == 'New York')\nresult = df[filter_cond]\n```\n\n## .isin()\n\nCheck if values exist in a list.\n\n```python\ncities = ['New York', 'Chicago']\nresult = df[df['City'].isin(cities)]\n```\n\n## String Methods\n\nPandas provides vectorized string functions via `.str` accessor.\n\n```python\n# Names starting with 'A'\na_names = df[df['Name'].str.startswith('A')]\n\n# Contains 'son'\nson_names = df[df['Name'].str.contains('son')]\n```\n\n## Query Method\n\nA more readable syntax for filtering.\n\n```python\nresult = df.query('Age > 25 and City == \"New York\"')\n```",
+  "code": "import pandas as pd\n\ndf = pd.DataFrame({'val': [10, 20, 30, 40], 'cat': ['a', 'b', 'a', 'c']})\n\n# Filter where cat is 'a'\nprint(df[df['cat'] == 'a'])"
+}

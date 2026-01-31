@@ -1,0 +1,9 @@
+{
+  "id": "trade-27",
+  "title": "Stochastic Oscillator",
+  "category": "Technical Analysis Indicators",
+  "number": 27,
+  "duration": "15 min read",
+  "content": "# Stochastic Oscillator\n\nStochastics compare a specific closing price of a security to a range of its prices over a certain period of time.\n\n## Calculation\n`%K = (Current Close - Lowest Low) / (Highest High - Lowest Low) * 100`\n`%D = 3-day SMA of %K`\n\n## Signals\nSimilar to RSI, but more sensitive.\n*   > 80: Overbought.\n*   < 20: Oversold.",
+  "code": "import pandas as pd\n\ndf = pd.DataFrame({\n    'High': [10, 12, 15, 14, 13],\n    'Low': [8, 9, 11, 10, 9],\n    'Close': [9, 11, 14, 12, 10]\n})\n\nperiod = 5\nlow_min = df['Low'].rolling(window=period).min()\nhigh_max = df['High'].rolling(window=period).max()\n\n# Fast Stochastic\ndf['%K'] = 100 * ((df['Close'] - low_min) / (high_max - low_min))\n\n# Slow Stochastic\ndf['%D'] = df['%K'].rolling(window=3).mean()\n\nprint(df.tail())"
+}

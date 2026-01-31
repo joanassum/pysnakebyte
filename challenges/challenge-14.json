@@ -1,0 +1,9 @@
+{
+  "id": "challenge-14",
+  "title": "Binary Search",
+  "difficulty": "medium",
+  "description": "# Binary Search\n\nWrite a function that implements binary search to find the index of a target value in a sorted list.\n\n## Example\n\n```python\nresult = solution([1, 3, 5, 7, 9, 11], 7)\nprint(result)  # Output: 3\n\nresult = solution([1, 3, 5, 7, 9, 11], 4)\nprint(result)  # Output: -1\n```\n\n## Requirements\n\n- Accept a sorted list and a target value\n- Return the index of the target if found\n- Return -1 if the target is not in the list\n- Must use binary search algorithm (O(log n) time complexity)",
+  "short_description": "Implement binary search",
+  "starter_code": "def solution(lst, target):\n    # Return the index of target in sorted list, or -1 if not found\n    pass\n\n# Test your solution\nprint(solution([1, 3, 5, 7, 9], 5))  # Should print 2\nprint(solution([1, 3, 5, 7, 9], 4))  # Should print -1",
+  "test_code": "assert solution([1, 3, 5, 7, 9, 11], 7) == 3, 'Test 1 failed'\nassert solution([1, 3, 5, 7, 9, 11], 4) == -1, 'Test 2 failed'\nassert solution([1, 3, 5, 7, 9, 11], 1) == 0, 'Test 3 failed: first element'\nassert solution([1, 3, 5, 7, 9, 11], 11) == 5, 'Test 4 failed: last element'\nassert solution([], 5) == -1, 'Test 5 failed: empty list'\nassert solution([5], 5) == 0, 'Test 6 failed: single element found'\nassert solution([5], 3) == -1, 'Test 7 failed: single element not found'\nprint('PASSED')"
+}

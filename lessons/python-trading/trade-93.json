@@ -1,0 +1,9 @@
+{
+  "id": "trade-93",
+  "title": "Project: Mean Reversion Bot",
+  "category": "Advanced Trading Projects",
+  "number": 93,
+  "duration": "18 min read",
+  "content": "## Buying the Dip\n\nMean reversion assumes extreme price moves will snap back to the average.\n\n### RSI Strategy\n\n- **RSI (Relative Strength Index)**: Oscillates between 0 and 100.\n- **Oversold (<30)**: Buy.\n- **Overbought (>70)**: Sell.\n\n### Bollinger Bands Squeeze\n\nBuy when price touches the lower band (2 std devs below mean). Sell when it touches the upper band.",
+  "code": "import pandas_ta as ta\n\n# df.ta.rsi(length=14, append=True)\n\n# def generate_signal(row):\n#     if row['RSI_14'] < 30:\n#         return 'BUY'\n#     elif row['RSI_14'] > 70:\n#         return 'SELL'\n#     return 'HOLD'"
+}

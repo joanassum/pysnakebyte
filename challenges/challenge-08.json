@@ -1,0 +1,9 @@
+{
+  "id": "challenge-08",
+  "title": "Palindrome Check",
+  "difficulty": "easy",
+  "description": "# Palindrome Check\n\nWrite a function that checks if a given string is a palindrome.\n\nA palindrome is a word that reads the same backward as forward.\n\n## Example\n\n```python\nresult = solution(\"racecar\")\nprint(result)  # Output: True\n\nresult = solution(\"hello\")\nprint(result)  # Output: False\n```\n\n## Requirements\n\n- Accept one string parameter\n- Return True if the string is a palindrome, False otherwise\n- The check should be case-insensitive\n- Ignore spaces when checking",
+  "short_description": "Check if string is palindrome",
+  "starter_code": "def solution(s):\n    # Return True if s is a palindrome, False otherwise\n    pass\n\n# Test your solution\nprint(solution('racecar'))  # Should print True\nprint(solution('hello'))    # Should print False",
+  "test_code": "assert solution('racecar') == True, 'Test 1 failed'\nassert solution('hello') == False, 'Test 2 failed'\nassert solution('A man a plan a canal Panama'.replace(' ', '').lower()) == True or solution('A man a plan a canal Panama') == True, 'Test 3 failed'\nassert solution('Racecar') == True, 'Test 4 failed: case insensitive'\nassert solution('a') == True, 'Test 5 failed: single char'\nassert solution('') == True, 'Test 6 failed: empty string is palindrome'\nprint('PASSED')"
+}

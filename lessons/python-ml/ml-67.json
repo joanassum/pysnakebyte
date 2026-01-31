@@ -1,0 +1,9 @@
+{
+  "id": "ml-67",
+  "title": "Decision Tree Regression",
+  "category": "Regression",
+  "number": 67,
+  "duration": "10 min read",
+  "content": "## Non-Linear Regression\n\nDecision Trees can be used for regression as well as classification. Instead of predicting a class, they predict a continuous value (usually the average of the observations in the leaf node).\n\n### How it Works\n\n1.  The algorithm splits the data into subsets based on feature values.\n2.  It chooses splits that minimize the MSE (Mean Squared Error).\n3.  This results in a piecewise constant approximation.\n\n### Advantages\n- Can model non-linear relationships.\n- Easy to interpret.\n\n### Disadvantages\n- Prone to overfitting (needs regularization like `max_depth`).\n",
+  "code": "import numpy as np\nimport matplotlib.pyplot as plt\nfrom sklearn.tree import DecisionTreeRegressor\n\n# Generate non-linear data\nnp.random.seed(42)\nX = np.sort(5 * np.random.rand(80, 1), axis=0)\ny = np.sin(X).ravel() + np.random.normal(0, 0.1, X.shape[0])\n\n# Train models with different depths\nregr_1 = DecisionTreeRegressor(max_depth=2)\nregr_2 = DecisionTreeRegressor(max_depth=5)\nregr_1.fit(X, y)\nregr_2.fit(X, y)\n\n# Predict\nX_test = np.arange(0.0, 5.0, 0.01)[:, np.newaxis]\ny_1 = regr_1.predict(X_test)\ny_2 = regr_2.predict(X_test)\n\n# Plot\nplt.figure()\nplt.scatter(X, y, s=20, edgecolor=\"black\", c=\"darkorange\", label=\"data\")\nplt.plot(X_test, y_1, color=\"cornflowerblue\", label=\"max_depth=2\", linewidth=2)\nplt.plot(X_test, y_2, color=\"yellowgreen\", label=\"max_depth=5\", linewidth=2)\nplt.xlabel(\"data\")\nplt.ylabel(\"target\")\nplt.title(\"Decision Tree Regression\")\nplt.legend()\nplt.show()"
+}

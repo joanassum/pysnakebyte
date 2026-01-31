@@ -1,0 +1,9 @@
+{
+  "id": "trade-03",
+  "title": "Getting Market Data",
+  "category": "Introduction to Algorithmic Trading",
+  "number": 3,
+  "duration": "15 min read",
+  "content": "# Getting Market Data\n\nData is the fuel for any trading algorithm. Data comes in various forms:\n\n*   **OHLCV**: Open, High, Low, Close, Volume. The standard format for bar data.\n*   **Tick Data**: Every single trade executed.\n*   **Fundamental Data**: Earnings, revenue, P/E ratios.\n*   **Alternative Data**: Satellite imagery, sentiment analysis.\n\n## Sources\n\n1.  **Yahoo Finance (`yfinance`)**: Free, easy to use, good for daily data. Not for HFT.\n2.  **Alpha Vantage**: Free tier API.\n3.  **IEX Cloud**: specific API for financial data.\n4.  **Interactive Brokers**: For live trading and professional data.\n\nWe will use `yfinance` for this course as it requires no API key for basic usage.",
+  "code": "import yfinance as yf\n\n# Download Apple stock data from 2020 to 2023\ndata = yf.download(\"AAPL\", start=\"2020-01-01\", end=\"2023-01-01\")\n\n# Display the first 5 rows\nprint(data.head())\n\n# Display data info\nprint(data.info())"
+}

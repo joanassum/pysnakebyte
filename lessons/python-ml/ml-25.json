@@ -1,0 +1,9 @@
+{
+  "id": "ml-25",
+  "title": "Subplots and Layouts",
+  "category": "Python for Data Science",
+  "number": 25,
+  "duration": "15 min read",
+  "content": "# Subplots and Layouts\n\nCreating multiple plots in a single figure.\n\n## `plt.subplot()`\n\nSimple grid system.\n\n```python\nplt.subplot(2, 1, 1) # (rows, cols, panel number)\nplt.plot(x, y1)\n\nplt.subplot(2, 1, 2)\nplt.plot(x, y2)\n```\n\n## `plt.subplots()`\n\nThe Object-Oriented approach (Recommended).\n\n```python\nfig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 8))\n\n# Access axes by index\naxes[0, 0].plot(x, y)\naxes[0, 1].scatter(x, y)\naxes[1, 0].hist(x)\naxes[1, 1].bar(x, y)\n\n# Adjust layout\nplt.tight_layout()\n```\n\n## GridSpec\n\nFor complex layouts (spanning multiple rows/cols).\n\n```python\ngrid = plt.GridSpec(2, 3, wspace=0.4, hspace=0.3)\nplt.subplot(grid[0, 0])\nplt.subplot(grid[0, 1:])\nplt.subplot(grid[1, :2])\nplt.subplot(grid[1, 2])\n```",
+  "code": "import matplotlib.pyplot as plt\n\nfig, ax = plt.subplots(2, 1)\nax[0].plot([1, 2, 3])\nax[1].plot([3, 2, 1])"
+}

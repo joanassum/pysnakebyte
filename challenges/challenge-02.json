@@ -1,0 +1,9 @@
+{
+  "id": "challenge-02",
+  "title": "Sum Two Numbers",
+  "difficulty": "easy",
+  "description": "# Sum Two Numbers\n\nWrite a function that takes two numbers as parameters and returns their sum.\n\n## Example\n\n```python\nresult = solution(3, 5)\nprint(result)  # Output: 8\n\nresult = solution(-1, 1)\nprint(result)  # Output: 0\n```\n\n## Requirements\n\n- Accept two numeric parameters\n- Return the sum of both numbers\n- Handle positive, negative, and zero values",
+  "short_description": "Write function to add two numbers",
+  "starter_code": "def solution(a, b):\n    # Return the sum of a and b\n    pass\n\n# Test your solution\nprint(solution(2, 3))  # Should print 5",
+  "test_code": "assert solution(3, 5) == 8, 'Test 1 failed: 3 + 5 should equal 8'\nassert solution(-1, 1) == 0, 'Test 2 failed: -1 + 1 should equal 0'\nassert solution(0, 0) == 0, 'Test 3 failed: 0 + 0 should equal 0'\nassert solution(-5, -3) == -8, 'Test 4 failed: -5 + -3 should equal -8'\nassert solution(100, 200) == 300, 'Test 5 failed: 100 + 200 should equal 300'\nprint('PASSED')"
+}

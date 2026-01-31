@@ -1,0 +1,9 @@
+{
+  "id": "challenge-07",
+  "title": "Factorial",
+  "difficulty": "easy",
+  "description": "# Factorial\n\nWrite a function that calculates the factorial of a given non-negative integer.\n\nThe factorial of n (written as n!) is the product of all positive integers less than or equal to n.\n\n## Example\n\n```python\nresult = solution(5)\nprint(result)  # Output: 120 (5! = 5 * 4 * 3 * 2 * 1)\n\nresult = solution(0)\nprint(result)  # Output: 1 (0! = 1 by definition)\n```\n\n## Requirements\n\n- Accept one non-negative integer parameter\n- Return the factorial of that number\n- Handle 0 (0! = 1)\n- Handle 1 (1! = 1)",
+  "short_description": "Calculate factorial",
+  "starter_code": "def solution(n):\n    # Return the factorial of n\n    pass\n\n# Test your solution\nprint(solution(5))  # Should print 120",
+  "test_code": "assert solution(5) == 120, 'Test 1 failed: 5! should be 120'\nassert solution(0) == 1, 'Test 2 failed: 0! should be 1'\nassert solution(1) == 1, 'Test 3 failed: 1! should be 1'\nassert solution(3) == 6, 'Test 4 failed: 3! should be 6'\nassert solution(10) == 3628800, 'Test 5 failed: 10! should be 3628800'\nprint('PASSED')"
+}

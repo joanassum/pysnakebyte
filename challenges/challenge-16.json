@@ -1,0 +1,9 @@
+{
+  "id": "challenge-16",
+  "title": "Valid Parentheses",
+  "difficulty": "medium",
+  "description": "# Valid Parentheses\n\nWrite a function that determines if a string of parentheses, brackets, and braces is valid.\n\nA string is valid if:\n- Open brackets are closed by the same type of brackets\n- Open brackets are closed in the correct order\n\n## Example\n\n```python\nresult = solution(\"()[]{}\")\nprint(result)  # Output: True\n\nresult = solution(\"([)]\")\nprint(result)  # Output: False\n\nresult = solution(\"{[]}\")\nprint(result)  # Output: True\n```\n\n## Requirements\n\n- Accept a string containing only '()', '[]', '{}'\n- Return True if valid, False otherwise\n- Handle empty strings (return True)",
+  "short_description": "Check balanced brackets",
+  "starter_code": "def solution(s):\n    # Return True if parentheses are balanced, False otherwise\n    pass\n\n# Test your solution\nprint(solution('()[]{}'))    # Should print True\nprint(solution('([)]'))      # Should print False",
+  "test_code": "assert solution('()[]{}') == True, 'Test 1 failed'\nassert solution('([)]') == False, 'Test 2 failed'\nassert solution('{[]}') == True, 'Test 3 failed'\nassert solution('') == True, 'Test 4 failed: empty is valid'\nassert solution('(') == False, 'Test 5 failed: unclosed'\nassert solution('(((())))') == True, 'Test 6 failed: nested'\nassert solution('({[)]}') == False, 'Test 7 failed: wrong order'\nprint('PASSED')"
+}

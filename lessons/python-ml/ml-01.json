@@ -1,0 +1,9 @@
+{
+  "id": "ml-01",
+  "title": "Introduction to Data Science",
+  "category": "Python for Data Science",
+  "number": 1,
+  "duration": "8 min read",
+  "content": "# Introduction to Data Science\n\nData Science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from structured and unstructured data. In this course, we will focus on using Python, a powerful and versatile programming language, to perform data science tasks.\n\n## The Data Science Lifecycle\n\n1.  **Data Collection**: Gathering raw data from various sources.\n2.  **Data Cleaning**: Preprocessing data to handle missing values, outliers, and inconsistencies.\n3.  **Exploratory Data Analysis (EDA)**: Understanding the data through statistics and visualization.\n4.  **Model Building**: Using machine learning algorithms to build predictive models.\n5.  **Model Evaluation**: Assessing the performance of the models.\n6.  **Deployment**: Integrating the model into a production environment.\n\n## Why Python for Data Science?\n\n*   **Rich Ecosystem**: Libraries like NumPy, Pandas, Matplotlib, and Scikit-learn.\n*   **Readability**: Python's syntax is clear and concise.\n*   **Community**: Huge community support and extensive documentation.\n\n## Key Libraries\n\n*   **NumPy**: Fundamental package for scientific computing.\n*   **Pandas**: Data manipulation and analysis.\n*   **Matplotlib/Seaborn**: Data visualization.\n*   **Scikit-learn**: Machine learning.\n\nLet's get started on your journey to becoming a Data Scientist!",
+  "code": "# Welcome to the Python for Data Science course!\nprint(\"Hello, Data Science!\")"
+}

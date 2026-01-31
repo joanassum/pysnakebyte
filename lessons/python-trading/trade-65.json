@@ -1,0 +1,9 @@
+{
+  "id": "trade-65",
+  "title": "Handling Order State (Websockets)",
+  "category": "Connecting to Brokers (APIs)",
+  "number": 65,
+  "duration": "12 min read",
+  "content": "# Tracking Orders: Websockets vs Polling\n\nOnce an order is placed, we need to know if it filled.\n\n## Polling (REST)\nPeriodically asking the server \"Is my order filled?\"\n- Inefficient, hits rate limits.\n\n## Websockets\nA persistent connection where the server *pushes* updates to you.\n- \"Order #123 Partially Filled\"\n- \"Order #123 Fully Filled\"\n- Real-time and efficient.",
+  "code": "import asyncio\n# import websockets\n\n# Conceptual Async Websocket Client\nasync def listen_to_orders():\n    uri = \"wss://stream.binance.com:9443/ws/my_listen_key\"\n    # async with websockets.connect(uri) as websocket:\n    #     while True:\n    #         msg = await websocket.recv()\n    #         print(f\"Update: {msg}\")\n    print(\"Websocket listening (mocked)\")\n\n# asyncio.run(listen_to_orders())\n"
+}

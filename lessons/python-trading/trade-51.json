@@ -1,0 +1,9 @@
+{
+  "id": "trade-51",
+  "title": "Introduction to Backtesting",
+  "category": "Backtesting Frameworks",
+  "number": 51,
+  "duration": "8 min read",
+  "content": "# Backtesting Basics\n\nBacktesting is the simulation of a trading strategy using historical data to generate results and analyze risk and profitability before risking any actual capital.\n\n## Types of Backtesting\n1. **Vectorized Backtesting**:\n   - Computes signals and PnL on the entire dataset at once using array operations (pandas/numpy).\n   - Pros: extremely fast, easy to code.\n   - Cons: Simplified, hard to model complex order types or execution physics.\n2. **Event-Driven Backtesting**:\n   - Loops through time, processing one event (tick/bar) at a time.\n   - Simulates a broker, order book, portfolio state.\n   - Pros: Realistic, avoids look-ahead bias naturally.\n   - Cons: Slower, more complex code.",
+  "code": "# Conceptual comparison\n# Vectorized:\n# signals = data['price'] > data['ma']\n# returns = signals.shift(1) * data['returns']\n\n# Event-Driven:\n# for bar in data:\n#     if portfolio.cash > 0 and bar.price > ma:\n#          broker.submit_order(buy_order)\n#     broker.process_orders()\n"
+}

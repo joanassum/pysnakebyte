@@ -1,0 +1,9 @@
+{
+  "id": "ml-24",
+  "title": "Customizing Plots",
+  "category": "Python for Data Science",
+  "number": 24,
+  "duration": "15 min read",
+  "content": "# Customizing Plots\n\nMaking your plots publication-ready.\n\n## Labels and Titles\n\n```python\nplt.title(\"Global Warming Data\", fontsize=16, fontweight='bold')\nplt.xlabel(\"Year\")\nplt.ylabel(\"Temperature Anomaly\")\n```\n\n## Legends\n\n```python\nplt.plot(x, y1, label='Model A')\nplt.plot(x, y2, label='Model B')\nplt.legend(loc='upper left', frameon=False)\n```\n\n## Ticks and Grids\n\n```python\nplt.grid(True, linestyle='--', alpha=0.6)\nplt.xticks(rotation=45)\nplt.xlim(0, 100) # Set axis limits\n```\n\n## Styles\n\nMatplotlib comes with pre-defined styles.\n\n```python\nprint(plt.style.available)\nplt.style.use('seaborn-v0_8-whitegrid')\n```\n\n## Annotations\n\nAdd text or arrows to highlight points.\n\n```python\nplt.annotate('Peak', xy=(x_max, y_max), xytext=(x_max+1, y_max+1),\n             arrowprops=dict(facecolor='black', shrink=0.05))\n```",
+  "code": "import matplotlib.pyplot as plt\n\nplt.style.use('classic')\nplt.plot([1, 2, 3], [1, 4, 9])\nplt.title(\"Classic Style\")"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ml-103",
+  "title": "Building ML APIs with Flask",
+  "category": "ML Projects",
+  "number": 103,
+  "duration": "15 min read",
+  "content": "## Building ML APIs with Flask\n\nTo make your model accessible to other applications (web apps, mobile apps), you can wrap it in an API (Application Programming Interface).\n\n### Flask\n\nFlask is a lightweight web framework for Python.\n\n### Structure\n\n1.  **Load Model**: Load the pre-trained model when the app starts.\n2.  **Define Endpoint**: Create a route (e.g., `/predict`) that accepts POST requests.\n3.  **Parse Input**: Get JSON data from the request.\n4.  **Predict**: Feed data to the model.\n5.  **Return Output**: Return the prediction as JSON.\n\n### Example Code\n\n```python\nfrom flask import Flask, request, jsonify\nimport joblib\n\napp = Flask(__name__)\nmodel = joblib.load('model.joblib')\n\n@app.route('/predict', methods=['POST'])\ndef predict():\n    data = request.json\n    prediction = model.predict([data['features']])\n    return jsonify({'prediction': list(prediction)})\n\nif __name__ == '__main__':\n    app.run(debug=True)\n```\n",
+  "code": "# This code represents a Flask app structure but won't run in the browser environment directly.\n\nfrom flask import Flask, request, jsonify\nimport joblib\nimport numpy as np\n\napp = Flask(__name__)\n\n# Mock model loading\nclass MockModel:\n    def predict(self, X):\n        return np.sum(X, axis=1)\n\nmodel = MockModel()\n\n@app.route('/predict', methods=['POST'])\ndef predict():\n    # TODO: Get JSON data from request\n    # data = request.get_json(force=True)\n    \n    # TODO: Extract features and convert to array\n    # features = np.array(data['features']).reshape(1, -1)\n    \n    # TODO: Make prediction\n    # prediction = model.predict(features)\n    \n    # TODO: Return jsonify result\n    # return jsonify({'prediction': prediction[0]})\n    pass\n\nprint(\"Flask app structure defined.\")"
+}

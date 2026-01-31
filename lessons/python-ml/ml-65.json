@@ -1,0 +1,9 @@
+{
+  "id": "ml-65",
+  "title": "Lasso Regression",
+  "category": "Regression",
+  "number": 65,
+  "duration": "10 min read",
+  "content": "## Regularization: L1 Penalty\n\nLasso (Least Absolute Shrinkage and Selection Operator) Regression adds a penalty term equal to the absolute value of the magnitude of coefficients.\n\n$$ Cost = MSE + \\alpha \\sum_{i=1}^{n} |b_i| $$\n\n### Key Characteristics\n\n- **Feature Selection**: Lasso tends to drive coefficients of less important features to exactly zero. This creates sparse models.\n- **Interpretation**: Good for understanding which features matter most.\n\n### Ridge vs. Lasso\n\n- Use **Ridge** if you want to keep all features and prevent overfitting.\n- Use **Lasso** if you suspect many features are irrelevant (automatic feature selection).\n",
+  "code": "from sklearn.linear_model import Lasso\nimport numpy as np\n\n# Generate data with many irrelevant features\nnp.random.seed(42)\nn_samples, n_features = 50, 20\nX = np.random.randn(n_samples, n_features)\n# Only first 2 features are useful\ncoef = np.zeros(n_features)\ncoef[:2] = [10, -5]\ny = np.dot(X, coef) + np.random.normal(size=n_samples)\n\n# Train Lasso\nlasso = Lasso(alpha=0.1)\nlasso.fit(X, y)\n\nprint(\"True coefficients:\", coef)\nprint(\"\\nLasso coefficients:\")\nprint(lasso.coef_)\n\nprint(f\"\\nNumber of features kept: {np.sum(lasso.coef_ != 0)}\")\nprint(f\"Features eliminated: {np.sum(lasso.coef_ == 0)}\")"
+}

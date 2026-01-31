@@ -1,0 +1,9 @@
+{
+  "id": "ml-64",
+  "title": "Ridge Regression",
+  "category": "Regression",
+  "number": 64,
+  "duration": "10 min read",
+  "content": "## Regularization: L2 Penalty\n\nRegularization is a technique to prevent overfitting by penalizing complex models. Ridge Regression (L2 Regularization) adds a penalty term equal to the square of the magnitude of coefficients.\n\n$$ Cost = MSE + \\alpha \\sum_{i=1}^{n} b_i^2 $$\n\n### Key Characteristics\n\n- **Shrinkage**: It shrinks the coefficients towards zero, but rarely exactly to zero.\n- **Multicollinearity**: It handles multicollinearity well.\n- **Alpha ($\\alpha$)**: Hyperparameter controlling regularization strength.\n    - $\\alpha = 0$: Same as Linear Regression.\n    - $\\alpha \\rightarrow \\infty$: Coefficients $\\rightarrow 0$ (underfitting).\n\n### When to use?\n\nGenerally, you should always prefer Ridge Regression over plain Linear Regression.\n",
+  "code": "from sklearn.linear_model import Ridge, LinearRegression\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import mean_squared_error\nimport numpy as np\n\n# Generate data with noise\nnp.random.seed(42)\nX = np.random.rand(100, 10) # 10 features\ny = 3 * X[:, 0] + 2 * X[:, 1] + np.random.randn(100)\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)\n\n# Standard Linear Regression\nlin_reg = LinearRegression()\nlin_reg.fit(X_train, y_train)\nprint(f\"Linear Reg Test Score: {lin_reg.score(X_test, y_test):.4f}\")\n\n# Ridge Regression (Alpha=1.0)\nridge_reg = Ridge(alpha=1.0)\nridge_reg.fit(X_train, y_train)\nprint(f\"Ridge Reg Test Score: {ridge_reg.score(X_test, y_test):.4f}\")\n\n# Check coefficients\nprint(f\"\\nLinear Coef (mean abs): {np.mean(np.abs(lin_reg.coef_)):.4f}\")\nprint(f\"Ridge Coef (mean abs): {np.mean(np.abs(ridge_reg.coef_)):.4f}\")\n# Ridge coefficients should be smaller"
+}

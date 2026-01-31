@@ -1,0 +1,9 @@
+{
+  "id": "ml-36",
+  "title": "Confidence Intervals",
+  "category": "Statistics for ML",
+  "number": 36,
+  "duration": "8 min read",
+  "content": "## Understanding Confidence Intervals\n\nA confidence interval (CI) is a range of estimates for an unknown parameter, defined at a specified confidence level. It quantifies the uncertainty associated with a sample statistic.\n\n### Why Confidence Intervals Matter\n\nIn Machine Learning, simply knowing the mean accuracy of a model isn't enough. We need to know how stable that performance is. A confidence interval tells us the range within which we can expect the true performance to fall, say, 95% of the time.\n\n### Calculating CI for a Mean\n\nFor a large sample size ($n > 30$), we can use the Normal Distribution (Z-score):\n\n$$ CI = \\bar{x} \\pm Z \\times \\frac{\\sigma}{\\sqrt{n}} $$\n\nWhere:\n- $\\bar{x}$ is the sample mean\n- $Z$ is the Z-score (1.96 for 95% confidence)\n- $\\sigma$ is the standard deviation\n- $n$ is the sample size\n\n### Using Scipy\n\nPython's `scipy.stats` library provides convenient functions to calculate these intervals.\n",
+  "code": "import numpy as np\nfrom scipy import stats\n\n# Generate dummy data (e.g., model accuracy scores)\nnp.random.seed(42)\ndata = np.random.normal(loc=0.85, scale=0.05, size=100)\n\n# Calculate mean and standard error\nmean = np.mean(data)\nstd_error = stats.sem(data)\n\n# Calculate 95% Confidence Interval\nconfidence = 0.95\nci = stats.t.interval(confidence, len(data)-1, loc=mean, scale=std_error)\n\nprint(f\"Mean Accuracy: {mean:.4f}\")\nprint(f\"95% Confidence Interval: {ci}\")"
+}

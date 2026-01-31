@@ -1,0 +1,9 @@
+{
+  "id": "ml-05",
+  "title": "Working with Virtual Environments",
+  "category": "Python for Data Science",
+  "number": 5,
+  "duration": "10 min read",
+  "content": "# Working with Virtual Environments\n\nVirtual environments allow you to create isolated Python environments for different projects, preventing dependency conflicts.\n\n## Using `venv`\n\nPython comes with the `venv` module.\n\n### Creating an Environment\n\n```bash\npython -m venv myenv\n```\n\n### Activating the Environment\n\n*   **Windows**:\n    ```bash\n    myenv\\Scripts\\activate\n    ```\n*   **macOS/Linux**:\n    ```bash\n    source myenv/bin/activate\n    ```\n\n### Deactivating\n\nSimply run `deactivate`.\n\n## Managing Dependencies\n\nUse `pip freeze` to list installed packages and save them to a file.\n\n```bash\npip freeze > requirements.txt\n```\n\nTo install from a file:\n\n```bash\npip install -r requirements.txt\n```\n\n## Using Conda Environments\n\nIf you use Anaconda:\n\n```bash\nconda create --name myenv python=3.9\nconda activate myenv\n```",
+  "code": "# This code runs in your current environment\nimport sys\nprint(f\"Current executable: {sys.executable}\")"
+}

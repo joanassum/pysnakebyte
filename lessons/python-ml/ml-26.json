@@ -1,0 +1,9 @@
+{
+  "id": "ml-26",
+  "title": "Introduction to Seaborn",
+  "category": "Python for Data Science",
+  "number": 26,
+  "duration": "10 min read",
+  "content": "# Introduction to Seaborn\n\nSeaborn is a statistical data visualization library based on Matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.\n\n## Why Seaborn?\n\n*   **Better Defaults**: Themes and color palettes are more aesthetic.\n*   **Statistical Functions**: Built-in support for regression lines, distributions, etc.\n*   **Pandas Integration**: Works seamlessly with DataFrames.\n\n## Basic Usage\n\n```python\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\n# Load example dataset\ntips = sns.load_dataset('tips')\n\n# Create a plot\nsns.scatterplot(data=tips, x='total_bill', y='tip', hue='time')\nplt.show()\n```\n\n## Figure-level vs Axes-level\n\n*   **Axes-level** (e.g., `scatterplot`, `barplot`): Draws onto a single matplotlib Axes.\n*   **Figure-level** (e.g., `relplot`, `catplot`): Manages the figure, often creating subplots automatically.",
+  "code": "import seaborn as sns\n\n# Seaborn has built-in datasets\niris = sns.load_dataset('iris')\nprint(iris.head())"
+}

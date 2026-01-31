@@ -1,0 +1,9 @@
+{
+  "id": "trade-91",
+  "title": "Project: Statistical Arbitrage (Pairs Trading)",
+  "category": "Advanced Trading Projects",
+  "number": 91,
+  "duration": "20 min read",
+  "content": "## Pairs Trading Concept\n\nFind two assets that move together (cointegrated). When they diverge (spread widens), sell the winner and buy the loser, expecting convergence.\n\n### Steps\n\n1.  **Selection**: Use Engle-Granger test for cointegration on historical data.\n2.  **Signal**: Calculate Z-Score of the spread.\n    - Z > 2: Sell Asset A, Buy Asset B.\n    - Z < -2: Buy Asset A, Sell Asset B.\n    - Z = 0: Close positions.\n3.  **Hedge Ratio**: Determine how many shares of B for each share of A (from OLS regression).",
+  "code": "import numpy as np\nimport statsmodels.api as sm\nimport statsmodels.tsa.stattools as ts\n\n# def check_cointegration(asset_a, asset_b):\n#     score, pvalue, _ = ts.coint(asset_a, asset_b)\n#     return pvalue < 0.05\n\n# def get_zscore(spread):\n#     return (spread - spread.mean()) / spread.std()\n\n# # Logic\n# # spread = asset_a - hedge_ratio * asset_b\n# # z = get_zscore(spread)\n# # if z > 2: go_short_spread()"
+}

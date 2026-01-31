@@ -1,0 +1,9 @@
+{
+  "id": "ml-91",
+  "title": "Introduction to Neural Networks",
+  "category": "Deep Learning",
+  "number": 91,
+  "duration": "10 min read",
+  "content": "## Introduction to Neural Networks\n\nArtificial Neural Networks (ANNs) are computing systems inspired by the biological neural networks that constitute animal brains.\n\n### The Biological Neuron\n\n*   **Dendrites**: Receive signals from other neurons.\n*   **Soma (Cell Body)**: Processes the signals.\n*   **Axon**: Transmits the signal to other neurons.\n*   **Synapse**: The connection between the axon of one neuron and the dendrite of another.\n\n### The Artificial Neuron (Perceptron)\n\nAn artificial neuron attempts to mimic this structure:\n1.  **Inputs ($X$)**: Like dendrites, receive data.\n2.  **Weights ($W$)**: Determine the importance of each input.\n3.  **Summation Function**: Calculates the weighted sum ($z = \\sum w_i x_i + b$).\n4.  **Activation Function**: Determines if the neuron \"fires\" (output).\n\n### Layers\n\n*   **Input Layer**: Receives the initial data.\n*   **Hidden Layers**: Intermediate layers where the magic happens.\n*   **Output Layer**: Produces the final result.\n\nDeep Learning essentially refers to Neural Networks with many hidden layers.\n",
+  "code": "# Conceptual visualization of a neuron\nimport numpy as np\n\ndef neuron(inputs, weights, bias):\n    # Weighted sum (dot product)\n    z = np.dot(inputs, weights) + bias\n    # Activation function (e.g., Sigmoid)\n    return 1 / (1 + np.exp(-z))\n\ninputs = [1.2, 0.8, -0.5]\nweights = [0.5, -0.6, 0.1]\nbias = 0.2\n\noutput = neuron(inputs, weights, bias)\nprint(f\"Neuron Output: {output:.4f}\")"
+}

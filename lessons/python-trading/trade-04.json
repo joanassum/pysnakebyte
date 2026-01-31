@@ -1,0 +1,9 @@
+{
+  "id": "trade-04",
+  "title": "Basic Python Structures for Trading",
+  "category": "Introduction to Algorithmic Trading",
+  "number": 4,
+  "duration": "10 min read",
+  "content": "# Basic Python Structures for Trading\n\nBefore diving into Pandas, it's crucial to understand how native Python structures apply to trading.\n\n## Lists\nUseful for storing sequences of prices or returns.\n\n## Dictionaries\nPerfect for storing portfolio positions or metadata about a stock.\n\n```python\nportfolio = {\n    \"AAPL\": 100,\n    \"TSLA\": 50,\n    \"GOOG\": 20\n}\n```\n\n## Datetime\nTime is critical in finance. The `datetime` module is essential for timestamp manipulation.",
+  "code": "from datetime import datetime\n\n# Storing trades in a list of dictionaries\ntrades = [\n    {\"symbol\": \"AAPL\", \"price\": 150.00, \"volume\": 10, \"time\": datetime(2023, 1, 1, 10, 0)},\n    {\"symbol\": \"GOOG\", \"price\": 2800.00, \"volume\": 2, \"time\": datetime(2023, 1, 2, 11, 30)}\n]\n\nfor trade in trades:\n    print(f\"Bought {trade['volume']} shares of {trade['symbol']} at ${trade['price']}\")"
+}

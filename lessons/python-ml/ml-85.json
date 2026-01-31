@@ -1,0 +1,9 @@
+{
+  "id": "ml-85",
+  "title": "Dimensionality Reduction",
+  "category": "Unsupervised Learning",
+  "number": 85,
+  "duration": "10 min read",
+  "content": "## Dimensionality Reduction\n\nDimensionality reduction is the process of reducing the number of random variables under consideration by obtaining a set of principal variables.\n\n### Why Reduce Dimensions?\n\n1.  **Curse of Dimensionality**: As the number of features increases, the amount of data needed to generalize accurately grows exponentially.\n2.  **Visualization**: We cannot visualize data in more than 3 dimensions.\n3.  **Computational Efficiency**: Fewer features mean faster training.\n4.  **Noise Reduction**: Removing irrelevant features can improve model performance.\n\n### Techniques\n\n1.  **Feature Selection**: Selecting a subset of the original features.\n2.  **Feature Extraction**: Creating new features by projecting the data onto a lower-dimensional space (e.g., PCA, t-SNE, LDA).\n\nThis section focuses on Feature Extraction methods.\n",
+  "code": "# Conceptual exercise - no code implementation for this intro lesson.\n# Review the dataset shape\nfrom sklearn.datasets import load_digits\ndata = load_digits()\nprint(f\"Original Data Shape: {data.data.shape}\")\n# We have 64 features (8x8 pixels). Can we reduce this?"
+}

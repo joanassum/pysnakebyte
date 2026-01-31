@@ -1,0 +1,9 @@
+{
+  "id": "challenge-12",
+  "title": "Anagram Check",
+  "difficulty": "medium",
+  "description": "# Anagram Check\n\nWrite a function that checks if two strings are anagrams of each other.\n\nAn anagram is a word formed by rearranging the letters of another word using all original letters exactly once.\n\n## Example\n\n```python\nresult = solution(\"listen\", \"silent\")\nprint(result)  # Output: True\n\nresult = solution(\"hello\", \"world\")\nprint(result)  # Output: False\n```\n\n## Requirements\n\n- Accept two string parameters\n- Return True if they are anagrams, False otherwise\n- The check should be case-insensitive\n- Ignore spaces",
+  "short_description": "Check if two strings are anagrams",
+  "starter_code": "def solution(s1, s2):\n    # Return True if s1 and s2 are anagrams, False otherwise\n    pass\n\n# Test your solution\nprint(solution('listen', 'silent'))  # Should print True\nprint(solution('hello', 'world'))    # Should print False",
+  "test_code": "assert solution('listen', 'silent') == True, 'Test 1 failed'\nassert solution('hello', 'world') == False, 'Test 2 failed'\nassert solution('Astronomer', 'Moon starer') == True, 'Test 3 failed'\nassert solution('abc', 'cba') == True, 'Test 4 failed'\nassert solution('abc', 'abcd') == False, 'Test 5 failed'\nassert solution('', '') == True, 'Test 6 failed: empty strings are anagrams'\nprint('PASSED')"
+}

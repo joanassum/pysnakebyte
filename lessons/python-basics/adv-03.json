@@ -1,0 +1,9 @@
+{
+  "id": "adv-03",
+  "title": "Generators",
+  "category": "Advanced Topics",
+  "number": 89,
+  "duration": "10 min read",
+  "content": "## Generators\n\nGenerators are a simple and powerful tool for creating iterators. They are written like regular functions but use the `yield` statement whenever they want to return data. Each time `next()` is called on it, the generator resumes where it left off (it remembers all the data values and which statement was last executed).\n\n### Why Generators?\n\n- **Memory Efficiency:** They generate values one at a time and don't store the entire sequence in memory.\n- **Infinite Sequences:** You can model infinite streams of data.\n\n### Generator Functions\n\n```python\ndef count_up_to(n):\n    count = 1\n    while count <= n:\n        yield count\n        count += 1\n\nfor number in count_up_to(5):\n    print(number)\n```\n\n### Generator Expressions\n\nSimilar to list comprehensions but with parentheses `()`. They create a generator object.\n\n```python\nsquares_gen = (x**2 for x in range(10))\n```\n",
+  "code": "# 1. Write a generator function `even_numbers(n)` that yields even numbers from 0 up to n\ndef even_numbers(n):\n    pass\n\n# Iterate and print\n# for num in even_numbers(10): ...\n\n# 2. Create a generator expression for powers of 2 (2^0, 2^1, ...) for exponents 0 to 9\n# powers_gen = ...\n"
+}

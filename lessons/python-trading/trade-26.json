@@ -1,0 +1,9 @@
+{
+  "id": "trade-26",
+  "title": "Average True Range (ATR)",
+  "category": "Technical Analysis Indicators",
+  "number": 26,
+  "duration": "12 min read",
+  "content": "# Average True Range (ATR)\n\nATR is a volatility indicator, not a directional one. It measures the \"True Range\" of price movement.\n\n## True Range (TR) is the max of:\n1.  High - Low\n2.  abs(High - Previous Close)\n3.  abs(Low - Previous Close)\n\n## ATR\nATR is the Moving Average of the True Range.\n\n## Use Cases\n*   **Stop Loss Sizing**: Set stop loss at `2 * ATR` from entry.\n*   **Position Sizing**: Reduce size when ATR (volatility) is high.",
+  "code": "import pandas as pd\nimport numpy as np\n\ndf = pd.DataFrame({\n    'High': [105, 106, 107],\n    'Low': [100, 102, 103],\n    'Close': [102, 105, 104]\n})\n\n# Previous Close\ndf['Prev_Close'] = df['Close'].shift(1)\n\n# Calculate TR components\ndf['TR1'] = df['High'] - df['Low']\ndf['TR2'] = abs(df['High'] - df['Prev_Close'])\ndf['TR3'] = abs(df['Low'] - df['Prev_Close'])\n\n# True Range is max of the three\ndf['TR'] = df[['TR1', 'TR2', 'TR3']].max(axis=1)\n\n# ATR\ndf['ATR_14'] = df['TR'].rolling(window=14).mean()\n\nprint(df)"
+}

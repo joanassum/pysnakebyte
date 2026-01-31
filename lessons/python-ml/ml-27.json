@@ -1,0 +1,9 @@
+{
+  "id": "ml-27",
+  "title": "Statistical Visualizations",
+  "category": "Python for Data Science",
+  "number": 27,
+  "duration": "15 min read",
+  "content": "# Statistical Visualizations\n\nSeaborn excels at visualizing distributions and categories.\n\n## Distributions\n\n*   **Histplot**: Histogram with optional KDE (Kernel Density Estimate).\n    ```python\n    sns.histplot(data=df, x='value', kde=True)\n    ```\n*   **KDEplot**: Smooth density estimate.\n    ```python\n    sns.kdeplot(data=df, x='value', hue='category')\n    ```\n\n## Categorical Plots\n\n*   **Boxplot**: Shows quartiles and outliers.\n    ```python\n    sns.boxplot(x='day', y='total_bill', data=tips)\n    ```\n*   **Violinplot**: Combines boxplot and KDE.\n    ```python\n    sns.violinplot(x='day', y='total_bill', data=tips)\n    ```\n*   **Countplot**: Bar chart of counts.\n    ```python\n    sns.countplot(x='class', data=titanic)\n    ```\n\n## Regression Plots\n\n*   **Regplot**: Scatter plot with regression line.\n    ```python\n    sns.regplot(x='x', y='y', data=df)\n    ```",
+  "code": "import seaborn as sns\nimport matplotlib.pyplot as plt\n\ntips = sns.load_dataset('tips')\nsns.boxplot(x='day', y='total_bill', data=tips)\n# plt.show()"
+}

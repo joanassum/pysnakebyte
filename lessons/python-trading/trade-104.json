@@ -1,0 +1,9 @@
+{
+  "id": "trade-104",
+  "title": "Project: Multi-Exchange Arbitrage Scanner",
+  "category": "Advanced Trading Projects",
+  "number": 104,
+  "duration": "20 min read",
+  "content": "## Price Discrepancies\n\nBitcoin price on Exchange A != Exchange B. A scanner finds these opportunities in real-time.\n\n### Architecture\n\n1.  **Connectors**: Async websocket connections to 5+ exchanges.\n2.  **Normalizer**: Standardize symbol names (BTC-USD vs XBT/USD).\n3.  **Aggregator**: Maintain a \"Global Best Bid/Offer\" (GBBO).\n4.  **Alerter**: If (Best Bid @ Ex A) > (Best Ask @ Ex B) + Fees -> Alert.\n\n### Challenges\n\nTransferring fiat/crypto between exchanges takes time (block confirmations). True arb usually requires holding inventory on both.",
+  "code": "# async def monitor_spread(ex_a, ex_b):\n#     while True:\n#         price_a = await ex_a.get_price()\n#         price_b = await ex_b.get_price()\n        \n#         spread = price_a - price_b\n#         pct_diff = spread / price_b\n        \n#         if abs(pct_diff) > 0.01: # 1% diff\n#             print(f\"Arb Opportunity: {pct_diff:.2%}\")"
+}

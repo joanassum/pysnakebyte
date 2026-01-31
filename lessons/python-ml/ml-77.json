@@ -1,0 +1,9 @@
+{
+  "id": "ml-77",
+  "title": "XGBoost",
+  "category": "Classification Algorithms",
+  "number": 77,
+  "duration": "15 min read",
+  "content": "## XGBoost (Extreme Gradient Boosting)\n\nXGBoost is an optimized distributed gradient boosting library designed to be highly efficient, flexible, and portable. It is the dominant algorithm in many Kaggle competitions.\n\n### Advantages over standard Gradient Boosting\n\n1.  **Regularization**: Has L1 and L2 regularization to prevent overfitting.\n2.  **Parallel Processing**: Can utilize multiple cores for faster training.\n3.  **Handling Missing Values**: Automatically learns the best direction to handle missing values.\n4.  **Tree Pruning**: Uses 'max_depth' but also prunes trees backwards using 'min_split_loss'.\n\n### Usage\n\nXGBoost is not part of Scikit-Learn but has a compatible API.\n\n```python\n# pip install xgboost\nimport xgboost as xgb\n\n# Scikit-Learn wrapper\nmodel = xgb.XGBClassifier(\n    n_estimators=100,\n    learning_rate=0.1,\n    max_depth=3,\n    use_label_encoder=False,\n    eval_metric='logloss'\n)\n\nmodel.fit(X_train, y_train)\n```\n",
+  "code": "import xgboost as xgb\nfrom sklearn.datasets import load_breast_cancer\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.metrics import accuracy_score\n\ndata = load_breast_cancer()\nX, y = data.data, data.target\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# TODO: Initialize XGBClassifier\n# Note: If running locally you might need to install xgboost first\nmodel = xgb.XGBClassifier(use_label_encoder=False, eval_metric='logloss')\n\n# TODO: Fit the model\n\n# TODO: Predict and evaluate\n# y_pred = \n# print(\"XGBoost Accuracy:\", accuracy_score(y_test, y_pred))"
+}

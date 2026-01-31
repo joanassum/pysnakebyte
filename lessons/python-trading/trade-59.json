@@ -1,0 +1,9 @@
+{
+  "id": "trade-59",
+  "title": "Walk-Forward Analysis",
+  "category": "Backtesting Frameworks",
+  "number": 59,
+  "duration": "12 min read",
+  "content": "# Walk-Forward Analysis\n\nA method to minimize overfitting by periodically re-optimizing the strategy on a moving window.\n\n## Process\n1. **In-Sample (Train)**: Optimize parameters on data [T1, T2].\n2. **Out-of-Sample (Test)**: Test best parameters on data [T2, T3].\n3. **Roll Forward**: Shift window. Optimize on [T2, T3], test on [T3, T4].\n\nThis simulates the process of re-adapting a strategy to changing market conditions.",
+  "code": "# Conceptual Workflow\nperiods = [('2018', '2019'), ('2019', '2020'), ('2020', '2021')]\n\nresults = []\nfor train_year, test_year in periods:\n    # best_params = optimize(start=train_year, end=test_year)\n    # perf = backtest(params=best_params, start=test_year, end=test_year_end)\n    # results.append(perf)\n    pass\n    \n# If 'results' are consistent, the strategy is robust.\n"
+}

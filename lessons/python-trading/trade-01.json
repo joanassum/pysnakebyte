@@ -1,0 +1,9 @@
+{
+  "id": "trade-01",
+  "title": "What is Algorithmic Trading?",
+  "category": "Introduction to Algorithmic Trading",
+  "number": 1,
+  "duration": "10 min read",
+  "content": "# What is Algorithmic Trading?\n\nAlgorithmic trading (also called automated trading, black-box trading, or algo-trading) uses a computer program that follows a defined set of instructions (an algorithm) to place a trade. The trade, in theory, can generate profits at a speed and frequency that is impossible for a human trader.\n\n## Key Components\n\n1.  **Idea Generation**: Developing a hypothesis.\n2.  **Data Acquisition**: Gathering historical and real-time data.\n3.  **Strategy Implementation**: Coding the logic.\n4.  **Backtesting**: Testing on historical data.\n5.  **Execution**: Interfacing with a broker to place orders.\n6.  **Risk Management**: Limiting losses.\n\n## Advantages\n\n*   **Speed**: Algorithms react in milliseconds.\n*   **Emotionless**: Removes fear and greed.\n*   **Consistency**: Follows the plan exactly.\n*   **Backtesting**: Ability to verify strategy on past data.\n\n## Disadvantages\n\n*   **Technical Failures**: Connectivity or power issues.\n*   **Overfitting**: Creating a strategy that works perfectly on past data but fails in real-time.\n\nIn this course, we will focus on the Python ecosystem for building and testing these strategies.",
+  "code": "# Python is the dominant language in Algo Trading due to its rich ecosystem.\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nprint(\"Ready to learn Algorithmic Trading!\")"
+}

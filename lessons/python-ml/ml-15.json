@@ -1,0 +1,9 @@
+{
+  "id": "ml-15",
+  "title": "Data Selection and Indexing",
+  "category": "Python for Data Science",
+  "number": 15,
+  "duration": "15 min read",
+  "content": "# Data Selection and Indexing\n\nPandas provides robust methods for selecting subsets of data.\n\n## .loc (Label-based)\n\nSelects data by the label of rows and columns.\n\n```python\n# Select row with index 'a' and column 'Age'\nval = df.loc['a', 'Age']\n\n# Select all rows, columns 'Name' and 'City'\nsubset = df.loc[:, ['Name', 'City']]\n```\n\n## .iloc (Integer-based)\n\nSelects data by integer position (0-based).\n\n```python\n# Select first row\nrow0 = df.iloc[0]\n\n# Select first 3 rows and first 2 columns\nsubset = df.iloc[:3, :2]\n```\n\n## Conditional Selection\n\nUsing boolean vectors to filter rows.\n\n```python\n# Select people older than 30\nsenior_df = df[df['Age'] > 30]\n```\n\n## Setting Index\n\nUse `set_index` to move a column to the index.\n\n```python\ndf.set_index('Name', inplace=True)\n```",
+  "code": "import pandas as pd\n\ndf = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6], 'C': [7, 8, 9]})\n\n# Select column 'A'\nprint(\"Column A:\\n\", df['A'])\n\n# Select row 1 using iloc\nprint(\"Row 1:\\n\", df.iloc[1])"
+}

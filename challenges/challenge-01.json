@@ -1,0 +1,9 @@
+{
+  "id": "challenge-01",
+  "title": "Hello World",
+  "difficulty": "easy",
+  "description": "# Hello World\n\nWrite a function that returns the string \"Hello, World!\".\n\nThis is the classic first program that every programmer writes.\n\n## Example\n\n```python\nresult = solution()\nprint(result)  # Output: Hello, World!\n```\n\n## Requirements\n\n- Return exactly the string \"Hello, World!\" (with comma and exclamation mark)\n- No input parameters needed",
+  "short_description": "Print Hello World",
+  "starter_code": "def solution():\n    # Return the string \"Hello, World!\"\n    pass\n\n# Test your solution\nprint(solution())",
+  "test_code": "result = solution()\nassert result == \"Hello, World!\", f'Expected \"Hello, World!\" but got \"{result}\"'\nprint('PASSED')"
+}

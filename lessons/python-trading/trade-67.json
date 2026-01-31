@@ -1,0 +1,9 @@
+{
+  "id": "trade-67",
+  "title": "Interactive Brokers (ib_insync)",
+  "category": "Connecting to Brokers (APIs)",
+  "number": 67,
+  "duration": "12 min read",
+  "content": "# Trading with Interactive Brokers\n\nIBKR is a popular broker for stocks, options, and futures. The native API is complex, so we often use `ib_insync` wrapper which makes it pythonic.\n\n## Architecture\nYou must run **TWS (Trader Workstation)** or **IB Gateway** software on your machine. Your Python script connects to this local gateway via a port (e.g., 7497).\n\n## Asynchronous\n`ib_insync` is built on `asyncio`.",
+  "code": "# from ib_insync import *\n\n# ib = IB()\n# Connect to local TWS\n# ib.connect('127.0.0.1', 7497, clientId=1)\n\n# contract = Stock('AAPL', 'SMART', 'USD')\n# bars = ib.reqHistoricalData(\n#     contract, endDateTime='', durationStr='30 D',\n#     barSizeSetting='1 hour', whatToShow='TRADES', useRTH=True)\n\n# df = util.df(bars)\n# print(df.head())\n\n# ib.disconnect()\n"
+}

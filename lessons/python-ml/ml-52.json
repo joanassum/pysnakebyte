@@ -1,0 +1,9 @@
+{
+  "id": "ml-52",
+  "title": "Scikit-Learn API Design",
+  "category": "Scikit-Learn",
+  "number": 52,
+  "duration": "10 min read",
+  "content": "## Consistency is Key\n\nOne of Scikit-Learn's greatest strengths is its consistent API design. Once you learn how to use one model, you can use almost any other.\n\n### The Estimator Object\n\nEverything in Scikit-Learn is an \"Estimator\".\n- **Estimators**: Objects that learn from data. (Method: `fit()`)\n- **Transformers**: Estimators that modify data. (Methods: `transform()`, `fit_transform()`)\n- **Predictors**: Estimators that make predictions. (Methods: `predict()`, `predict_proba()`, `score()`)\n\n### API Principles\n\n- **Consistency**: All objects share a common interface.\n- **Inspection**: All specified parameter values are exposed as public attributes.\n- **Non-proliferation of classes**: Datasets are standard NumPy arrays or Pandas DataFrames.\n",
+  "code": "from sklearn.preprocessing import StandardScaler\nfrom sklearn.linear_model import LogisticRegression\nfrom sklearn.pipeline import make_pipeline\nfrom sklearn.datasets import load_iris\n\n# Load Data\nX, y = load_iris(return_X_y=True)\n\n# Estimator 1: Transformer (Scaler)\nscaler = StandardScaler()\n# Fit finds mean and std\nscaler.fit(X)\n# Transform scales the data\nX_scaled = scaler.transform(X)\n\n# Estimator 2: Predictor (Model)\nclf = LogisticRegression(random_state=42)\n# Fit learns the model\nclf.fit(X_scaled, y)\n# Predict makes predictions\npreds = clf.predict(X_scaled[:5])\n\nprint(f\"Scaled Data Sample:\\n{X_scaled[:2]}\")\nprint(f\"Predictions: {preds}\")"
+}

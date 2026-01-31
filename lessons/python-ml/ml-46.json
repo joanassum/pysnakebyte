@@ -1,0 +1,9 @@
+{
+  "id": "ml-46",
+  "title": "Train-Test Split",
+  "category": "ML Fundamentals",
+  "number": 46,
+  "duration": "8 min read",
+  "content": "## Why Split Data?\n\nTo build a model that generalizes well to new, unseen data, we cannot test it on the same data used for training. If we do, the model might just memorize the training examples (overfitting).\n\n### The Standard Split\n\nWe typically divide our dataset into two parts:\n\n1.  **Training Set (e.g., 70-80%)**: Used to train the model.\n2.  **Test Set (e.g., 20-30%)**: Used to evaluate the model's performance on unseen data.\n\n### Scikit-Learn's `train_test_split`\n\nThe `train_test_split` function is the standard tool for this. It shuffles the data and splits it ensuring that the distribution of data points is random.\n\n### Random State\n\nSetting a `random_state` (seed) ensures reproducibility. If you run the code again with the same seed, you get the exact same split.\n",
+  "code": "import numpy as np\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import LinearRegression\n\n# Generate synthetic data\nX = np.arange(20).reshape(-1, 1)\ny = 2 * X.flatten() + 1 + np.random.normal(0, 1, 20)\n\nprint(f\"Total samples: {len(X)}\")\n\n# Perform the split\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.3, random_state=42\n)\n\nprint(f\"Training samples: {len(X_train)}\")\nprint(f\"Test samples: {len(X_test)}\")\n\n# Train on training set\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n\n# Evaluate on test set\naccuracy = model.score(X_test, y_test)\nprint(f\"Test Set R² Score: {accuracy:.4f}\")"
+}

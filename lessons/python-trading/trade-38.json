@@ -1,0 +1,9 @@
+{
+  "id": "trade-38",
+  "title": "Capital Asset Pricing Model (CAPM)",
+  "category": "Quantitative Finance Basics",
+  "number": 38,
+  "duration": "10 min read",
+  "content": "# CAPM: Calculating Alpha and Beta\n\nThe Capital Asset Pricing Model (CAPM) describes the relationship between systematic risk and expected return for assets, particularly stocks.\n\n$$ E(R_i) = R_f + \\beta_i (E(R_m) - R_f) $$\n\nWhere:\n- $E(R_i)$ is the expected return of the asset.\n- $R_f$ is the risk-free rate.\n- $\\beta_i$ (Beta) is the sensitivity of the expected excess asset returns to the expected excess market returns.\n- $E(R_m)$ is the expected return of the market.\n\n**Beta** > 1 indicates the stock is more volatile than the market.\n**Alpha** is the excess return of an investment relative to the return of a benchmark index.",
+  "code": "import numpy as np\nimport pandas as pd\nfrom scipy import stats\n\n# Mock Data\nnp.random.seed(101)\nmarket_returns = np.random.randn(252) / 100 + 0.0005\nstock_returns = 1.2 * market_returns + np.random.randn(252) / 200 # Correlated with market\n\n# Linear Regression to find Beta and Alpha\nbeta, alpha, r_value, p_value, std_err = stats.linregress(market_returns, stock_returns)\n\nprint(f\"Beta: {beta:.4f}\")\nprint(f\"Alpha: {alpha:.6f}\") # Daily Alpha\nprint(f\"R-squared: {r_value**2:.4f}\")\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "adv-12",
+  "title": "Logging",
+  "category": "Advanced Topics",
+  "number": 98,
+  "duration": "8 min read",
+  "content": "## Logging\n\nUsing `print()` for debugging is common, but for production applications, you should use the `logging` module. It offers flexibility in output format, destination (file, console), and granularity.\n\n### Basic Configuration\n\n```python\nimport logging\n\nlogging.basicConfig(level=logging.INFO)\nlogging.info(\"This is an info message\")\nlogging.warning(\"This is a warning\")\nlogging.error(\"This is an error\")\n```\n\n### Log Levels\n\n1. **DEBUG**: Detailed information, typically of interest only when diagnosing problems.\n2. **INFO**: Confirmation that things are working as expected.\n3. **WARNING**: An indication that something unexpected happened (default level).\n4. **ERROR**: Due to a more serious problem, the software has not been able to perform some function.\n5. **CRITICAL**: A serious error, indicating that the program itself may be unable to continue running.\n\n### Logging to a File\n\n```python\nlogging.basicConfig(filename='app.log', level=logging.DEBUG)\n```\n",
+  "code": "import logging\n\n# 1. Configure logging to print DEBUG level messages\n# logging.basicConfig(...)\n\n# 2. Log messages of different levels\ndef divide(x, y):\n    logging.info(f\"Dividing {x} by {y}\")\n    try:\n        return x / y\n    except ZeroDivisionError:\n        logging.error(\"Attempted to divide by zero\")\n        return None\n\ndivide(10, 2)\ndivide(5, 0)\n"
+}

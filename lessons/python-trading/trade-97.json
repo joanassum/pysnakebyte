@@ -1,0 +1,9 @@
+{
+  "id": "trade-97",
+  "title": "Project: Volatility Arbitrage Strategy",
+  "category": "Advanced Trading Projects",
+  "number": 97,
+  "duration": "22 min read",
+  "content": "## Implied vs. Realized Volatility\n\n- **Implied Volatility (IV)**: Market's expectation of future volatility (derived from option prices).\n- **Realized Volatility (RV)**: Actual historical volatility.\n\nStrategy: If IV is significantly higher than RV, sell options (short straddle/strangle) expecting the market to be calmer than predicted. This harvest the \"Variance Risk Premium\".",
+  "code": "# Compare IV and RV\n# iv = get_implied_volatility(symbol)\n# rv = calculate_historical_volatility(symbol, window=30)\n\n# if iv > rv * 1.5:\n#     # Signal: Sell Premium (Short Volatility)\n#     pass"
+}

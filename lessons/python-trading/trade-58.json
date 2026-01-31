@@ -1,0 +1,9 @@
+{
+  "id": "trade-58",
+  "title": "Lean / QuantConnect",
+  "category": "Backtesting Frameworks",
+  "number": 58,
+  "duration": "10 min read",
+  "content": "# Lean Engine (QuantConnect)\n\nLEAN is an open-source algorithmic trading engine built in C# but supports Python. It powers the QuantConnect platform.\n\n## Key Features\n- **Cloud & Local**: Develop locally, deploy to cloud.\n- **Universe Selection**: Dynamic selection of assets (e.g., top 500 by dollar volume).\n- **Alpha Model**: Separation of Alpha (signals) and Portfolio Construction.\n\n## Basic Structure\nInherit from `QCAlgorithm`.",
+  "code": "# from AlgorithmImports import *\n\n# class BasicTemplateAlgorithm(QCAlgorithm):\n#     def Initialize(self):\n#         self.SetStartDate(2020, 1, 1) \n#         self.SetCash(100000) \n#         self.AddEquity(\"SPY\", Resolution.Daily)\n\n#     def OnData(self, data):\n#         if not self.Portfolio.Invested:\n#             self.SetHoldings(\"SPY\", 1)\n"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "trade-45",
+  "title": "VWAP Strategy",
+  "category": "Building Trading Strategies",
+  "number": 45,
+  "duration": "8 min read",
+  "content": "# Volume-Weighted Average Price (VWAP)\n\nVWAP is a trading benchmark used by traders that gives the average price a security has traded at throughout the day, based on both volume and price. It is important because it provides insight into both the trend and value of a security.\n\n$$ VWAP = \\frac{\\sum (Price_i * Volume_i)}{\\sum Volume_i} $$\n\n## Intraday Strategy\n- If price crosses above VWAP, it may indicate bullish sentiment.\n- Institutional traders use VWAP to execute large orders without moving the market price too much (buying below VWAP, selling above).",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Mock Intraday Data (Minute bars)\ndates = pd.date_range(start='2023-01-01 09:30', end='2023-01-01 16:00', freq='1min')\nn = len(dates)\ndata = pd.DataFrame({\n    'price': np.random.randn(n).cumsum() + 100,\n    'volume': np.random.randint(100, 1000, n)\n}, index=dates)\n\n# Calculate Intraday VWAP\n# In pandas, we typically group by day if we have multiple days\n# Since this is one day:\ndata['cum_vol_price'] = (data['price'] * data['volume']).cumsum()\ndata['cum_vol'] = data['volume'].cumsum()\ndata['vwap'] = data['cum_vol_price'] / data['cum_vol']\n\n# Signal\ndata['above_vwap'] = data['price'] > data['vwap']\n\nprint(data[['price', 'vwap', 'above_vwap']].tail())\n"
+}

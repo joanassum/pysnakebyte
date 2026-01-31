@@ -1,0 +1,9 @@
+{
+  "id": "trade-90",
+  "title": "Handling Latency and Slippage",
+  "category": "Live Trading System Architecture",
+  "number": 90,
+  "duration": "14 min read",
+  "content": "## Speed Matters\n\nNetwork latency and processing time can change a winning strategy into a losing one.\n\n### Latency Sources\n\n1.  **Network**: Distance to exchange servers. Co-location (renting servers near the exchange) is used by HFT.\n2.  **Processing**: Python is slower than C++. Minimize heavy loops in the critical path.\n\n### Slippage\n\nThe difference between expected price and fill price. High volatility or low liquidity increases slippage.\n\n### Mitigation\n\n- Use Limit Orders instead of Market Orders.\n- Account for slippage in backtests (add a friction cost).\n- Optimize code (profile using `cProfile`).",
+  "code": "import time\n\n# def measure_latency(api_call_func):\n#     start = time.time()\n#     api_call_func()\n#     end = time.time()\n#     print(f\"Latency: {(end - start)*1000:.2f} ms\")\n\n# # Example: Check ping to server\n# # measure_latency(api.get_clock)"
+}

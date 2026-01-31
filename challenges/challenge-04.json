@@ -1,0 +1,9 @@
+{
+  "id": "challenge-04",
+  "title": "Reverse String",
+  "difficulty": "easy",
+  "description": "# Reverse String\n\nWrite a function that reverses a given string.\n\n## Example\n\n```python\nresult = solution(\"hello\")\nprint(result)  # Output: \"olleh\"\n\nresult = solution(\"Python\")\nprint(result)  # Output: \"nohtyP\"\n```\n\n## Requirements\n\n- Accept one string parameter\n- Return the string reversed\n- Handle empty strings\n- Preserve case and special characters",
+  "short_description": "Reverse a given string",
+  "starter_code": "def solution(s):\n    # Return the reversed string\n    pass\n\n# Test your solution\nprint(solution('hello'))  # Should print 'olleh'",
+  "test_code": "assert solution('hello') == 'olleh', 'Test 1 failed'\nassert solution('Python') == 'nohtyP', 'Test 2 failed'\nassert solution('') == '', 'Test 3 failed: empty string should return empty'\nassert solution('a') == 'a', 'Test 4 failed: single char should return same'\nassert solution('12345') == '54321', 'Test 5 failed'\nassert solution('Hello World!') == '!dlroW olleH', 'Test 6 failed'\nprint('PASSED')"
+}

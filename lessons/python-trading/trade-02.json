@@ -1,0 +1,9 @@
+{
+  "id": "trade-02",
+  "title": "Setting Up the Environment",
+  "category": "Introduction to Algorithmic Trading",
+  "number": 2,
+  "duration": "15 min read",
+  "content": "# Setting Up the Environment\n\nTo trade effectively with Python, you need a robust environment. We recommend **Anaconda** or **Miniconda** as they handle package management and environments seamlessly.\n\n## Key Libraries\n\n*   **Pandas**: The backbone of data analysis. Handles time-series data efficiently.\n*   **NumPy**: Numerical computing library for fast array operations.\n*   **Matplotlib/Seaborn**: For plotting and visualizing market data.\n*   **yfinance**: A popular open-source tool to download market data from Yahoo Finance (great for learning).\n*   **TA-Lib**: A technical analysis library (requires binary installation).\n\n## Virtual Environments\n\nAlways use virtual environments to keep dependencies isolated.\n\n```bash\nconda create -n trading python=3.9\nconda activate trading\npip install pandas numpy matplotlib yfinance\n```",
+  "code": "# Check versions of installed libraries\nimport pandas as pd\nimport numpy as np\nimport yfinance as yf\n\nprint(f\"Pandas version: {pd.__version__}\")\nprint(f\"Numpy version: {np.__version__}\")\nprint(f\"yfinance version: {yf.__version__}\")"
+}

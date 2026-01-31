@@ -1,0 +1,9 @@
+{
+  "id": "trade-18",
+  "title": "Pivot Tables for Portfolio Analysis",
+  "category": "Financial Data Analysis with Pandas",
+  "number": 18,
+  "duration": "12 min read",
+  "content": "# Pivot Tables for Portfolio Analysis\n\nPivot tables are powerful for reshaping data, especially when dealing with 'Long' format data (common in databases) vs 'Wide' format (common in matrices).\n\n## Long Format\n`Date | Ticker | Price`\n\n## Wide Format\n`Date | AAPL | GOOG | MSFT`\n\nConverting Long to Wide makes correlation analysis much easier.\n\n```python\ndf.pivot(index='Date', columns='Ticker', values='Price')\n```",
+  "code": "import pandas as pd\n\ndata = {\n    'Date': ['2023-01-01', '2023-01-01', '2023-01-02', '2023-01-02'],\n    'Ticker': ['AAPL', 'GOOG', 'AAPL', 'GOOG'],\n    'Price': [150, 2800, 152, 2810]\n}\ndf_long = pd.DataFrame(data)\n\n# Pivot to Wide format\ndf_wide = df_long.pivot(index='Date', columns='Ticker', values='Price')\n\nprint(\"Long Format:\")\nprint(df_long)\nprint(\"\\nWide Format:\")\nprint(df_wide)"
+}

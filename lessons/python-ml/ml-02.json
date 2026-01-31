@@ -1,0 +1,9 @@
+{
+  "id": "ml-02",
+  "title": "Setting Up Your ML Environment",
+  "category": "Python for Data Science",
+  "number": 2,
+  "duration": "10 min read",
+  "content": "# Setting Up Your ML Environment\n\nA robust development environment is crucial for efficient data science workflows. We recommend using Anaconda or a standard Python installation with `pip` and `venv`.\n\n## Installing Python\n\nEnsure you have Python 3.8 or later installed. You can verify this by running:\n\n```bash\npython --version\n```\n\n## Package Management\n\n`pip` is the package installer for Python. You will use it to install libraries.\n\n```bash\npip install numpy pandas matplotlib scikit-learn\n```\n\n## Anaconda Distribution\n\nAnaconda is a popular distribution for data science that comes pre-installed with many libraries and the Conda package manager. It simplifies package management and deployment.\n\n## Integrated Development Environments (IDEs)\n\n*   **Jupyter Notebook/Lab**: Interactive web-based environments perfect for experimentation.\n*   **VS Code**: A lightweight but powerful code editor with excellent Python support.\n*   **PyCharm**: A full-featured Python IDE.\n\nWe will primarily use Jupyter Notebooks and VS Code in this course.",
+  "code": "# Check your python version\nimport sys\nprint(f\"Python version: {sys.version}\")"
+}

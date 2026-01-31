@@ -1,0 +1,9 @@
+{
+  "id": "ml-22",
+  "title": "Line and Scatter Plots",
+  "category": "Python for Data Science",
+  "number": 22,
+  "duration": "12 min read",
+  "content": "# Line and Scatter Plots\n\nTwo of the most fundamental plots for visualizing relationships.\n\n## Line Plots\n\nBest for continuous data, typically time series or functions.\n\n```python\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y, color='blue', linestyle='--')\n```\n\n### Styles\n\n*   `linestyle`: '-', '--', '-.', ':'\n*   `color`: 'b', 'g', 'r', 'c', 'm', 'y', 'k', 'w'\n*   `linewidth`: float value\n\n## Scatter Plots\n\nBest for visualizing the relationship between two variables (correlation).\n\n```python\nx = np.random.rand(50)\ny = np.random.rand(50)\ncolors = np.random.rand(50)\nsizes = 1000 * np.random.rand(50)\n\nplt.scatter(x, y, c=colors, s=sizes, alpha=0.5, cmap='viridis')\nplt.colorbar()  # Show color scale\n```\n\n*   `c`: Color sequence\n*   `s`: Size of markers\n*   `alpha`: Transparency (0 to 1)",
+  "code": "import matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 30)\ny = np.sin(x)\n\nplt.plot(x, y, 'o', color='black')\n# plt.show()"
+}

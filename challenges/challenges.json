@@ -1,0 +1,29 @@
+{
+  "challenges": [
+    {"id": "challenge-01", "title": "Hello World", "difficulty": "easy", "short_description": "Print Hello World"},
+    {"id": "challenge-02", "title": "Sum Two Numbers", "difficulty": "easy", "short_description": "Write function to add two numbers"},
+    {"id": "challenge-03", "title": "Even or Odd", "difficulty": "easy", "short_description": "Check if number is even or odd"},
+    {"id": "challenge-04", "title": "Reverse String", "difficulty": "easy", "short_description": "Reverse a given string"},
+    {"id": "challenge-05", "title": "Find Maximum", "difficulty": "easy", "short_description": "Find max in a list"},
+    {"id": "challenge-06", "title": "Count Vowels", "difficulty": "easy", "short_description": "Count vowels in a string"},
+    {"id": "challenge-07", "title": "Factorial", "difficulty": "easy", "short_description": "Calculate factorial"},
+    {"id": "challenge-08", "title": "Palindrome Check", "difficulty": "easy", "short_description": "Check if string is palindrome"},
+    {"id": "challenge-09", "title": "FizzBuzz", "difficulty": "medium", "short_description": "Classic FizzBuzz problem"},
+    {"id": "challenge-10", "title": "Prime Number", "difficulty": "medium", "short_description": "Check if a number is prime"},
+    {"id": "challenge-11", "title": "Fibonacci", "difficulty": "medium", "short_description": "Generate fibonacci sequence"},
+    {"id": "challenge-12", "title": "Anagram Check", "difficulty": "medium", "short_description": "Check if two strings are anagrams"},
+    {"id": "challenge-13", "title": "Remove Duplicates", "difficulty": "medium", "short_description": "Remove duplicates from list"},
+    {"id": "challenge-14", "title": "Binary Search", "difficulty": "medium", "short_description": "Implement binary search"},
+    {"id": "challenge-15", "title": "Merge Sorted Lists", "difficulty": "medium", "short_description": "Merge two sorted lists"},
+    {"id": "challenge-16", "title": "Valid Parentheses", "difficulty": "medium", "short_description": "Check balanced brackets"},
+    {"id": "challenge-17", "title": "Word Frequency", "difficulty": "medium", "short_description": "Count word occurrences"},
+    {"id": "challenge-18", "title": "Caesar Cipher", "difficulty": "medium", "short_description": "Encrypt/decrypt text with Caesar cipher"},
+    {"id": "challenge-19", "title": "Quick Sort", "difficulty": "hard", "short_description": "Implement quicksort algorithm"},
+    {"id": "challenge-20", "title": "Longest Common Subsequence", "difficulty": "hard", "short_description": "Find LCS of two strings"},
+    {"id": "challenge-21", "title": "Matrix Rotation", "difficulty": "hard", "short_description": "Rotate matrix 90 degrees"},
+    {"id": "challenge-22", "title": "Find Missing Number", "difficulty": "hard", "short_description": "Find missing in 1-n sequence"},
+    {"id": "challenge-23", "title": "Flatten Nested List", "difficulty": "hard", "short_description": "Flatten deeply nested list"},
+    {"id": "challenge-24", "title": "LRU Cache", "difficulty": "hard", "short_description": "Implement LRU cache"},
+    {"id": "challenge-25", "title": "Sudoku Validator", "difficulty": "hard", "short_description": "Validate sudoku board"}
+  ]
+}

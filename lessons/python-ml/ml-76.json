@@ -1,0 +1,9 @@
+{
+  "id": "ml-76",
+  "title": "Gradient Boosting Classification",
+  "category": "Classification Algorithms",
+  "number": 76,
+  "duration": "15 min read",
+  "content": "## Gradient Boosting Classification\n\nGradient Boosting is another ensemble technique. Unlike Random Forest (which builds trees in parallel), Gradient Boosting builds trees **sequentially**.\n\n### How it Works\n\n1.  **Base Learner**: Starts with a weak learner (usually a shallow decision tree).\n2.  **Residuals**: Calculate the errors (residuals) of the previous model.\n3.  **Correcting Errors**: Train the next tree to predict the residuals of the previous tree.\n4.  **Update**: Add the new tree's prediction to the ensemble, scaled by a learning rate.\n\n### Key Parameters\n\n*   `n_estimators`: Number of boosting stages.\n*   `learning_rate`: Shrinks the contribution of each tree. Lower values require more trees.\n*   `max_depth`: Depth of individual regression estimators.\n\n### Scikit-Learn Implementation\n\n```python\nfrom sklearn.ensemble import GradientBoostingClassifier\n\ngb_clf = GradientBoostingClassifier(\n    n_estimators=100,\n    learning_rate=0.1,\n    max_depth=3,\n    random_state=42\n)\ngb_clf.fit(X_train, y_train)\n```\n",
+  "code": "from sklearn.ensemble import GradientBoostingClassifier\nfrom sklearn.datasets import make_hastie_10_2\nfrom sklearn.model_selection import train_test_split\n\n# Generate synthetic data\nX, y = make_hastie_10_2(random_state=0)\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\n# TODO: Create GradientBoostingClassifier with learning_rate=0.1\ngb = \n\n# TODO: Fit model\n\n# TODO: Check the score\n# print(f\"Accuracy: {gb.score(X_test, y_test):.4f}\")"
+}

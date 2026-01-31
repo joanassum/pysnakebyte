@@ -1,0 +1,9 @@
+{
+  "id": "trade-42",
+  "title": "Mean Reversion with Bollinger Bands",
+  "category": "Building Trading Strategies",
+  "number": 42,
+  "duration": "10 min read",
+  "content": "# Bollinger Bands Strategy\n\nBollinger Bands consist of a middle band (N-period SMA) and two outer bands (N-period SMA +/- K * standard deviations).\n\n## Mean Reversion Logic\n- Prices tend to return to the mean.\n- **Buy Signal**: When price touches or crosses below the lower band (oversold).\n- **Sell Signal**: When price touches or crosses above the upper band (overbought).\n\nStandard settings: 20-day SMA, 2 standard deviations.",
+  "code": "import pandas as pd\nimport numpy as np\n\n# Mock Data\ndates = pd.date_range(start='2020-01-01', periods=200)\nprice = pd.Series(np.cumsum(np.random.randn(200)) + 100, index=dates)\n\n# Calculate Bollinger Bands\nperiod = 20\nstd_dev_multiplier = 2\n\nsma = price.rolling(window=period).mean()\nstd = price.rolling(window=period).std()\n\nupper_band = sma + (std * std_dev_multiplier)\nlower_band = sma - (std * std_dev_multiplier)\n\n# Generate Signals\nsignals = pd.DataFrame(index=price.index)\nsignals['price'] = price\nsignals['buy'] = np.where(price < lower_band, 1, 0) # Buy when price < lower\nsignals['sell'] = np.where(price > upper_band, 1, 0) # Sell when price > upper\n\nprint(\"Buy Signals:\")\nprint(signals[signals['buy'] == 1].head())\n"
+}

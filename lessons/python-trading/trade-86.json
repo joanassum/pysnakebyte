@@ -1,0 +1,9 @@
+{
+  "id": "trade-86",
+  "title": "Order Management and Execution Algorithms",
+  "category": "Live Trading System Architecture",
+  "number": 86,
+  "duration": "15 min read",
+  "content": "## Smart Execution\n\nDumping a large order at market price causes slippage. Execution algos break orders down.\n\n### Common Order Types\n\n- **Market**: Execute immediately at best price.\n- **Limit**: Execute at specific price or better.\n- **Stop Loss / Take Profit**: Triggers when price hits a level.\n\n### Execution Algorithms\n\n- **TWAP (Time-Weighted Average Price)**: Slice order evenly over time.\n- **VWAP (Volume-Weighted Average Price)**: Slice order based on historical volume profiles.\n- **Iceberg**: Show only a small tip of the total order size to the market.",
+  "code": "# Simple TWAP Logic Concept\n# import time\n\n# total_qty = 1000\n# slices = 10\n# interval = 60 # seconds\n# slice_qty = total_qty / slices\n\n# for i in range(slices):\n#     # Place Limit Order for slice_qty\n#     # api.submit_order(symbol='AAPL', qty=slice_qty, ...)\n#     # time.sleep(interval)"
+}

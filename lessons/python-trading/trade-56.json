@@ -1,0 +1,9 @@
+{
+  "id": "trade-56",
+  "title": "Analyzing Backtest Results",
+  "category": "Backtesting Frameworks",
+  "number": 56,
+  "duration": "10 min read",
+  "content": "# Performance Metrics\n\nBeyond raw return, we check:\n\n1. **CAGR (Compound Annual Growth Rate)**: The mean annual growth rate.\n2. **Max Drawdown**: The largest peak-to-trough decline.\n   $$ DD = \\frac{Trough - Peak}{Peak} $$\n3. **Win Rate**: Percentage of trades that were profitable.\n4. **Profit Factor**: Gross Profit / Gross Loss.\n\nBacktrader Analyzers help calculate these automatically.",
+  "code": "import backtrader as bt\n\n# cerebro.addanalyzer(bt.analyzers.SharpeRatio, _name='sharpe')\n# cerebro.addanalyzer(bt.analyzers.DrawDown, _name='drawdown')\n# cerebro.addanalyzer(bt.analyzers.TradeAnalyzer, _name='trades')\n\n# results = cerebro.run()\n# strat = results[0]\n\n# print('Sharpe Ratio:', strat.analyzers.sharpe.get_analysis()['sharperatio'])\n# print('Max Drawdown:', strat.analyzers.drawdown.get_analysis()['max']['drawdown'])\n"
+}

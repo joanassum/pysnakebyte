@@ -1,0 +1,9 @@
+{
+  "id": "ml-38",
+  "title": "A/B Testing",
+  "category": "Statistics for ML",
+  "number": 38,
+  "duration": "12 min read",
+  "content": "## A/B Testing Fundamentals\n\nA/B testing (or split testing) is a method of comparing two versions of a variable to determine which one performs better. In Data Science, it is the gold standard for causal inference in product changes.\n\n### The Process\n\n1.  **Hypothesis**: Define a null hypothesis ($H_0$) and an alternative hypothesis ($H_1$).\n2.  **Split**: Randomly assign users to a Control group (A) and a Treatment group (B).\n3.  **Measure**: Collect data on the primary metric (e.g., conversion rate).\n4.  **Test**: Perform a statistical test (like a t-test or z-test) to calculate a p-value.\n5.  **Decision**: If $p < \\alpha$ (usually 0.05), reject $H_0$ and conclude the change had an effect.\n\n### Key Metrics\n\n- **Conversion Rate**: Proportion of users taking action.\n- **Lift**: Percentage increase in the metric.\n- **P-value**: Probability of observing the result if $H_0$ were true.\n",
+  "code": "import numpy as np\nfrom scipy import stats\n\n# Simulated data: Conversion rates for Group A and Group B\n# 1 = converted, 0 = did not convert\n\nnp.random.seed(42)\ngroup_a = np.random.binomial(n=1, p=0.10, size=1000)\ngroup_b = np.random.binomial(n=1, p=0.12, size=1000)\n\nprint(f\"Conversion Rate A: {np.mean(group_a):.3f}\")\nprint(f\"Conversion Rate B: {np.mean(group_b):.3f}\")\n\n# Perform a two-sample t-test\nt_stat, p_val = stats.ttest_ind(group_a, group_b)\n\nprint(f\"T-statistic: {t_stat:.3f}\")\nprint(f\"P-value: {p_val:.3f}\")\n\nif p_val < 0.05:\n    print(\"Result is statistically significant!\")\nelse:\n    print(\"Result is not statistically significant.\")"
+}

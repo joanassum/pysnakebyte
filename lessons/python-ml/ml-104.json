@@ -1,0 +1,9 @@
+{
+  "id": "ml-104",
+  "title": "Model Deployment Strategies",
+  "category": "ML Projects",
+  "number": 104,
+  "duration": "15 min read",
+  "content": "## Model Deployment Strategies\n\nDeploying a model means making it available in a production environment.\n\n### Options\n\n1.  **On-Premise**: Hosting on your own servers. Full control, high maintenance.\n2.  **IaaS (Infrastructure as a Service)**: AWS EC2, Google Compute Engine. Rent virtual machines. Flexible, requires setup.\n3.  **PaaS (Platform as a Service)**: Heroku, Google App Engine. Deploy code, platform handles infrastructure. Easy, less control.\n4.  **Serverless**: AWS Lambda, Google Cloud Functions. Run code in response to events. Cost-effective, good for sporadic traffic.\n5.  **Containerization (Docker)**: Package model and dependencies into a container. Ensures consistency across environments.\n\n### Docker Workflow\n\n1.  **Dockerfile**: Define the environment (Python version, libraries).\n2.  **Build**: Create an image (`docker build -t my-model .`).\n3.  **Run**: Start a container (`docker run -p 5000:5000 my-model`).\n",
+  "code": "# Example Dockerfile content\ndockerfile = \"\"\"\nFROM python:3.9-slim\n\nWORKDIR /app\n\nCOPY requirements.txt .\nRUN pip install -r requirements.txt\n\nCOPY . .\n\nCMD [\"python\", \"app.py\"]\n\"\"\"\n\nprint(\"Here is a sample Dockerfile for your ML app:\")\nprint(dockerfile)"
+}

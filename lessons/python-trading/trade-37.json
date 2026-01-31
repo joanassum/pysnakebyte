@@ -1,0 +1,9 @@
+{
+  "id": "trade-37",
+  "title": "Sharpe Ratio & Sortino Ratio",
+  "category": "Quantitative Finance Basics",
+  "number": 37,
+  "duration": "8 min read",
+  "content": "# Risk-Adjusted Return Metrics\n\nEvaluating a strategy solely on returns is insufficient; we must understand the risk taken to achieve those returns.\n\n## Sharpe Ratio\nThe Sharpe Ratio measures the performance of an investment compared to a risk-free asset, after adjusting for its risk.\n$$ S_a = \\frac{E[R_a - R_f]}{\\sigma_a} $$\nWhere:\n- $R_a$ is the asset return\n- $R_f$ is the risk-free rate\n- $\\sigma_a$ is the standard deviation of the asset excess return\n\n## Sortino Ratio\nThe Sortino Ratio is a variation of the Sharpe Ratio that differentiates harmful volatility from total overall volatility by using the asset's standard deviation of **negative** portfolio returns (downside deviation). The Sharpe ratio penalizes both upside and downside volatility equally, whereas the Sortino ratio penalizes only downside volatility.",
+  "code": "import numpy as np\nimport pandas as pd\n\n# Mock data\nnp.random.seed(42)\nreturns = pd.Series(np.random.randn(252) / 100 + 0.001) # Daily returns\nrisk_free_rate = 0.02 # Annualized\n\n# Annualize factors\nN = 252\n\n# Sharpe Ratio\nmean_return = returns.mean() * N\nvolatility = returns.std() * np.sqrt(N)\nsharpe_ratio = (mean_return - risk_free_rate) / volatility\n\nprint(f\"Sharpe Ratio: {sharpe_ratio:.2f}\")\n\n# Sortino Ratio\ndownside_returns = returns[returns < 0]\ndownside_std = downside_returns.std() * np.sqrt(N)\nsortino_ratio = (mean_return - risk_free_rate) / downside_std\n\nprint(f\"Sortino Ratio: {sortino_ratio:.2f}\")\n"
+}

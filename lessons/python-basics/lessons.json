@@ -1,0 +1,169 @@
+{
+  "categories": [
+    {
+      "name": "Python Basics",
+      "id": "basics",
+      "lessons": [
+        {"id": "basics-01", "title": "Introduction to Python", "number": 1},
+        {"id": "basics-02", "title": "Installing Python", "number": 2},
+        {"id": "basics-03", "title": "Your First Python Program", "number": 3},
+        {"id": "basics-04", "title": "Python Syntax Basics", "number": 4},
+        {"id": "basics-05", "title": "Comments in Python", "number": 5},
+        {"id": "basics-06", "title": "Variables and Assignment", "number": 6},
+        {"id": "basics-07", "title": "Variable Naming Rules", "number": 7},
+        {"id": "basics-08", "title": "Python Keywords", "number": 8},
+        {"id": "basics-09", "title": "Print Function Deep Dive", "number": 9},
+        {"id": "basics-10", "title": "Input from Users", "number": 10},
+        {"id": "basics-11", "title": "Basic Operators", "number": 11},
+        {"id": "basics-12", "title": "Type Conversion", "number": 12},
+        {"id": "basics-13", "title": "String Basics", "number": 13},
+        {"id": "basics-14", "title": "Working with Numbers", "number": 14},
+        {"id": "basics-15", "title": "Python REPL", "number": 15}
+      ]
+    },
+    {
+      "name": "Data Types",
+      "id": "data-types",
+      "lessons": [
+        {"id": "types-01", "title": "Understanding Data Types", "number": 16},
+        {"id": "types-02", "title": "Integers", "number": 17},
+        {"id": "types-03", "title": "Floating Point Numbers", "number": 18},
+        {"id": "types-04", "title": "Complex Numbers", "number": 19},
+        {"id": "types-05", "title": "Strings in Depth", "number": 20},
+        {"id": "types-06", "title": "String Methods", "number": 21},
+        {"id": "types-07", "title": "String Formatting", "number": 22},
+        {"id": "types-08", "title": "Lists", "number": 23},
+        {"id": "types-09", "title": "List Methods", "number": 24},
+        {"id": "types-10", "title": "Tuples", "number": 25},
+        {"id": "types-11", "title": "Dictionaries", "number": 26},
+        {"id": "types-12", "title": "Sets", "number": 27}
+      ]
+    },
+    {
+      "name": "Control Flow",
+      "id": "control-flow",
+      "lessons": [
+        {"id": "flow-01", "title": "Boolean Values", "number": 28},
+        {"id": "flow-02", "title": "Comparison Operators", "number": 29},
+        {"id": "flow-03", "title": "Logical Operators", "number": 30},
+        {"id": "flow-04", "title": "If Statements", "number": 31},
+        {"id": "flow-05", "title": "Else and Elif", "number": 32},
+        {"id": "flow-06", "title": "Nested Conditionals", "number": 33},
+        {"id": "flow-07", "title": "For Loops", "number": 34},
+        {"id": "flow-08", "title": "While Loops", "number": 35},
+        {"id": "flow-09", "title": "Break and Continue", "number": 36},
+        {"id": "flow-10", "title": "Loop Patterns", "number": 37}
+      ]
+    },
+    {
+      "name": "Functions",
+      "id": "functions",
+      "lessons": [
+        {"id": "func-01", "title": "Defining Functions", "number": 38},
+        {"id": "func-02", "title": "Function Parameters", "number": 39},
+        {"id": "func-03", "title": "Return Values", "number": 40},
+        {"id": "func-04", "title": "Default Parameters", "number": 41},
+        {"id": "func-05", "title": "Keyword Arguments", "number": 42},
+        {"id": "func-06", "title": "*args and **kwargs", "number": 43},
+        {"id": "func-07", "title": "Variable Scope", "number": 44},
+        {"id": "func-08", "title": "Global Variables", "number": 45},
+        {"id": "func-09", "title": "Lambda Functions", "number": 46},
+        {"id": "func-10", "title": "Recursion", "number": 47},
+        {"id": "func-11", "title": "Docstrings", "number": 48},
+        {"id": "func-12", "title": "Function Best Practices", "number": 49}
+      ]
+    },
+    {
+      "name": "Modules & Packages",
+      "id": "modules",
+      "lessons": [
+        {"id": "mod-01", "title": "What are Modules?", "number": 50},
+        {"id": "mod-02", "title": "Importing Modules", "number": 51},
+        {"id": "mod-03", "title": "From Import", "number": 52},
+        {"id": "mod-04", "title": "Creating Modules", "number": 53},
+        {"id": "mod-05", "title": "Python Packages", "number": 54},
+        {"id": "mod-06", "title": "Standard Library Tour", "number": 55},
+        {"id": "mod-07", "title": "pip and PyPI", "number": 56},
+        {"id": "mod-08", "title": "Virtual Environments", "number": 57}
+      ]
+    },
+    {
+      "name": "Object-Oriented Programming",
+      "id": "oop",
+      "lessons": [
+        {"id": "oop-01", "title": "Introduction to OOP", "number": 58},
+        {"id": "oop-02", "title": "Classes and Objects", "number": 59},
+        {"id": "oop-03", "title": "The __init__ Method", "number": 60},
+        {"id": "oop-04", "title": "Instance Attributes", "number": 61},
+        {"id": "oop-05", "title": "Instance Methods", "number": 62},
+        {"id": "oop-06", "title": "Class Attributes", "number": 63},
+        {"id": "oop-07", "title": "Class Methods", "number": 64},
+        {"id": "oop-08", "title": "Static Methods", "number": 65},
+        {"id": "oop-09", "title": "Inheritance", "number": 66},
+        {"id": "oop-10", "title": "Method Overriding", "number": 67},
+        {"id": "oop-11", "title": "Multiple Inheritance", "number": 68},
+        {"id": "oop-12", "title": "Encapsulation", "number": 69},
+        {"id": "oop-13", "title": "Properties", "number": 70},
+        {"id": "oop-14", "title": "Magic Methods", "number": 71},
+        {"id": "oop-15", "title": "Abstract Classes", "number": 72}
+      ]
+    },
+    {
+      "name": "File Handling",
+      "id": "files",
+      "lessons": [
+        {"id": "file-01", "title": "Opening Files", "number": 73},
+        {"id": "file-02", "title": "Reading Files", "number": 74},
+        {"id": "file-03", "title": "Writing Files", "number": 75},
+        {"id": "file-04", "title": "File Modes", "number": 76},
+        {"id": "file-05", "title": "Context Managers", "number": 77},
+        {"id": "file-06", "title": "Working with CSV", "number": 78},
+        {"id": "file-07", "title": "Working with JSON", "number": 79},
+        {"id": "file-08", "title": "Path Operations", "number": 80}
+      ]
+    },
+    {
+      "name": "Error Handling",
+      "id": "errors",
+      "lessons": [
+        {"id": "err-01", "title": "Understanding Errors", "number": 81},
+        {"id": "err-02", "title": "Try and Except", "number": 82},
+        {"id": "err-03", "title": "Handling Multiple Exceptions", "number": 83},
+        {"id": "err-04", "title": "Finally Block", "number": 84},
+        {"id": "err-05", "title": "Raising Exceptions", "number": 85},
+        {"id": "err-06", "title": "Custom Exceptions", "number": 86}
+      ]
+    },
+    {
+      "name": "Advanced Topics",
+      "id": "advanced",
+      "lessons": [
+        {"id": "adv-01", "title": "List Comprehensions", "number": 87},
+        {"id": "adv-02", "title": "Dict Comprehensions", "number": 88},
+        {"id": "adv-03", "title": "Generators", "number": 89},
+        {"id": "adv-04", "title": "Iterators", "number": 90},
+        {"id": "adv-05", "title": "Decorators", "number": 91},
+        {"id": "adv-06", "title": "Context Managers Advanced", "number": 92},
+        {"id": "adv-07", "title": "Regular Expressions", "number": 93},
+        {"id": "adv-08", "title": "Type Hints", "number": 94},
+        {"id": "adv-09", "title": "Dataclasses", "number": 95},
+        {"id": "adv-10", "title": "Async Programming Intro", "number": 96},
+        {"id": "adv-11", "title": "Testing with pytest", "number": 97},
+        {"id": "adv-12", "title": "Logging", "number": 98},
+        {"id": "adv-13", "title": "Working with APIs", "number": 99},
+        {"id": "adv-14", "title": "Best Practices & PEP 8", "number": 100}
+      ]
+    },
+    {
+      "name": "Bonus: Real-World Projects",
+      "id": "projects",
+      "lessons": [
+        {"id": "proj-01", "title": "Building a Calculator", "number": 101},
+        {"id": "proj-02", "title": "Web Scraping Basics", "number": 102},
+        {"id": "proj-03", "title": "Building a CLI Tool", "number": 103},
+        {"id": "proj-04", "title": "Data Analysis with Pandas", "number": 104},
+        {"id": "proj-05", "title": "Simple Web App with Flask", "number": 105}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "id": "challenge-11",
+  "title": "Fibonacci",
+  "difficulty": "medium",
+  "description": "# Fibonacci\n\nWrite a function that generates the first n numbers in the Fibonacci sequence.\n\nThe Fibonacci sequence starts with 0 and 1, and each subsequent number is the sum of the previous two.\n\n## Example\n\n```python\nresult = solution(7)\nprint(result)  # Output: [0, 1, 1, 2, 3, 5, 8]\n\nresult = solution(1)\nprint(result)  # Output: [0]\n```\n\n## Requirements\n\n- Accept one integer n\n- Return a list of the first n Fibonacci numbers\n- Start with 0 as the first number\n- Handle n = 0 (return empty list)",
+  "short_description": "Generate fibonacci sequence",
+  "starter_code": "def solution(n):\n    # Return a list of the first n Fibonacci numbers\n    pass\n\n# Test your solution\nprint(solution(10))  # Should print [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]",
+  "test_code": "assert solution(7) == [0, 1, 1, 2, 3, 5, 8], 'Test 1 failed'\nassert solution(1) == [0], 'Test 2 failed'\nassert solution(2) == [0, 1], 'Test 3 failed'\nassert solution(0) == [], 'Test 4 failed: n=0 should return empty list'\nassert solution(10) == [0, 1, 1, 2, 3, 5, 8, 13, 21, 34], 'Test 5 failed'\nprint('PASSED')"
+}

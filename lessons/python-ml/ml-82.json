@@ -1,0 +1,9 @@
+{
+  "id": "ml-82",
+  "title": "K-Means Clustering",
+  "category": "Unsupervised Learning",
+  "number": 82,
+  "duration": "15 min read",
+  "content": "## K-Means Clustering\n\nK-Means is one of the most popular clustering algorithms. It partitions data into $K$ distinct non-overlapping subgroups (clusters).\n\n### Algorithm Steps\n\n1.  **Initialization**: Randomly select $K$ data points as initial centroids.\n2.  **Assignment**: Assign each data point to the nearest centroid.\n3.  **Update**: Calculate the new centroid of each cluster by taking the mean of all data points assigned to it.\n4.  **Repeat**: Repeat steps 2 and 3 until centroids do not change (convergence) or a maximum number of iterations is reached.\n\n### Choosing K (The Elbow Method)\n\nHow do we know the best $K$? We can use the Elbow Method.\n*   Calculate the **Within-Cluster Sum of Squares (WCSS)** for a range of $K$ values.\n*   Plot WCSS vs $K$.\n*   The point where the rate of decrease sharply shifts (the \"elbow\") is usually a good choice for $K$.\n\n### Implementation\n\n```python\nfrom sklearn.cluster import KMeans\n\nkmeans = KMeans(n_clusters=3, random_state=42)\nkmeans.fit(X)\ny_kmeans = kmeans.predict(X)\n```\n",
+  "code": "from sklearn.cluster import KMeans\nfrom sklearn.datasets import make_blobs\nimport matplotlib.pyplot as plt\n\nX, y = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)\n\n# TODO: Initialize KMeans with n_clusters=4\nkmeans = \n\n# TODO: Fit the model to X\n\n# TODO: Predict the cluster labels\n# y_kmeans = \n\n# Visualize the clusters\n# plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')\n# centers = kmeans.cluster_centers_\n# plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5)\n# plt.show()"
+}

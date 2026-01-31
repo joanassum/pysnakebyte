@@ -1,0 +1,9 @@
+{
+  "id": "ml-39",
+  "title": "Bayesian Statistics Intro",
+  "category": "Statistics for ML",
+  "number": 39,
+  "duration": "10 min read",
+  "content": "## Frequentist vs. Bayesian\n\nSo far, we've looked at Frequentist statistics (fixed parameters, random data). Bayesian statistics treats parameters as random variables with their own distributions.\n\n### Bayes' Theorem\n\n$$ P(A|B) = \\frac{P(B|A) \\times P(A)}{P(B)} $$\n\nWhere:\n- $P(A|B)$ is the **Posterior**: Probability of hypothesis A given data B.\n- $P(B|A)$ is the **Likelihood**: Probability of data B given hypothesis A.\n- $P(A)$ is the **Prior**: Initial belief about hypothesis A.\n- $P(B)$ is the **Marginal Likelihood**: Total probability of the data.\n\n### Updating Beliefs\n\nIn ML, Bayesian methods allow us to update our model as we see more data. We start with a prior belief and update it to get a posterior distribution.\n",
+  "code": "def bayes_theorem(p_a, p_b_given_a, p_b_given_not_a):\n    # Calculate P(B)\n    # P(B) = P(B|A) * P(A) + P(B|~A) * P(~A)\n    p_not_a = 1 - p_a\n    p_b = (p_b_given_a * p_a) + (p_b_given_not_a * p_not_a)\n    \n    # Calculate Posterior P(A|B)\n    p_a_given_b = (p_b_given_a * p_a) / p_b\n    return p_a_given_b\n\n# Example: Medical Test\n# P(Disease) = 0.01 (Prior)\n# P(Positive|Disease) = 0.99 (Sensitivity)\n# P(Positive|No Disease) = 0.05 (False Positive Rate)\n\nprior = 0.01\nsensitivity = 0.99\nfalse_pos_rate = 0.05\n\nposterior = bayes_theorem(prior, sensitivity, false_pos_rate)\nprint(f\"Probability of Disease given Positive Test: {posterior:.4f}\")"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ml-11",
+  "title": "Introduction to Pandas",
+  "category": "Python for Data Science",
+  "number": 11,
+  "duration": "10 min read",
+  "content": "# Introduction to Pandas\n\nPandas is an open-source library built on top of NumPy, providing high-performance, easy-to-use data structures and data analysis tools for Python. It is the de facto standard for data manipulation.\n\n## Why Pandas?\n\n*   **Data Structures**: Series (1D) and DataFrame (2D) handle heterogeneous data effortlessly.\n*   **Data Handling**: Tools for reading/writing data between in-memory structures and various formats (CSV, Excel, SQL).\n*   **Data Cleaning**: Powerful methods for handling missing data, filtering, and aggregation.\n\n## Importing Pandas\n\nStandard import convention:\n\n```python\nimport pandas as pd\nimport numpy as np\n```\n\n## Core Components\n\n1.  **Series**: A one-dimensional labeled array.\n2.  **DataFrame**: A two-dimensional labeled data structure with columns of potentially different types.",
+  "code": "import pandas as pd\n\nprint(\"Pandas version:\", pd.__version__)"
+}

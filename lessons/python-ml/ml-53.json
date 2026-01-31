@@ -1,0 +1,9 @@
+{
+  "id": "ml-53",
+  "title": "Data Preprocessing",
+  "category": "Scikit-Learn",
+  "number": 53,
+  "duration": "10 min read",
+  "content": "## Garbage In, Garbage Out\n\nReal-world data is rarely ready for ML. It's often messy, missing values, or in the wrong format. Preprocessing is the step of converting raw data into a clean dataset.\n\n### Handling Missing Data\n\nMissing values can be handled by:\n- **Dropping**: Removing rows/columns (if data is plentiful).\n- **Imputation**: Filling missing values with mean, median, mode, or a constant.\n\n### Scikit-Learn's `SimpleImputer`\n\nThe `SimpleImputer` class provides basic strategies for imputing missing values.\n",
+  "code": "import numpy as np\nfrom sklearn.impute import SimpleImputer\n\n# Data with missing values (NaN)\nX = np.array([\n    [1, 2],\n    [np.nan, 3],\n    [7, 6],\n    [4, np.nan]\n])\n\nprint(\"Original Data:\\n\", X)\n\n# Create Imputer (Strategy: Mean)\nimputer = SimpleImputer(missing_values=np.nan, strategy='mean')\n\n# Fit and Transform\nX_imputed = imputer.fit_transform(X)\n\nprint(\"\\nImputed Data (Mean):\\n\", X_imputed)"
+}

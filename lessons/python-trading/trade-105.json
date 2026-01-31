@@ -1,0 +1,9 @@
+{
+  "id": "trade-105",
+  "title": "Final Capstone: End-to-End Hedge Fund Simulation",
+  "category": "Advanced Trading Projects",
+  "number": 105,
+  "duration": "30 min read",
+  "content": "## Putting It All Together\n\nIn this final capstone, we combine ML, System Architecture, and Strategy into a complete simulation.\n\n### The System\n\n1.  **Data Layer**: Cron job fetches daily data into PostgreSQL.\n2.  **Research Layer**: Jupyter notebooks for training models (Random Forest prediction).\n3.  **Strategy Layer**: Python script loads model, generates target portfolio weights.\n4.  **Execution Layer**: Algorithm splits orders and sends to Paper Trading API.\n5.  **Reporting**: Dash app showing PnL, Sharpe, and current positions.\n\n### Final Task\n\nBuild this pipeline for a portfolio of 5 tech stocks and run it for a week on paper trading.",
+  "code": "# # Pseudo-code for the main controller\n# def daily_job():\n#     update_database()\n#     model = load_model()\n#     signals = model.predict(latest_data)\n#     target_portfolio = construct_portfolio(signals)\n#     current_portfolio = api.get_positions()\n    \n#     orders = diff(target_portfolio, current_portfolio)\n#     execution_engine.execute(orders)\n#     generate_report()\n\n# schedule.every().day.at(\"09:30\").do(daily_job)"
+}

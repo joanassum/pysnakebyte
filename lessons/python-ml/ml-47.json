@@ -1,0 +1,9 @@
+{
+  "id": "ml-47",
+  "title": "Cross-Validation",
+  "category": "ML Fundamentals",
+  "number": 47,
+  "duration": "10 min read",
+  "content": "## Beyond Train-Test Split\n\nA single train-test split can be misleading if the split happens to be \"lucky\" or \"unlucky\". **Cross-Validation (CV)** provides a more robust estimate of model performance.\n\n### K-Fold Cross-Validation\n\n1.  Split the data into $K$ equal subsets (folds).\n2.  Train on $K-1$ folds and validate on the remaining fold.\n3.  Repeat this $K$ times, each time using a different fold as the validation set.\n4.  Average the $K$ scores to get the final performance metric.\n\nCommon values for $K$ are 5 or 10.\n\n### Stratified K-Fold\n\nFor classification problems with imbalanced classes, **Stratified K-Fold** ensures that each fold has the same proportion of class labels as the original dataset.\n",
+  "code": "import numpy as np\nfrom sklearn.datasets import load_iris\nfrom sklearn.model_selection import cross_val_score, KFold\nfrom sklearn.neighbors import KNeighborsClassifier\n\n# Load data\niris = load_iris()\nX, y = iris.data, iris.target\n\n# Model\nmodel = KNeighborsClassifier(n_neighbors=5)\n\n# 5-Fold Cross-Validation\nkf = KFold(n_splits=5, shuffle=True, random_state=42)\nscores = cross_val_score(model, X, y, cv=kf)\n\nprint(f\"Cross-Validation Scores: {scores}\")\nprint(f\"Average Score: {np.mean(scores):.4f}\")\nprint(f\"Standard Deviation: {np.std(scores):.4f}\")"
+}

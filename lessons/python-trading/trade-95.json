@@ -1,0 +1,9 @@
+{
+  "id": "trade-95",
+  "title": "Project: Portfolio Optimization",
+  "category": "Advanced Trading Projects",
+  "number": 95,
+  "duration": "22 min read",
+  "content": "## Modern Portfolio Theory (MPT)\n\nGoal: Maximize return for a given level of risk (Efficient Frontier).\n\n### Mathematics\n\nMinimize Variance: $w^T \\Sigma w$\nSubject to: $w^T \\mu = TargetReturn$ and $\\sum w = 1$\n\nWhere $w$ is weights, $\\Sigma$ is covariance matrix, $\\mu$ is expected returns.\n\n### Black-Litterman Model\n\nCombines market equilibrium with investor \"views\" (subjective predictions) to produce more stable weights than raw MPT.",
+  "code": "import numpy as np\nfrom scipy.optimize import minimize\n\n# def portfolio_variance(weights, cov_matrix):\n#     return weights.T @ cov_matrix @ weights\n\n# constraints = ({'type': 'eq', 'fun': lambda x: np.sum(x) - 1})\n# bounds = tuple((0, 1) for _ in range(num_assets))\n\n# result = minimize(portfolio_variance, init_weights, args=(cov_matrix,),\n#                   method='SLSQP', bounds=bounds, constraints=constraints)"
+}

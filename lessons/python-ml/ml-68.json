@@ -1,0 +1,9 @@
+{
+  "id": "ml-68",
+  "title": "Random Forest Regression",
+  "category": "Regression",
+  "number": 68,
+  "duration": "10 min read",
+  "content": "## Ensemble of Trees\n\nRandom Forest Regression is an ensemble technique that combines multiple decision trees to produce a more stable and accurate prediction.\n\n### How it Works\n\n1.  **Bootstrapping**: Train many decision trees on random subsets of the data (with replacement).\n2.  **Aggregation**: For regression, the final prediction is the average of the predictions of all individual trees.\n\n### Benefits\n\n- Reduces overfitting compared to a single Decision Tree.\n- Generally provides high accuracy.\n- Provides feature importance scores.\n",
+  "code": "from sklearn.ensemble import RandomForestRegressor\nfrom sklearn.datasets import make_regression\nfrom sklearn.model_selection import train_test_split\n\n# Generate data\nX, y = make_regression(n_features=4, n_informative=2, random_state=0, shuffle=False)\nX_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)\n\n# Train Random Forest\nregr = RandomForestRegressor(max_depth=3, random_state=0, n_estimators=100)\nregr.fit(X_train, y_train)\n\n# Evaluate\nscore = regr.score(X_test, y_test)\nprint(f\"R2 Score: {score:.4f}\")\n\n# Feature Importance\nprint(\"Feature Importances:\", regr.feature_importances_)\n# Note: Only first 2 features are informative, so they should have higher importance"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "ml-98",
+  "title": "Convolutional Neural Networks",
+  "category": "Deep Learning",
+  "number": 98,
+  "duration": "15 min read",
+  "content": "## Convolutional Neural Networks (CNNs)\n\nCNNs are specialized neural networks for processing data that has a known grid-like topology, such as images.\n\n### Key Components\n\n1.  **Convolutional Layer**: Applies filters (kernels) to the input to create feature maps. Detects local patterns like edges, textures, shapes.\n2.  **Pooling Layer**: Reduces the spatial dimensions (downsampling). Max Pooling is common (takes the maximum value in a window).\n3.  **Flatten Layer**: Converts the 2D matrix data into a 1D vector to feed into a dense layer.\n4.  **Fully Connected (Dense) Layer**: Performs the classification based on the features extracted.\n\n### Implementation\n\n```python\nfrom tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten\n\nmodel = Sequential()\n# 32 filters, 3x3 kernel\nmodel.add(Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)))\nmodel.add(MaxPooling2D((2, 2)))\nmodel.add(Flatten())\nmodel.add(Dense(10, activation='softmax'))\n```\n",
+  "code": "import tensorflow as tf\nfrom tensorflow.keras.models import Sequential\nfrom tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense\n\n# TODO: Build a simple CNN for MNIST (28x28 images)\nmodel = Sequential()\n\n# 1. Add Conv2D layer: 32 filters, 3x3 kernel, relu activation, input_shape=(28, 28, 1)\n\n# 2. Add MaxPooling2D layer: 2x2 pool size\n\n# 3. Add Flatten layer\n\n# 4. Add Dense output layer: 10 units, softmax activation\n\nmodel.summary()"
+}

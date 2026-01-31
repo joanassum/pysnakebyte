@@ -1,0 +1,9 @@
+{
+  "id": "adv-14",
+  "title": "Best Practices & PEP 8",
+  "category": "Advanced Topics",
+  "number": 100,
+  "duration": "8 min read",
+  "content": "## Best Practices & PEP 8\n\nWriting \"Pythonic\" code means following the conventions and philosophy of the Python community.\n\n### PEP 8\n\nPEP 8 is the official style guide for Python code.\n\n- **Indentation**: Use 4 spaces per indentation level.\n- **Line Length**: Limit lines to 79 characters.\n- **Naming Conventions**:\n    - `snake_case` for functions and variables.\n    - `CamelCase` for classes.\n    - `UPPER_CASE` for constants.\n\n### Docstrings\n\nUse triple quotes `\"\"\"` for documentation strings in modules, classes, and functions.\n\n```python\ndef add(a, b):\n    \"\"\"\n    Returns the sum of two numbers.\n    \n    Args:\n        a (int): First number\n        b (int): Second number\n    \"\"\"\n    return a + b\n```\n\n### The Zen of Python\n\nRun `import this` to see the guiding principles.\n\n> explicit is better than implicit.\n> simple is better than complex.\n",
+  "code": "# 1. Refactor this code to follow PEP 8 (naming, spacing)\n\ndef Calc_Sum( A,B ):\n return A+B\n\nx=10\ny =20\nPRINT = print\nPRINT( Calc_Sum(x, y) )\n\n# Your refactored version:\n# def calculate_sum(a, b):\n#     ...\n"
+}

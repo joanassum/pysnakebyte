@@ -1,0 +1,9 @@
+{
+  "id": "trade-44",
+  "title": "Pairs Trading (Cointegration)",
+  "category": "Building Trading Strategies",
+  "number": 44,
+  "duration": "15 min read",
+  "content": "# Pairs Trading\n\nPairs trading is a market-neutral strategy that matches a long position with a short position in a pair of highly correlated instruments (like KO and PEP, or Gold and Silver miners).\n\n## Cointegration\nCorrelation is not enough; we need **cointegration**. Two series are cointegrated if a linear combination of them is stationary (mean-reverting), even if the individual series are non-stationary random walks.\n\n## Strategy\n1. Identify a cointegrated pair.\n2. Calculate the spread (Stock A - HedgeRatio * Stock B).\n3. Calculate the z-score of the spread.\n4. Long the spread when z-score < -2 (Long A, Short B).\n5. Short the spread when z-score > 2 (Short A, Long B).",
+  "code": "import numpy as np\nimport pandas as pd\nimport statsmodels.api as sm\nfrom statsmodels.tsa.stattools import coint\n\n# Mock Cointegrated Data\nnp.random.seed(42)\nX = np.random.randn(200) + 100 # Stock A (Random Walk roughly)\nX = np.cumsum(X)\nnoise = np.random.normal(0, 1, 200)\nY = 0.5 * X + noise + 20 # Stock B is linked to A plus noise\n\n# Check Cointegration\nscore, pvalue, _ = coint(X, Y)\nprint(f\"Cointegration p-value: {pvalue:.4f}\") # < 0.05 implies cointegration\n\n# Calculate Spread and Z-Score\nX = sm.add_constant(X)\nresults = sm.OLS(Y, X).fit()\nX = X[:, 1] # Remove constant for next steps\nb = results.params[1] # Hedge Ratio\n\nspread = Y - b * X\nzscore = (spread - spread.mean()) / spread.std()\n\n# Signals\nlong_spread = zscore < -2\nshort_spread = zscore > 2\n\nprint(f\"Long Spread signals count: {sum(long_spread)}\")\n"
+}

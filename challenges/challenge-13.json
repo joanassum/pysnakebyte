@@ -1,0 +1,9 @@
+{
+  "id": "challenge-13",
+  "title": "Remove Duplicates",
+  "difficulty": "medium",
+  "description": "# Remove Duplicates\n\nWrite a function that removes duplicate elements from a list while preserving the original order.\n\n## Example\n\n```python\nresult = solution([1, 2, 2, 3, 4, 4, 5])\nprint(result)  # Output: [1, 2, 3, 4, 5]\n\nresult = solution(['a', 'b', 'a', 'c', 'b'])\nprint(result)  # Output: ['a', 'b', 'c']\n```\n\n## Requirements\n\n- Accept a list with potential duplicates\n- Return a new list with duplicates removed\n- Preserve the original order (keep first occurrence)\n- Handle empty lists",
+  "short_description": "Remove duplicates from list",
+  "starter_code": "def solution(lst):\n    # Return a new list with duplicates removed (preserve order)\n    pass\n\n# Test your solution\nprint(solution([1, 2, 2, 3, 3, 3, 4]))  # Should print [1, 2, 3, 4]",
+  "test_code": "assert solution([1, 2, 2, 3, 4, 4, 5]) == [1, 2, 3, 4, 5], 'Test 1 failed'\nassert solution(['a', 'b', 'a', 'c', 'b']) == ['a', 'b', 'c'], 'Test 2 failed'\nassert solution([]) == [], 'Test 3 failed: empty list'\nassert solution([1, 1, 1, 1]) == [1], 'Test 4 failed'\nassert solution([1, 2, 3]) == [1, 2, 3], 'Test 5 failed: no duplicates'\nassert solution([5, 4, 3, 2, 1, 5, 4]) == [5, 4, 3, 2, 1], 'Test 6 failed: order preserved'\nprint('PASSED')"
+}

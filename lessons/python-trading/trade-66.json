@@ -1,0 +1,9 @@
+{
+  "id": "trade-66",
+  "title": "Introduction to CCXT",
+  "category": "Connecting to Brokers (APIs)",
+  "number": 66,
+  "duration": "12 min read",
+  "content": "# Crypto Trading with CCXT\n\nCCXT (CryptoCurrency eXchange Trading) is a library that supports over 100 bitcoin/altcoin exchanges with a unified API.\n\n## Benefits\n- **Unified Interface**: `exchange.fetch_ticker('BTC/USD')` works the same for Kraken, Binance, Coinbase, etc.\n- **Async Support**: Native `async`/`await` support.\n\n## Usage\n1. Instantiate exchange class.\n2. Load markets.\n3. Call unified methods.",
+  "code": "# import ccxt\n\n# exchange = ccxt.binance({\n#     'apiKey': 'YOUR_API_KEY',\n#     'secret': 'YOUR_SECRET',\n# })\n\n# markets = exchange.load_markets()\n# ticker = exchange.fetch_ticker('ETH/USDT')\n\n# print(f\"ETH Price: {ticker['last']}\")\n\n# balance = exchange.fetch_balance()\n# print(balance['total']['USDT'])\n"
+}

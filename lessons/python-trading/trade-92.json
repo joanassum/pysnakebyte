@@ -1,0 +1,9 @@
+{
+  "id": "trade-92",
+  "title": "Project: Momentum Strategy Implementation",
+  "category": "Advanced Trading Projects",
+  "number": 92,
+  "duration": "18 min read",
+  "content": "## Trend Following\n\n\"The trend is your friend.\" Buy assets that are going up; sell those going down.\n\n### Dual Moving Average Crossover\n\n- **Fast MA (e.g., 50 days)**\n- **Slow MA (e.g., 200 days)**\n- **Signal**: Buy when Fast crosses above Slow (Golden Cross). Sell when Fast crosses below Slow (Death Cross).\n\n### Optimization\n\nUse an optimizer to find the best window lengths for a specific asset, but beware of overfitting.",
+  "code": "import pandas as pd\n\n# df = pd.read_csv('data.csv')\n# short_window = 50\n# long_window = 200\n\n# df['fast_ma'] = df['Close'].rolling(window=short_window).mean()\n# df['slow_ma'] = df['Close'].rolling(window=long_window).mean()\n\n# df['signal'] = 0.0\n# df['signal'][short_window:] = np.where(df['fast_ma'][short_window:] > df['slow_ma'][short_window:], 1.0, 0.0)\n\n# df['positions'] = df['signal'].diff()"
+}

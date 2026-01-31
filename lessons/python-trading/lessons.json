@@ -1,0 +1,169 @@
+{
+  "categories": [
+    {
+      "name": "Introduction to Algorithmic Trading",
+      "id": "trading-intro",
+      "lessons": [
+        {"id": "trade-01", "title": "What is Algorithmic Trading?", "number": 1},
+        {"id": "trade-02", "title": "Setting Up Your Trading Environment", "number": 2},
+        {"id": "trade-03", "title": "Market Data Fundamentals", "number": 3},
+        {"id": "trade-04", "title": "Asset Classes & Market Microstructure", "number": 4},
+        {"id": "trade-05", "title": "Order Types and Execution", "number": 5},
+        {"id": "trade-06", "title": "APIs in Trading", "number": 6},
+        {"id": "trade-07", "title": "Python Libraries for Finance", "number": 7},
+        {"id": "trade-08", "title": "Working with OHLCV Data", "number": 8},
+        {"id": "trade-09", "title": "Time Zones and Market Hours", "number": 9},
+        {"id": "trade-10", "title": "Handling Real-time vs Historical Data", "number": 10}
+      ]
+    },
+    {
+      "name": "Financial Data Analysis with Pandas",
+      "id": "financial-pandas",
+      "lessons": [
+        {"id": "trade-11", "title": "Time Series Data in Pandas", "number": 11},
+        {"id": "trade-12", "title": "Resampling and Frequency Conversion", "number": 12},
+        {"id": "trade-13", "title": "Moving Averages and Rolling Windows", "number": 13},
+        {"id": "trade-14", "title": "Handling Missing Market Data", "number": 14},
+        {"id": "trade-15", "title": "Calculating Asset Returns", "number": 15},
+        {"id": "trade-16", "title": "Log Returns vs Simple Returns", "number": 16},
+        {"id": "trade-17", "title": "Volatility Measurement", "number": 17},
+        {"id": "trade-18", "title": "Correlation Matrix of Assets", "number": 18},
+        {"id": "trade-19", "title": "Data Visualization for Traders", "number": 19},
+        {"id": "trade-20", "title": "Candlestick Charts with Plotly", "number": 20}
+      ]
+    },
+    {
+      "name": "Technical Analysis Indicators",
+      "id": "technical-analysis",
+      "lessons": [
+        {"id": "trade-21", "title": "Trend Indicators (SMA, EMA)", "number": 21},
+        {"id": "trade-22", "title": "Momentum Indicators (RSI)", "number": 22},
+        {"id": "trade-23", "title": "MACD (Moving Average Convergence Divergence)", "number": 23},
+        {"id": "trade-24", "title": "Bollinger Bands", "number": 24},
+        {"id": "trade-25", "title": "Volume Indicators (OBV, VWAP)", "number": 25},
+        {"id": "trade-26", "title": "Stochastic Oscillator", "number": 26},
+        {"id": "trade-27", "title": "Average True Range (ATR)", "number": 27},
+        {"id": "trade-28", "title": "Implementing Indicators from Scratch", "number": 28},
+        {"id": "trade-29", "title": "Using TA-Lib Wrapper", "number": 29},
+        {"id": "trade-30", "title": "Detecting Patterns (Head & Shoulders)", "number": 30}
+      ]
+    },
+    {
+      "name": "Quantitative Finance Basics",
+      "id": "quant-basics",
+      "lessons": [
+        {"id": "trade-31", "title": "Risk vs Reward Ratios", "number": 31},
+        {"id": "trade-32", "title": "Sharpe Ratio & Sortino Ratio", "number": 32},
+        {"id": "trade-33", "title": "Maximum Drawdown Calculation", "number": 33},
+        {"id": "trade-34", "title": "Beta and Alpha", "number": 34},
+        {"id": "trade-35", "title": "Portfolio Optimization (Markowitz)", "number": 35},
+        {"id": "trade-36", "title": "Efficient Frontier", "number": 36},
+        {"id": "trade-37", "title": "Value at Risk (VaR)", "number": 37},
+        {"id": "trade-38", "title": "Monte Carlo Simulations", "number": 38},
+        {"id": "trade-39", "title": "Hypothesis Testing in Trading", "number": 39},
+        {"id": "trade-40", "title": "Stationarity and Cointegration", "number": 40}
+      ]
+    },
+    {
+      "name": "Building Trading Strategies",
+      "id": "strategies",
+      "lessons": [
+        {"id": "trade-41", "title": "Moving Average Crossover Strategy", "number": 41},
+        {"id": "trade-42", "title": "Mean Reversion Strategy", "number": 42},
+        {"id": "trade-43", "title": "Momentum Trading Strategy", "number": 43},
+        {"id": "trade-44", "title": "Pairs Trading", "number": 44},
+        {"id": "trade-45", "title": "Breakout Strategies", "number": 45},
+        {"id": "trade-46", "title": "Sentiment Analysis Strategy", "number": 46},
+        {"id": "trade-47", "title": "Statistical Arbitrage Intro", "number": 47},
+        {"id": "trade-48", "title": "Trend Following", "number": 48},
+        {"id": "trade-49", "title": "Grid Trading Bots", "number": 49},
+        {"id": "trade-50", "title": "Dollar Cost Averaging (DCA) Bot", "number": 50}
+      ]
+    },
+    {
+      "name": "Backtesting Frameworks",
+      "id": "backtesting",
+      "lessons": [
+        {"id": "trade-51", "title": "Why Backtesting Matters", "number": 51},
+        {"id": "trade-52", "title": "Look-ahead Bias and Overfitting", "number": 52},
+        {"id": "trade-53", "title": "Building a Simple Backtester", "number": 53},
+        {"id": "trade-54", "title": "Introduction to Backtrader", "number": 54},
+        {"id": "trade-55", "title": "Implementing Strategy in Backtrader", "number": 55},
+        {"id": "trade-56", "title": "Adding Commission and Slippage", "number": 56},
+        {"id": "trade-57", "title": "Parameter Optimization", "number": 57},
+        {"id": "trade-58", "title": "Walk-Forward Analysis", "number": 58},
+        {"id": "trade-59", "title": "Analyzing Backtest Results", "number": 59},
+        {"id": "trade-60", "title": "Visualizing Equity Curves", "number": 60}
+      ]
+    },
+    {
+      "name": "Connecting to Brokers (APIs)",
+      "id": "broker-apis",
+      "lessons": [
+        {"id": "trade-61", "title": "Introduction to Broker APIs", "number": 61},
+        {"id": "trade-62", "title": "Alpaca API Setup (Stock Trading)", "number": 62},
+        {"id": "trade-63", "title": "Fetching Historical Data via API", "number": 63},
+        {"id": "trade-64", "title": "Placing Orders (Market, Limit, Stop)", "number": 64},
+        {"id": "trade-65", "title": "Managing Positions", "number": 65},
+        {"id": "trade-66", "title": "WebSockets for Real-time Data", "number": 66},
+        {"id": "trade-67", "title": "Introduction to CCXT (Crypto)", "number": 67},
+        {"id": "trade-68", "title": "Connecting to Binance/Coinbase", "number": 68},
+        {"id": "trade-69", "title": "Handling Rate Limits", "number": 69},
+        {"id": "trade-70", "title": "Error Handling and Reconnection", "number": 70}
+      ]
+    },
+    {
+      "name": "Machine Learning for Trading",
+      "id": "ml-trading",
+      "lessons": [
+        {"id": "trade-71", "title": "Predicting Price Direction with ML", "number": 71},
+        {"id": "trade-72", "title": "Feature Engineering for Time Series", "number": 72},
+        {"id": "trade-73", "title": "Lagged Features and Rolling Windows", "number": 73},
+        {"id": "trade-74", "title": "Train/Test Split for Time Series", "number": 74},
+        {"id": "trade-75", "title": "Using Random Forest for Trading", "number": 75},
+        {"id": "trade-76", "title": "LSTM for Price Prediction", "number": 76},
+        {"id": "trade-77", "title": "Sentiment Analysis on Financial News", "number": 77},
+        {"id": "trade-78", "title": "Reinforcement Learning Intro", "number": 78},
+        {"id": "trade-79", "title": "Building an RL Trading Agent", "number": 79},
+        {"id": "trade-80", "title": "Evaluating ML Strategies", "number": 80}
+      ]
+    },
+    {
+      "name": "Live Trading System Architecture",
+      "id": "system-arch",
+      "lessons": [
+        {"id": "trade-81", "title": "Paper Trading vs Live Trading", "number": 81},
+        {"id": "trade-82", "title": "Event-Driven Architecture", "number": 82},
+        {"id": "trade-83", "title": "Logging and Monitoring", "number": 83},
+        {"id": "trade-84", "title": "Exception Handling in Live Loops", "number": 84},
+        {"id": "trade-85", "title": "Database Storage (SQL vs NoSQL)", "number": 85},
+        {"id": "trade-86", "title": "Storing Tick Data", "number": 86},
+        {"id": "trade-87", "title": "Task Scheduling (Cron, Celery)", "number": 87},
+        {"id": "trade-88", "title": "Hosting on Cloud (AWS/GCP)", "number": 88},
+        {"id": "trade-89", "title": "Telegram/Discord Alerts", "number": 89},
+        {"id": "trade-90", "title": "System Reliability Patterns", "number": 90}
+      ]
+    },
+    {
+      "name": "Advanced Trading Projects",
+      "id": "trading-projects",
+      "lessons": [
+        {"id": "trade-91", "title": "Project: Crypto Arbitrage Scanner", "number": 91},
+        {"id": "trade-92", "title": "Project: Backtesting Engine from Scratch", "number": 92},
+        {"id": "trade-93", "title": "Project: Sentiment Analysis Dashboard", "number": 93},
+        {"id": "trade-94", "title": "Project: Algorithmic Execution Bot", "number": 94},
+        {"id": "trade-95", "title": "Project: Portfolio Rebalancing Tool", "number": 95},
+        {"id": "trade-96", "title": "High Frequency Trading Concepts", "number": 96},
+        {"id": "trade-97", "title": "Market Making Basics", "number": 97},
+        {"id": "trade-98", "title": "Order Book Analysis", "number": 98},
+        {"id": "trade-99", "title": "Options Trading Basics", "number": 99},
+        {"id": "trade-100", "title": "The Greek (Delta, Gamma, Theta)", "number": 100},
+        {"id": "trade-101", "title": "Implied Volatility", "number": 101},
+        {"id": "trade-102", "title": "Black-Scholes Model", "number": 102},
+        {"id": "trade-103", "title": "Algorithmic Options Strategies", "number": 103},
+        {"id": "trade-104", "title": "Ethics and Regulations", "number": 104},
+        {"id": "trade-105", "title": "Next Steps in Quant Finance", "number": 105}
+      ]
+    }
+  ]
+}

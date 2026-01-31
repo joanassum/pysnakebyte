@@ -1,0 +1,9 @@
+{
+  "id": "ml-81",
+  "title": "Introduction to Clustering",
+  "category": "Unsupervised Learning",
+  "number": 81,
+  "duration": "10 min read",
+  "content": "## Introduction to Clustering\n\nClustering is an **unsupervised learning** technique that involves grouping a set of objects in such a way that objects in the same group (cluster) are more similar to each other than to those in other groups.\n\n### Use Cases\n\n*   **Customer Segmentation**: Grouping customers based on purchasing behavior.\n*   **Image Segmentation**: Partitioning an image into regions.\n*   **Anomaly Detection**: Identifying outliers that don't fit into any cluster.\n*   **Document Clustering**: Grouping similar documents.\n\n### Types of Clustering\n\n1.  **Centroid-based**: Clusters are represented by a central vector (e.g., K-Means).\n2.  **Connectivity-based**: Clusters are based on distance connectivity (e.g., Hierarchical Clustering).\n3.  **Density-based**: Clusters are defined as areas of higher density (e.g., DBSCAN).\n4.  **Distribution-based**: Clusters are modeled using statistical distributions (e.g., Gaussian Mixture Models).\n\n### Challenges\n\n*   Determining the number of clusters.\n*   Handling noise and outliers.\n*   Dealing with high-dimensional data.\n",
+  "code": "import matplotlib.pyplot as plt\nfrom sklearn.datasets import make_blobs\n\n# Generate synthetic data\nX, y = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)\n\n# Visualizing the data\nplt.scatter(X[:, 0], X[:, 1], s=50)\nplt.title(\"Unlabeled Data\")\nplt.xlabel(\"Feature 1\")\nplt.ylabel(\"Feature 2\")\nplt.show()"
+}
