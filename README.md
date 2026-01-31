@@ -4,6 +4,8 @@ A comprehensive Python learning platform with 105 lessons, 25 code challenges, a
 
 **Live Demo:** [https://pysnakebyte.com/](https://pysnakebyte.com/)
 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support%20my%20work-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/joanassum)
+
 ## Features
 
 - **105 Interactive Lessons** - From beginner basics to advanced topics

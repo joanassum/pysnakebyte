@@ -529,6 +529,48 @@ function ChallengesPage() {
   );
 }
 
+// Footer Component
+function Footer() {
+  return (
+    <footer style={{
+      borderTop: '1px solid var(--border)',
+      padding: '2rem',
+      marginTop: 'auto',
+      textAlign: 'center',
+      backgroundColor: 'var(--bg-secondary)',
+      color: 'var(--text-secondary)'
+    }}>
+      <div style={{ marginBottom: '1rem' }}>
+        Built with 🐍 for Python Learners
+      </div>
+      <a 
+        href="https://buymeacoffee.com/joanassum" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          padding: '0.75rem 1.25rem',
+          backgroundColor: '#FFDD00',
+          color: '#000000',
+          borderRadius: '8px',
+          fontWeight: '600',
+          textDecoration: 'none',
+          fontSize: '1rem',
+          marginTop: '0.5rem',
+          transition: 'transform 0.2s'
+        }}
+        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+      >
+        <span style={{ fontSize: '1.2rem' }}>☕</span>
+        Buy me a coffee
+      </a>
+    </footer>
+  );
+}
+
 // Main App
 function App() {
   return (
@@ -565,6 +607,7 @@ function App() {
               </RequireAuth>
             } />
           </Routes>
+          <Footer />
         </div>
       </ProgressProvider>
     </AuthProvider>
