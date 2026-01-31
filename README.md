@@ -2,6 +2,8 @@
 
 A comprehensive Python learning platform with 105 lessons, 25 code challenges, and Docker-based sandbox code execution.
 
+**Live Demo:** [https://pysnakebyte.com/](https://pysnakebyte.com/)
+
 ## Features
 
 - **105 Interactive Lessons** - From beginner basics to advanced topics
